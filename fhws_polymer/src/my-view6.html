@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-	<link rel="import" href="../fhws_elements/fhws-switch.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">
 
 <dom-module id="my-view6">
   <template>
@@ -21,7 +21,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 10px;
       }
     </style>
-	Guide zum Erstellen neuer Polymer-Elemente
+	<fhws-card title="Guide zum Erstellen neuer Polymer-Elemente">
+	<div class="card-content">
+	<fhws-card title="A Set Up" color="white">
+	<div class="card-content">
 	A. Set Up:
 	1) Polymer installieren
 	Hierfür gibt es die Anleitung unter: https://www.polymer-project.org/2.0/docs/tools/polymer-cli
@@ -33,7 +36,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	
 	Nun läuft der lokale Polymer Server
 	Aufzurufen unter der in der Konsole angegeben URL.
-	
+	</div>
+	</fhws-card>
+	<fhws-card title="B Entwurf eines Polymer Elementes" color="white">
+	<div class="card-content">
 	B. Entwurf eines Polymer Elementes
 &lt;link rel=&quot;import&quot; href=&quot;../bower_components/polymer/polymer-element.html&quot;&gt;
 
@@ -69,7 +75,10 @@ Anschließend folgt innerhalb des template-Abschnittes die Gestaltung des Neuen 
 
 3. script Part
 Hier werden attribute des Elementes oder weitere Skripte definiert, die Daten für das Element zurückliefern sollen.
-
+</div>
+</fhws-card>
+<fhws-card title="C Allgemeines zu Polymer" color="white">
+<div class="card-content">
 C. Allgemeines zu  Polymer Bausteine
 1. Naming
 Die Polymerdatei hat die Endung .html
@@ -82,7 +91,10 @@ Das erstellte Polymerelement kann eigene Attribute erhalten.
 Bsp.: <fhws-test-element title="Hallo"></fhws-test-element>
 Definiert wird dies in der Klasse FhwsTestElement in der Methode:
 static get properties()
-
+</div>
+</fhws-card>
+</div>
+</fhws-card>
   </template>
 
   <script>
