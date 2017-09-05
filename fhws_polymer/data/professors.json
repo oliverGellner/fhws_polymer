@@ -1,0 +1,6 @@
+{ 
+	"doctor" : ["name", "email"],
+	"email" : "xsd"
+}
+		 
+		

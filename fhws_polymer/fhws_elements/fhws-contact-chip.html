@@ -1,0 +1,97 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+
+orientierungshilfe:https://github.com/PolymerElements/paper-contact-chip/blob/master/paper-contact-chip.html
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<!--
+Example:
+<fhws-contact-chip person="testPerson"></fhws-contact-chip>
+
+Available Styling		| Description									| Default
+
+-->
+<dom-module id="fhws-contact-chip">
+	<template>
+		<style>
+			.background {
+			position: relative;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+				transition: 0.3s;
+				background-color: grey;
+				border-radius: 30px;
+			}
+			
+			.picture {
+				position: relative;
+				border-radius: 50%;
+				background-color: orange;
+				width: 4%;
+				height: 100%; 
+			}
+			
+			.name {
+				text-align: center;
+			}
+			
+		</style>
+	
+	
+		<iron-ajax 
+			auto 
+			url="{{url}}"
+			handle-as="json"
+			last-response="{{json}}">
+		</iron-ajax>
+		
+		<div class="background">
+			<a href="mail:to{{json.email}}">
+				<img class="picture" src="{{imgUrl}}">
+				<span class="name">{{json.name}}</span>
+			</a>
+		<div>
+		
+	</template>
+  <script>
+    class FhwsContactChip extends Polymer.Element {
+		static get is() { 
+			return 'fhws-contact-chip'; 
+		}
+		
+		static get properties() {
+			return {
+				person: {
+					value: 'testPerson',
+					notify: true
+				},
+				url: {
+					computed: 'computeUrl(person)'
+				},				
+				imgUrl: {
+					computed: 'computeImgUrl(person)'
+				}
+			}
+		}
+		
+		computeUrl(person) {
+			return '../data/professor/'+ person + '.json';
+		}
+		
+		computeImgUrl(person) {
+			return '../data/professor/'+ person + '.png';
+		}
+	}
+    window.customElements.define(FhwsContactChip.is, FhwsContactChip);
+
+  </script>
+</dom-module>
+

@@ -1,0 +1,138 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+
+orientierungshilfe:https://github.com/PolymerElements/paper-card/blob/master/paper-card.html
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<!--
+Example:
+<fhws-card title="Card">
+	<div class="card-content">Content</div>
+	<div class="card-actions">
+        <fhws-link href="xd">Some action</fhws-link>
+    </div>
+</fhws-card>
+
+Available Styling		| Description									| Default
+'--fhws-card-content' 	| Mixin applied to the card content section		| '{}'
+'--fhws-card-actions'	| Mixin applied to the card action section 		| '{}'
+
+-->
+<dom-module id="fhws-card">
+  <template>
+
+    <style>
+	.container {position: relative;}
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		background-color: white;
+	}
+
+	.colorblock {
+		position: relative;
+		background-color: #ed6c00;
+		height: 200px;
+		color: white;
+	}
+	
+	.label {
+		position: absolute;
+		bottom: 10%;
+		left: 1%;
+	}
+	
+	:host ::slotted(.card-content) {
+        padding: 16px;
+        position:relative;
+
+        @apply --fhws-card-content;
+    }
+	
+	:host ::slotted(.card-actions) {
+        border-top: 1px solid #e8e8e8;
+        padding: 5px 16px;
+        position:relative;
+        @apply --fhws-card-actions;
+    }
+	
+	:host ::slotted(.card-content-code) {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+        font-size: 95%;
+        line-height: 140%;
+        white-space: pre;
+        background: #faf8f0;
+		@apply --fhws-card-content-code;
+	}
+	
+    </style>
+	
+	<template is="dom-if" if="{{orange}}">
+		<div class="card">
+			<div class="colorblock">
+			<span class="label">
+				<h3>{{title}}</h3>
+			</span>
+			</div>
+				<slot></slot>
+		</div> 
+	</template>
+	
+	<template is="dom-if" if="{{white}}">
+	<br>
+		<div class="card">
+			<h3>{{title}}</h3>
+			<slot></slot>
+		</div> 
+	</template>
+  </template>
+
+  <script>
+    class FhwsCard extends Polymer.Element {
+
+      static get is() { 
+        return 'fhws-card'; 
+		}
+		
+		static get properties() {
+        return {
+            title: {
+			},
+			color: {
+				value: "orange"
+			},
+			orange: {
+				computed: 'computeOrange(color)'
+			},
+			white: {
+				computed: 'computeWhite(color)'
+			},
+        }
+      }
+	  
+	  computeOrange(color) {
+			if (color === "orange"){
+				return true;
+			}
+			return false;
+		}
+	
+		computeWhite(color) {
+			if (color === "white"){
+				return true;
+			}
+			return false;
+		}
+	}
+    window.customElements.define(FhwsCard.is, FhwsCard);
+
+  </script>
+</dom-module>
+

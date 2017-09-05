@@ -1,0 +1,79 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+
+orientierungshilfe:https://github.com/PolymerElements/paper-card/blob/master/paper-card.html
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<!--
+Example:
+<fhws-card-white title="Card">
+	<div class="card-content">Content</div>
+	<div class="card-actions">
+        <fhws-link href="xd">Some action</fhws-link>
+    </div>
+</fhws-card-white>
+
+Available Styling		| Description									| Default
+'--fhws-card-white-content' 	| Mixin applied to the card content section		| '{}'
+'--fhws-card-white-actions'	| Mixin applied to the card action section 		| '{}'
+
+-->
+<dom-module id="fhws-card-white">
+  <template>
+
+    <style>
+	.card {
+		/* Add shadows to create the "card" effect */
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		background-color: white;
+	}
+		
+	:host ::slotted(.card-content) {
+        padding: 16px;
+        position:relative;
+
+        @apply --fhws-card-white-content;
+    }
+	
+	:host ::slotted(.card-actions) {
+        border-top: 1px solid #e8e8e8;
+        padding: 5px 16px;
+        position:relative;
+		
+        @apply --fhws-card-white-actions;
+    }
+    </style>
+	
+	
+	<div class="card">
+		<h3>{{title}}</h3>
+		<slot></slot>
+	</div> 
+  </template>
+
+  <script>
+    class FhwsCardWhite extends Polymer.Element {
+
+      static get is() { 
+        return 'fhws-card-white'; 
+		}
+		
+		static get properties() {
+        return {
+            title: String,
+        }
+      }
+	}
+    window.customElements.define(FhwsCardWhite.is, FhwsCardWhite);
+
+  </script>
+</dom-module>
+

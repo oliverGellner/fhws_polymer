@@ -1,0 +1,85 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+
+orientierungshilfe:https://github.com/PolymerElements/paper-dialog/blob/master/paper-dialog.html
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<!--
+Example:
+<fhws-dialog title="Title">
+	<div class="card-content">Content</div>
+	<div class="card-actions"><button>TestBut</button></div>
+</fhws-dialog>
+
+Available Styling		| Description									| Default
+'--fhws-card-content' 	| Mixin applied to the card content section		| '{}'
+'--fhws-card-actions'	| Mixin applied to the card action section 		| '{}'
+
+-->
+<dom-module id="fhws-dialog">
+	<template>
+		<style>
+		
+		.container {position: relative;}
+		.dialog {
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+			background-color: white;
+			
+			position: relative;
+		}
+		
+		:host ::slotted(.card-content) {
+			padding: 16px;
+			position:relative;
+		
+			@apply --fhws-card-content;
+		}
+		
+		button{
+		
+		}
+		:host ::slotted(.card-actions) {
+			position: relative;
+			right:    0;
+			bottom:   0;
+			
+			@apply --fhws-card-actions;
+		}
+		
+		
+		</style>
+			<div class="dialog">
+					<span class="label">
+						<h3>{{title}}</h3>
+					</span>
+					<slot></slot>
+			</div> 
+		<br>
+	</template>
+  <script>
+    class FhwsDialog extends Polymer.Element {
+		static get is() { 
+			return 'fhws-dialog'; 
+		}
+		
+		static get properties() {
+			return {
+				title: String,
+			}
+		}
+	}
+    window.customElements.define(FhwsDialog.is, FhwsDialog);
+
+  </script>
+</dom-module>
+
