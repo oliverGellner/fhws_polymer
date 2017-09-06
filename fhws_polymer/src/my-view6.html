@@ -11,18 +11,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
 
 <dom-module id="my-view6">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 10px;
+      
       }
             </style>
       
-      //card #1
+      
+      <fhws-header header="Guide zur Erstellung von Polymer-Elementen">
+          
+          
+          
+      <!--card #1-->
       
 	<div class="card-content">
 	<fhws-card title="A. Set Up" color="orange">
@@ -41,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</div>
 	</fhws-card>
 
-      //card #2
+      <!--//card #2-->
       
       <fhws-card title="B. Entwurf eines Polymer Elements" color="orange">
 	<div class="card-content">
@@ -79,11 +84,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <li><b>Template</b><br>Anschließend folgt innerhalb des template-Abschnittes die Gestaltung des Neuen Polymer Elementes.</li>
     <li><b>Script Part</b><br>Hier werden die Attribute des Elementes oder weitere Skripte definiert, die Daten für das Element zurückliefern sollen</li>
 </ol>
-       
-
 </div>
+          
+<!--card #3-->
+          
 </fhws-card>
-<fhws-card title="C. Allgemeines zu Polymer" color="white">
+<fhws-card title="C. Allgemeines zu Polymer" color="orange">
 <div class="card-content">
     
     <ol>
@@ -100,7 +106,7 @@ static get properties()</li>
     </ol>
 </div>
 </fhws-card>
-
+</fhws-header>
   </template>
 
   <script>
