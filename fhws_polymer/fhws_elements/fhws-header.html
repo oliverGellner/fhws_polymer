@@ -30,16 +30,35 @@ Available Styling		| Description									| Default
 		color: white;
 	}
         
-.header {
+	.header {
 		position: absolute;
-		bottom: 10%;
+		
 		left: 16px;
         font-weight: 400; font-size: 24px;
-}
-        
-.content {
-        padding: 10px;
-        }
+	}
+
+	.content {
+		color: black;
+	}
+
+	@media screen and (min-width: 0px) and (max-width:1459px){
+		.content {
+			padding-top: 166px;
+		}
+	}
+		
+       @media screen and (min-width: 1460px) {
+			.content {
+				padding-top: 88px;
+				width: 1000px;
+				margin: 0 auto;
+			}
+			
+			.colorblock {
+				height: 256px;
+			}
+		}
+
         
         
     </style>
@@ -48,13 +67,13 @@ Available Styling		| Description									| Default
 			<span class="header">
 				<h3>{{header}}</h3>
 			</span>
-			</div>
+			
       
       <div class="content">
           <slot></slot>
           
       </div>
-      
+      </div>
   </template>
 
   
