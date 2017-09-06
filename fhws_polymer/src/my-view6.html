@@ -20,27 +20,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
-    </style>
-	<fhws-card title="Guide zum Erstellen neuer Polymer-Elemente">
+            </style>
+      
+      //card #1
+      
 	<div class="card-content">
-	<fhws-card title="A Set Up" color="white">
+	<fhws-card title="A. Set Up" color="orange">
 	<div class="card-content">
-	A. Set Up:
-	1) Polymer installieren
-	Hierfür gibt es die Anleitung unter: https://www.polymer-project.org/2.0/docs/tools/polymer-cli
-	
-	2) Git Repro clonen 
-	3) In Git Verzeichnis wechseln
-	4) bower install
-	6) polymer serve
-	
-	Nun läuft der lokale Polymer Server
-	Aufzurufen unter der in der Konsole angegeben URL.
+        Das Set Up für Polymer erfolgt nach dieser Vorgehensweise:
+	<ol>
+        <li>Polymer installieren. Hierfür gibt es die <b>Anleitung</b> unter: <a href>https://www.polymer-project.org/2.0/docs/tools/polymer-cli</a></li>
+        <li>Git Repro clonen</li>
+        <li>In Git das Verzeichnis wechseln</li>
+        <li>Den Befehl <i>bower install</i> ausführen</li>
+        <li>Den Befehl <i>polymer serve</i> ausführen</li>
+    </ol>
+        <img src="../images/bash_screen.png" alt="bash-screen"></img><br>
+        
+	Nun läuft der lokale Polymer Server. Der Aufruf erfolgt unter der in der Konsole angegeben URL.
 	</div>
 	</fhws-card>
-	<fhws-card title="B Entwurf eines Polymer Elementes" color="white">
+
+      //card #2
+      
+      <fhws-card title="B. Entwurf eines Polymer Elements" color="orange">
 	<div class="card-content">
-	B. Entwurf eines Polymer Elementes
+        Jedes Polymer Element ist nach folgendem Schema aufgebaut:<br><br>
+       
+          <code>
 &lt;link rel=&quot;import&quot; href=&quot;../bower_components/polymer/polymer-element.html&quot;&gt;
 
 &lt;dom-module id=&quot;fhws-name&quot;&gt;
@@ -65,36 +72,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     window.customElements.define(FhwsName.is, FhwsName);
   &lt;/script&gt;
-&lt;/dom-module&gt;
+            &lt;/dom-module&gt;</code>
+        
+<ol>
+    <li><b>Style</b><br>Hier wird der Style des Objekts mithilfe von CSS festgelegt.</li>
+    <li><b>Template</b><br>Anschließend folgt innerhalb des template-Abschnittes die Gestaltung des Neuen Polymer Elementes.</li>
+    <li><b>Script Part</b><br>Hier werden die Attribute des Elementes oder weitere Skripte definiert, die Daten für das Element zurückliefern sollen</li>
+</ol>
+       
 
-1. style Part
-Hier wird das Style mit Hilfe von css für das Objekt festgelegt.
-
-2. template Part
-Anschließend folgt innerhalb des template-Abschnittes die Gestaltung des Neuen Polymer Elemenes
-
-3. script Part
-Hier werden attribute des Elementes oder weitere Skripte definiert, die Daten für das Element zurückliefern sollen.
 </div>
 </fhws-card>
-<fhws-card title="C Allgemeines zu Polymer" color="white">
+<fhws-card title="C. Allgemeines zu Polymer" color="white">
 <div class="card-content">
-C. Allgemeines zu  Polymer Bausteine
-1. Naming
+    
+    <ol>
+        <li><b>Naming</b>
 Die Polymerdatei hat die Endung .html
 Darüberhinaus muss sie ein "-" Enthalten
 Im JavaScript Teil werden die mit "-" getrennten Worte durch CamelCase dargestellt.
-Bsp.: fhws-test-element wird zu fhwsTestElement
-
-2. Nutzereingaben
+Bsp.: fhws-test-element wird zu fhwsTestElement</li>
+        <li><b>Nutzereingaben</b>
 Das erstellte Polymerelement kann eigene Attribute erhalten.
 Bsp.: <fhws-test-element title="Hallo"></fhws-test-element>
 Definiert wird dies in der Klasse FhwsTestElement in der Methode:
-static get properties()
+static get properties()</li>
+    </ol>
 </div>
 </fhws-card>
-</div>
-</fhws-card>
+
   </template>
 
   <script>
