@@ -7,8 +7,18 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
+	
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/neon-animation/web-animations.html">">
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
 <!--
 Example:
 
@@ -21,18 +31,65 @@ Available Styling		| Description									| Default
   <template>
 
     <style>
+	:root {
+		/* Label and underline color when the input is not focused */
+        --paper-input-container-color: orange;
+
+        /* Label and underline color when the input is focused */
+        --paper-input-container-focus-color: green;
+
+        /* Label and underline color when the input is invalid */
+        --paper-input-container-invalid-color: red;
+
+        /* Input foreground color */
+        --paper-input-container-input-color: black;
+	}
 	
+	
+	.suffix {
+		
+	}
 
     </style>
-	<template is="dom-if" if="{{text}}">
+	<template is="dom-if" if="{{studentmail}}">
 		<div class="container">
-			<div class="text">
-				<input type="text" id="text" placeholder="{{placeholder}}"/>
-				<label for="text"><slot></slot></label>
-			</div>
+			<paper-input label="Studenten Email-Adresse">
+				<iron-icon icon="mail" slot="prefix"></iron-icon>
+				<div slot="suffix" class="suffix">@student.fhws.de</div>
+			</paper-input>
 		</div>
 	</template>
-
+	<template is="dom-if" if="{{knummer}}">
+		<div class="container">
+				<paper-input 
+				auto-validate
+                pattern="^k(\d{5})$"
+                allowed-pattern="[\d.k]"
+				error-message="keine gültige k-Nummer"
+				label="k-Nummer">
+				</paper-input>
+	</div>
+	</template>
+	<template is="dom-if" if="{{studiengangfakinfo}}">
+		<div class="container">
+		<paper-dropdown-menu label="Upwards and to the left!" vertical-align="bottom" horizontal-align="left">
+  <paper-listbox slot="dropdown-content" class="dropdown-content">
+    <paper-item>allosaurus</paper-item>
+    <paper-item>brontosaurus</paper-item>
+    <paper-item>carcharodontosaurus</paper-item>
+    <paper-item>diplodocus</paper-item>
+  </paper-listbox>
+</paper-dropdown-menu>
+		
+			<paper-dropdown-menu label="Studiengang">
+				<paper-listbox slot="dropdown-content" selected="1">
+					<paper-item>EC</paper-item>
+					<paper-item>Informatik</paper-item>
+					<paper-item>Wirtschaftinformatik</paper-item>
+				</paper-listbox>
+			</paper-dropdown-menu>
+		</div>
+	</template>
   </template>
 
   <script>
@@ -45,20 +102,39 @@ Available Styling		| Description									| Default
 		static get properties() {
         return {
 			type: {
-				value: 'text'
+				value: 'knummer'
 			},
 			
 			placeholder: {
 			},
 			
-			text: {
-					computed: 'computeType(type)'
-				}
+			studentmail: {
+					computed: 'computeStudentenmail(type)'
+			},
+			knummer: {
+					computed: 'computeKnummer(type)'
+			},
+			studiengangfakinfo: {
+					computed: 'computeStudiengangFakInfo(type)'
 			}
 		}
+	}
 		
-		computeType(element) {
-			if(element === "text"){
+		computeStudentenmail(type) {
+			if(type === "studentmail"){
+				return true;
+			}
+			return false;
+		}
+		computeStudiengangFakInfo(type) {
+			if(type === "studiengangfakinfo"){
+				return true;
+			}
+			return false;
+		}
+		
+		computeKnummer(type) {
+			if(type === "knummer"){
 				return true;
 			}
 			return false;

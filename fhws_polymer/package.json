@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
-    "materialize-css": "^0.100.1"
+    "materialize-css": "^0.100.1",
+    "web-animations-js": "^2.3.1"
   }
 }

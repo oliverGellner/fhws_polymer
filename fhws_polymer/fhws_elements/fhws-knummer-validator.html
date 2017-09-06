@@ -1,0 +1,17 @@
+class fhwsKnummerValidator extends Polymer.mixinBehaviors([Polymer.IronValidatorBehavior], Polymer.Element) {
+  static get is() { return 'ssn-validator'; }
+
+  ready() {
+    super.ready();
+
+    // Workaround https://github.com/PolymerElements/iron-validator-behavior/issues/30#issuecomment-305643574
+    new Polymer.IronMeta({type: 'validator', key: fhwsKnummerValidator.is, value: this});
+  }
+
+  validate(value) {
+    const re = /^k\d{5}$/;
+    return re.test(value);
+  }
+}
+
+window.customElements.define(fhwsKnummerValidator.is, fhwsKnummerValidator);
