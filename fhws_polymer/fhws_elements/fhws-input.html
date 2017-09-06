@@ -45,12 +45,20 @@ Available Styling		| Description									| Default
         --paper-input-container-input-color: black;
 	}
 	
-	
-	.suffix {
-		
-	}
-
     </style>
+	<template is="dom-if" if="{{text}}">
+		<div class="container">
+			<paper-input value="{{value}}" label="{{label}}">
+			</paper-input>
+		</div>
+	</template>
+	<template is="dom-if" if="{{password}}">
+		<div class="container">
+			<paper-input type="password" label="Password">
+			</paper-input>
+		</div>
+	</template>
+	
 	<template is="dom-if" if="{{studentmail}}">
 		<div class="container">
 			<paper-input label="Studenten Email-Adresse">
@@ -72,15 +80,6 @@ Available Styling		| Description									| Default
 	</template>
 	<template is="dom-if" if="{{studiengangfakinfo}}">
 		<div class="container">
-		<paper-dropdown-menu label="Upwards and to the left!" vertical-align="bottom" horizontal-align="left">
-  <paper-listbox slot="dropdown-content" class="dropdown-content">
-    <paper-item>allosaurus</paper-item>
-    <paper-item>brontosaurus</paper-item>
-    <paper-item>carcharodontosaurus</paper-item>
-    <paper-item>diplodocus</paper-item>
-  </paper-listbox>
-</paper-dropdown-menu>
-		
 			<paper-dropdown-menu label="Studiengang">
 				<paper-listbox slot="dropdown-content" selected="1">
 					<paper-item>EC</paper-item>
@@ -89,7 +88,7 @@ Available Styling		| Description									| Default
 				</paper-listbox>
 			</paper-dropdown-menu>
 		</div>
-	</template>
+	</template>	
   </template>
 
   <script>
@@ -102,12 +101,15 @@ Available Styling		| Description									| Default
 		static get properties() {
         return {
 			type: {
-				value: 'knummer'
+				value: 'text'
 			},
-			
+			label: {
+			},
+			value: {
+				value: ''
+			},
 			placeholder: {
 			},
-			
 			studentmail: {
 					computed: 'computeStudentenmail(type)'
 			},
@@ -116,7 +118,13 @@ Available Styling		| Description									| Default
 			},
 			studiengangfakinfo: {
 					computed: 'computeStudiengangFakInfo(type)'
-			}
+			},
+			text: {
+					computed: 'computeText(type)'
+			},
+			password: {
+					computed: 'computePassword(type)'
+			},
 		}
 	}
 		
@@ -132,13 +140,25 @@ Available Styling		| Description									| Default
 			}
 			return false;
 		}
-		
 		computeKnummer(type) {
 			if(type === "knummer"){
 				return true;
 			}
 			return false;
 		}
+		computeText(type) {
+			if(type === "text"){
+				return true;
+			}
+			return false;
+		}
+		computePassword(type) {
+			if(type === "password"){
+				return true;
+			}
+			return false;
+		}
+		
       }
     window.customElements.define(FhwsInput.is, FhwsInput);
 
