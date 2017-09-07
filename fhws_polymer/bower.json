@@ -24,7 +24,8 @@
     "paper-radio-button": "PolymerElements/paper-radio-button#^2.0.0",
     "paper-checkbox": "PolymerElements/paper-checkbox#^2.0.1",
     "paper-button": "PolymerElements/paper-button#^2.0.0",
-    "paper-alert-dialog": "Collaborne/paper-alert-dialog#^2.0.1"
+    "paper-alert-dialog": "Collaborne/paper-alert-dialog#^2.0.1",
+    "paper-slider": "PolymerElements/paper-slider#^2.0.2"
   },
   "resolutions": {
     "polymer": "^2.0.0"
