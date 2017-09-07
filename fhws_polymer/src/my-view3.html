@@ -12,6 +12,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-contact-chip.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+
 
 <dom-module id="my-view3">
   <template>
@@ -21,12 +25,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <fhws-header header="Contact-Chip">
+    <fhws-header header="Kontakt-Chip">
   
+            
+    <!-- Vorschau Kontakt-Chip -->  
+    <fhws-card title="Vorschau Kontakt-Chip" color="white">
+		  <div class="card-content">
+            <fhws-contact-chip person="testPerson"></fhws-contact-chip>
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+ 	
       
-   <fhws-contact-chip person="testPerson">
+     <!-- Quellcode Kontakt-Chip -->            
+    <fhws-card title="Quellcode Kontaktchip" color="white">
+		<div class="card-content">
+			<fhws-code code=''></fhws-code>
+			
+           	</div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+	</div>        
+    <br> 
         
-        </fhws-contact-chip>
   </template>
 
   <script>
