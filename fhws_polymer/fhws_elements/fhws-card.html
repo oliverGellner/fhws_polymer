@@ -23,7 +23,7 @@ Example:
     </div>
 </fhws-card>
 
-Available Styling		| Description									| Default
+Available Styling		| Description									| defaultc
 '--fhws-card-content' 	| Mixin applied to the card content section		| '{}'
 '--fhws-card-actions'	| Mixin applied to the card action section 		| '{}'
 
@@ -38,7 +38,6 @@ Available Styling		| Description									| Default
 		transition: 0.3s;
 		background-color: white;
         margin-top: 20px;
-		width: 1000px;
 		
 	}
 
@@ -72,11 +71,7 @@ Available Styling		| Description									| Default
     }
 	
 	:host ::slotted(.card-content-code) {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-        font-size: 95%;
-        line-height: 140%;
-        white-space: pre;
-        background: #faf8f0;
+        background: white;
 		@apply --fhws-card-content-code;
 	}
 	
@@ -99,9 +94,9 @@ Available Styling		| Description									| Default
 			<h3 style="padding-left:16px; padding-top:16p;">{{title}}</h3>
             <slot></slot>
          </div>
-	</template
+	</template>
 	
-	<template is="dom-if" if="{{default}}">
+	<template is="dom-if" if="{{defaultc}}">
 		<div class="card">
 				<slot></slot>
         </div>
@@ -121,7 +116,7 @@ Available Styling		| Description									| Default
                 
 			},
 			color: {
-				value: "default"
+				value: "defaultc"
 			},
 			orange: {
 				computed: 'computeOrange(color)'
@@ -129,8 +124,8 @@ Available Styling		| Description									| Default
 			white: {
 				computed: 'computeWhite(color)'
 			},
-			default: {
-				computed: 'computeDefault(color)'
+			defaultc: {
+				computed: 'computeDefaultc(color)'
 			},
         }
       }
@@ -149,8 +144,8 @@ Available Styling		| Description									| Default
 			return false;
 		}
 		
-		computeWhite(color) {
-			if (color === "default"){
+		computeDefaultc(color) {
+			if (color === "defaultc"){
 				return true;
 			}
 			return false;

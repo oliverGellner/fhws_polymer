@@ -30,14 +30,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
     <fhws-header header="Cards">
 
-        
-	<fhws-grid>
+     
 
 	 <fhws-card title="Allgemeine Informationen" color="white">
 	   <div class="card-content">
 	Attribute:<br>
-	title: Überschrift defaultValue: empty<br>
-	color: orange oder white defaultValue: orange<br>
+	title: Überschrift (optional, nur verfügbar mit auswahlt von color)<br>
+	color: orange oder white (optional)
 	<br>
 	Verfügbare Klassen im Element<br>
 	card-content: Hier wird der Hauptteil des Elements befüllt<br>
@@ -57,18 +56,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <!--Quellcode 1-->
             
-	<fhws-card title="Quellcode">
-        <div class="card-content-code">
-            <pre>
-                <code text-align="left">
-                     &lt;fhws-card title=&quot;your title&quot;&gt;
-			         &lt;div class=&quot;card-content&quot;&gt;Your content&lt;/div&gt;
-			         &lt;div class=&quot;card-actions&quot;&gt;
-			         &lt;fhws-link href=&quot;xd&quot;&gt;Some action&lt;/fhws-link&gt;
-			         &lt;/div&gt;
-			         &lt;/fhws-card&gt;
-                </code>
-            </pre>
+	<fhws-card title="Quellcode" color="white">
+        <div class="card-content">
+            <fhws-code code='<fhws-card title="your title" color="white">'></fhws-code>
+ 			<div style="text-indent:25px;">
+ 				<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
+ 				<fhws-code code='<div class="card-actions">'></fhws-code>
+ 				<div style="text-indent:50px">
+ 					<fhws-code code='<fhws-link href="xd">Some action</fhws-link>'></fhws-code>	
+ 				</div>
+ 				<fhws-code code='</div>'></fhws-code>
+ 			</div>
+ 			<fhws-code code='</fhws-card>'></fhws-code>
         </div>
 	</fhws-card>
 	</div>
@@ -84,22 +83,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <fhws-link href="xd">Some action</fhws-link>
       </div>
 	</fhws-card>
-
+ 			
      <!--Quellcode 2-->  
              
-        	<fhws-card title="Quellcode" color="white">
-        <div class="card-content-code">
-            <pre>
-                <code text-align="left">
-                    &lt;fhws-card title=&quot;your title&quot; color=&quot;white&quot;&gt;
-                    &lt;div class=&quot;card-content&quot;&gt;Your content&lt;/div&gt;
-                    &lt;div class=&quot;card-actions&quot;&gt;
-                    &lt;fhws-link href=&quot;xd&quot;&gt;Some action&lt;/fhws-link&gt;
-                    &lt;/div&gt;
-                    &lt;/fhws-card&gt;
-                </code>
-            </pre>
-        </div>
+    <fhws-card title="Quellcode" color="white">
+		<div class="card-content">
+			<fhws-code code='<fhws-card title="your title">'></fhws-code>
+			<div style="text-indent:25px;">
+				<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
+				<fhws-code code='<div class="card-actions">'></fhws-code>
+				<div style="text-indent:50px">
+					<fhws-code code='<fhws-link href="xd">Some action</fhws-link>'></fhws-code>	
+				</div>
+				<fhws-code code='</div>'></fhws-code>
+			</div>
+			<fhws-code code='</fhws-card>'></fhws-code>
+		</div>
 	</fhws-card>
 	</div>        
     <br>        
