@@ -30,84 +30,90 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
     <fhws-header header="Cards">
 
-     
-
-	 <fhws-card title="Allgemeine Informationen" color="white">
-	   <div class="card-content">
-	Attribute:<br>
-	title: Überschrift (optional, nur verfügbar mit auswahlt von color)<br>
-	color: orange oder white (optional)
-	<br>
-	Verfügbare Klassen im Element<br>
-	card-content: Hier wird der Hauptteil des Elements befüllt<br>
-	card-actions: optional
-	</div>
-	</fhws-card>
-	<br>
-            
-    <fhws-card title="Beispiel Card 1" color="white">
+    
+    <!-- Card One -->      
+    <fhws-card title="Vorschau Card One" color="white">
 		  <div class="card-content">
             Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim             id est laborum.
-		  </div>
+		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Some action</fhws-link>
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
       </div>
 	</fhws-card>
 
-    <!--Quellcode 1-->
-            
-	<fhws-card title="Quellcode" color="white">
+    <!-- Quellcode Card One -->    
+	<fhws-card title="Quellcode Card One" color="white">
         <div class="card-content">
             <fhws-code code='<fhws-card title="your title" color="white">'></fhws-code>
  			<div style="text-indent:25px;">
  				<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
  				<fhws-code code='<div class="card-actions">'></fhws-code>
  				<div style="text-indent:50px">
- 					<fhws-code code='<fhws-link href="xd">Some action</fhws-link>'></fhws-code>	
+ 					<fhws-code code='<fhws-link href="xd">Quellcode anzeigen</fhws-link>'></fhws-code>	
  				</div>
  				<fhws-code code='</div>'></fhws-code>
  			</div>
  			<fhws-code code='</fhws-card>'></fhws-code>
-        </div>
+        </div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
 	</fhws-card>
 	</div>
-    <br>
     
-        
-        <fhws-card title="Beispiel Card 2" color="orange">
+      <!-- Card Two -->  
+    <fhws-card title="Vorschau Card Two" color="orange">
 		  <div class="card-content">
             Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim             id est laborum.
-		  </div>
+		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Some action</fhws-link>
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
       </div>
 	</fhws-card>
- 			
-     <!--Quellcode 2-->  
-             
-
-    <fhws-card title="Quellcode" color="white">
+ 	
+      
+     <!--Quellcode Card Two-->            
+    <fhws-card title="Quellcode Card Two" color="orange">
 		<div class="card-content">
 			<fhws-code code='<fhws-card title="your title">'></fhws-code>
 			<div style="text-indent:25px;">
 				<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
 				<fhws-code code='<div class="card-actions">'></fhws-code>
 				<div style="text-indent:50px">
-					<fhws-code code='<fhws-link href="xd">Some action</fhws-link>'></fhws-code>	
+					<fhws-code code='<fhws-link href="xd">Quellcode anzeigen</fhws-link>'></fhws-code>	
 				</div>
 				<fhws-code code='</div>'></fhws-code>
 			</div>
-			<fhws-code code='</fhws-card>'></fhws-code>
-		</div>
+            </div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
 	</fhws-card>
 	</div>        
     <br>        
-        
-        </fhws-header>
 
+    
+    <p><b>Ergänzende Informationen</b><br><br>
+    Attribute
+           <ul>
+               <li>title: Überschrift (optional, nur verfügbar mit auswahlt von color)</li>
+               <li>color: orange oder white (optional)</li>
+           </ul><br>
+           Verfügbare Klassen im Element
+           <ul>
+               <li>card-content: Hier wird der Hauptteil des Elements befüllt</li>
+               <li>card-actions: optional</li>
+           </ul>
+    </p>
+<br>
+<br>
+    </fhws-header>
 </template>
+
+
+
   <script>
     class MyView2 extends Polymer.Element {
       static get is() { return 'my-view2'; }
