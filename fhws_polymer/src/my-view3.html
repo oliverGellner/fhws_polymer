@@ -10,19 +10,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-	<link rel="import" href="../fhws_elements/fhws-contact-chip.html">
+<link rel="import" href="../fhws_elements/fhws-contact-chip.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
 
 <dom-module id="my-view3">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 10px;
       }
     </style>
 
-   <fhws-contact-chip person="testPerson"></fhws-contact-chip>
+    <fhws-header header="Contact-Chip">
+  
+      
+   <fhws-contact-chip person="testPerson">
+        
+        </fhws-contact-chip>
   </template>
 
   <script>

@@ -11,17 +11,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-input.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
 
 <dom-module id="my-view7">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 10px;
       }
     </style>
-	<fhws-input label="name"></fhws-input>
+      
+    <fhws-header header="Input-Felder">
+
+  <fhws-input label="name"></fhws-input>
   <fhws-input type="password"></fhws-input>
   <fhws-input type="knummer"></fhws-input>
   <fhws-input type="studentmail"></fhws-input>
