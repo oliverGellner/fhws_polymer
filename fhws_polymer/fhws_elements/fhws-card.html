@@ -38,7 +38,7 @@ Available Styling		| Description									| Default
 		transition: 0.3s;
 		background-color: white;
         margin-top: 20px;
-		width: 1000px;
+		
 	}
 
 	.colorblock {
@@ -57,7 +57,7 @@ Available Styling		| Description									| Default
 	
 	:host ::slotted(.card-content) {
         padding: 16px;
-        position:relative;
+        
         font-weight'400'; font-size: '16px';
         @apply --fhws-card-content;
     }
@@ -66,6 +66,7 @@ Available Styling		| Description									| Default
         border-top: 1px solid #e8e8e8;
         padding: 5px 16px;
         position:relative;
+		
         @apply --fhws-card-actions;
     }
 	
@@ -94,11 +95,9 @@ Available Styling		| Description									| Default
 	<template is="dom-if" if="{{white}}">
 	<br>
 		<div class="card">
-            
 			<h3 style="padding-left:16px; padding-top:16p;">{{title}}</h3>
-           
             <slot></slot>
-            </div>
+         </div>
 	</template>
   </template>
 

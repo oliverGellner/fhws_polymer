@@ -12,7 +12,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
-
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
 <link rel="import" href="../fhws_elements/fhws-dialog.html">
 <link rel="import" href="../fhws_elements/fhws-grid.html">
 
@@ -21,71 +22,71 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 10px;
       }
     </style>
-	<fhws-grid>
-		<div class="col-5">
-		<h1>Boxen</h1>
-	 <fhws-card title=" Allgemeine Informationen " color="white">
-	   <div class="card-content">
-	Attribute:<br>
-	title: Überschrift defaultValue: empty<br>
-	color: orange oder white defaultValue: orange<br>
-	<br>
-	Verfügbare Klassen im Element<br>
-	card-content: Hier wird der Hauptteil des Elements befüllt<br>
-	card-actions: optional
-	</div>
-	</fhws-card>
-	<br>
+	<fhws-header header="Karten">
+		<fhws-card title=" Allgemeine Informationen " color="orange">
+		    <div class="card-content">
+				Attribute:<br>
+				title: Überschrift defaultValue: empty<br>
+				color: orange oder white defaultValue: orange<br>
+				<br>
+				Verfügbare Klassen im Element<br>
+				card-content: Hier wird der Hauptteil des Elements befüllt<br>
+				card-actions: optional
+				</div>
+		</fhws-card>
+		<br>
 	
-	Beispiel Orangene-Box:
-	
-   <fhws-card title="Card" color="orange">
+		<fhws-card  title="Beispiel orangene Karte">
 		<div class="card-content">
-			Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<fhws-card title="Card" color="orange">
+				<div class="card-content">
+					Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="card-actions">
+					<fhws-link href="xd">Some action</fhws-link>
+				</div>
+			</fhws-card>
+			<br>
+			<h4> Quellcode</h4>
+			<fhws-code code='<fhws-card title="your title">'></fhws-code>
+			<div style="text-indent:25px;">
+				<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
+				<fhws-code code='<div class="card-actions">'></fhws-code>
+				<div style="text-indent:50px">
+					<fhws-code code='<fhws-link href="xd">Some action</fhws-link>'></fhws-code>	
+				</div>
+				<fhws-code code='</div>'></fhws-code>
+			</div>
+			<fhws-code code='</fhws-card>'></fhws-code>
 		</div>
-		 <div class="card-actions">
-        <fhws-link href="xd">Some action</fhws-link>
-      </div>
-	</fhws-card>
-	<br>Quellcode: 
-	<fhws-card color="white">
-		<pre>
-			&lt;fhws-card title=&quot;your title&quot;&gt;
-			&lt;div class=&quot;card-content&quot;&gt;Your content&lt;/div&gt;
-			&lt;div class=&quot;card-actions&quot;&gt;
-			&lt;fhws-link href=&quot;xd&quot;&gt;Some action&lt;/fhws-link&gt;
-			&lt;/div&gt;
-			&lt;/fhws-card&gt;
-		</pre>
-	</fhws-card>
-	</div>
-	<div class="col-6">
-	Beispiel weiße Box: 
-	 <fhws-card color="white" title="Card">
-		<div class="card-content">
-			Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</div>
-		 <div class="card-actions">
-        <fhws-link href="xd">Some action</fhws-link>
-      </div>
-	</fhws-card>
-   	<br>Quellcode: 
-	<fhws-card color="white">
-		<div class="card-content-code">
-			&lt;fhws-card title=&quot;your title&quot; color=&quot;white&quot;&gt;<br>
-			&lt;div class=&quot;card-content&quot;&gt;Your content&lt;/div&gt;<br>
-			&lt;div class=&quot;card-actions&quot;&gt;<br>
-			&lt;fhws-link href=&quot;xd&quot;&gt;Some action&lt;/fhws-link&gt;<br>
-			&lt;/div&gt;<br>
-			&lt;/fhws-card&gt;<br>
-		</div>
-	</fhws-card>
-  </div>
-
+		</fhws-card>
+		
+		<fhws-card title="Beispiel weiße Karte">
+			<div class="card-content">
+			<fhws-card color="white" title="Card">
+				<div class="card-content">
+					Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div class="card-actions">
+					<fhws-link href="xd">Some action</fhws-link>
+				</div>
+			</fhws-card>
+			<h4>Quellcode</h4>
+			<fhws-code code='<fhws-card title="your title" color="white">'></fhws-code>
+				<div style="text-indent:25px;">
+					<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
+					<fhws-code code='<div class="card-actions">'></fhws-code>
+					<div style="text-indent:50px">
+						<fhws-code code='<fhws-link href="xd">Some action</fhws-link>'></fhws-code>	
+					</div>
+					<fhws-code code='</div>'></fhws-code>
+				</div>
+				<fhws-code code='</fhws-card>'></fhws-code>
+			</div>
+		</fhws-card>
+	</fhws-header>
 </template>
   <script>
     class MyView2 extends Polymer.Element {
