@@ -41,11 +41,17 @@ Available Styling		| Description									| Default
 		
 	}
 
-	.colorblock {
+	.card_orange {
 		position: relative;
 		background-color: #ff9b3e;
 		height: 100px;
 		color: white;
+	}
+        .card_white {
+		position: relative;
+		background-color: white;
+		height: 100px;
+		color: black;
 	}
 	
 	.title {
@@ -57,7 +63,6 @@ Available Styling		| Description									| Default
 	
 	:host ::slotted(.card-content) {
         padding: 16px;
-        
         font-weight'400'; font-size: '16px';
         @apply --fhws-card-content;
     }
@@ -71,8 +76,7 @@ Available Styling		| Description									| Default
     }
 	
 	:host ::slotted(.card-content-code) {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-        font-size: 95%;
+	font-weight:400; font-size: 16px;
         line-height: 140%;
         white-space: pre;
         background: #faf8f0;
@@ -83,7 +87,7 @@ Available Styling		| Description									| Default
 	
 	<template is="dom-if" if="{{orange}}">
 		<div class="card">
-			<div class="colorblock">
+			<div class="card_orange">
 			<span class="title">
 				<h3>{{title}}</h3>
 			</span>
@@ -93,11 +97,14 @@ Available Styling		| Description									| Default
 	</template>
 	
 	<template is="dom-if" if="{{white}}">
-	<br>
-		<div class="card">
-			<h3 style="padding-left:16px; padding-top:16p;">{{title}}</h3>
-            <slot></slot>
-         </div>
+<div class="card">
+			<div class="card_white">
+			<span class="title">
+				<h3>{{title}}</h3>
+			</span>
+			</div>
+				<slot></slot>
+        </div>
 	</template>
   </template>
 
