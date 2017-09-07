@@ -45,6 +45,10 @@ Available Styling		| Description									| Default
         --paper-input-container-input-color: black;
 	}
 	
+	.container {
+		padding:10px;
+	}
+	
     </style>
 	<template is="dom-if" if="{{text}}">
 		<div class="container">
@@ -62,7 +66,6 @@ Available Styling		| Description									| Default
 	<template is="dom-if" if="{{studentmail}}">
 		<div class="container">
 			<paper-input label="Studenten Email-Adresse">
-				<iron-icon icon="mail" slot="prefix"></iron-icon>
 				<div slot="suffix" class="suffix">@student.fhws.de</div>
 			</paper-input>
 		</div>

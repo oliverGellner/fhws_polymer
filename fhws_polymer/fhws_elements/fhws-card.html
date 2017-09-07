@@ -23,7 +23,7 @@ Example:
     </div>
 </fhws-card>
 
-Available Styling		| Description									| Default
+Available Styling		| Description									| defaultc
 '--fhws-card-content' 	| Mixin applied to the card content section		| '{}'
 '--fhws-card-actions'	| Mixin applied to the card action section 		| '{}'
 
@@ -63,6 +63,7 @@ Available Styling		| Description									| Default
 	
 	:host ::slotted(.card-content) {
         padding: 16px;
+        position: relative;
         font-weight'400'; font-size: '16px';
         @apply --fhws-card-content;
     }
@@ -76,10 +77,7 @@ Available Styling		| Description									| Default
     }
 	
 	:host ::slotted(.card-content-code) {
-	font-weight:400; font-size: 16px;
-        line-height: 140%;
-        white-space: pre;
-        background: #faf8f0;
+        background: white;
 		@apply --fhws-card-content-code;
 	}
 	
@@ -106,6 +104,12 @@ Available Styling		| Description									| Default
 				<slot></slot>
         </div>
 	</template>
+	
+	<template is="dom-if" if="{{defaultc}}">
+		<div class="card">
+				<slot></slot>
+        </div>
+	</template>
   </template>
 
   <script>
@@ -121,13 +125,16 @@ Available Styling		| Description									| Default
                 
 			},
 			color: {
-				value: "orange"
+				value: "defaultc"
 			},
 			orange: {
 				computed: 'computeOrange(color)'
 			},
 			white: {
 				computed: 'computeWhite(color)'
+			},
+			defaultc: {
+				computed: 'computeDefaultc(color)'
 			},
         }
       }
@@ -141,6 +148,13 @@ Available Styling		| Description									| Default
 	
 		computeWhite(color) {
 			if (color === "white"){
+				return true;
+			}
+			return false;
+		}
+		
+		computeDefaultc(color) {
+			if (color === "defaultc"){
 				return true;
 			}
 			return false;
