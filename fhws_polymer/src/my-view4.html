@@ -10,11 +10,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="../fhws_elements/fhws-dialog.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-alert-dialog/paper-alert-dialog.html">
+<link rel="import" href="../bower_components/paper-alert-dialog/paper-alert-dialog-icon-header.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+
+
+
+
 
 <dom-module id="my-view4">
   <template>
@@ -31,15 +39,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <fhws-card title="Vorschau Dialog" color="white">
 		  <div class="card-content">
             
-
-           .
-		  </div><br>
+        
+		  
+            </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
       </div>
 	</fhws-card>
  	
-      
+          <paper-alert-dialog
+                id="dialog"
+                title="Congratulations"
+                dismiss-button="Cancel"
+                confirm-button="OK"
+                on-confirm="confirm"
+                on-dismiss="dismiss">
+                It work's!
+              </paper-alert-dialog>
+        
+        
      <!-- Quellcode Dialog -->            
     <fhws-card title="Quellcode Dialog" color="white">
 		<div class="card-content">
