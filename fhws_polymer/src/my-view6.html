@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
 
 <dom-module id="my-view6">
   <template>
@@ -29,7 +30,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           
       <!--card #1-->
       
-	<div class="card-content">
 	<fhws-card title="A. Set Up" color="orange">
 	<div class="card-content">
         Das Set Up für Polymer erfolgt nach dieser Vorgehensweise:
@@ -52,33 +52,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	<div class="card-content">
         Jedes Polymer Element ist nach folgendem Schema aufgebaut:<br><br>
        
-          <code>
-&lt;link rel=&quot;import&quot; href=&quot;../bower_components/polymer/polymer-element.html&quot;&gt;
-
-&lt;dom-module id=&quot;fhws-name&quot;&gt;
-  &lt;template&gt;
-
-    &lt;style&gt;
-    &lt;/style&gt;
-
-  &lt;/template&gt;
-
-  &lt;script&gt;
-    class FhwsName extends Polymer.Element {
-
-      static get is() { 
-        return 'fhws-name'; 
-		}
-		
-		static get properties() {
-        return {
-			
-		}
-      }
-    window.customElements.define(FhwsName.is, FhwsName);
-  &lt;/script&gt;
-            &lt;/dom-module&gt;</code>
-        
+    <fhws-code code='<link rel="import" href="../bower_components/polymer/polymer-element.html">'></fhws-code>
+	<fhws-code code='<dom-module id="fhws-name">'></fhws-code>
+	<div style="text-indent:25px;">
+		<fhws-code code='<template>'></fhws-code>
+		<div style="text-indent:50px;">
+			<fhws-code code='<style>'></fhws-code>
+			<fhws-code code='</style>'></fhws-code>
+			<br>
+		</div>
+		<fhws-code code='</template>'></fhws-code>
+		<fhws-code code="<script>"></fhws-code>
+		<div style="text-indent:50px;">
+			<fhws-code code='class FhwsName extends Polymer.Element {'></fhws-code>
+			<div style="text-indent:75px;">
+				<fhws-code code='static get is() { '></fhws-code>
+				<div style="text-indent:100px;">
+					<fhws-code code="return 'fhws-name'"; '></fhws-code>
+				</div>
+				<fhws-code code='}'></fhws-code>
+				<fhws-code code='static get properties() {'></fhws-code>	
+				<div style="text-indent:100px;">
+					<fhws-code code='return {'></fhws-code>	
+					<fhws-code code='}'></fhws-code>	
+				</div>
+			</div>
+			<fhws-code code='  }'></fhws-code>	
+			<fhws-code code='window.customElements.define(FhwsName.is, FhwsName);'></fhws-code>	
+		</div>
+		<fhws-code code='</script>'></fhws-code>	
+	</div>
+		<fhws-code code='</dom-module>'></fhws-code>
+	  
 <ol>
     <li><b>Style</b><br>Hier wird der Style des Objekts mithilfe von CSS festgelegt.</li>
     <li><b>Template</b><br>Anschließend folgt innerhalb des template-Abschnittes die Gestaltung des Neuen Polymer Elementes.</li>

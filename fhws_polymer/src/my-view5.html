@@ -13,6 +13,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-switch.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
 
+<link rel="import" href="../fhws_elements/fhws-card.html">
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+
 <dom-module id="my-view5">
   <template>
     <style include="shared-styles">
@@ -20,13 +24,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
     </style>
-      
-    <fhws-header header="Switchs">
 
-	
-	<fhws-switch element="checkbox"></fhws-switch>
-	<fhws-switch element="radio"></fhws-switch>
-	<fhws-switch element="switch"></fhws-switch>
+	<fhws-header header="Switchs">
+		<fhws-card title="Switch-Elemente">
+			<div class="card-content">
+				Bestandteile:<br>
+				Checkbox: <fhws-switch element="checkbox"></fhws-switch>
+				Radio-Button: <fhws-switch element="radio"></fhws-switch>
+				Switch-Bar: <fhws-switch element="switch"></fhws-switch>
+				
+				Quellcode:
+				<fhws-code code='<fhws-switch element="<<attribut>>"></fhws-switch>'></fhws-code>
+				<br>
+				Verfügbare Attribute für element:<br>
+				checkbox; radio; switch<br>
+				Default wert: checkbox<br>
+				Fallback: keiner
+			</div>
+			<div class="card-action">
+				<fhws-link href="https://material.io/guidelines/components/selection-controls.html#selection-controls-checkbox">Mehr Informationen über Switch-Elemente in Material Design</fhws-link>
+			</div>
+		</fhws-card>
+	</fhws-header>
   </template>
 
   <script>

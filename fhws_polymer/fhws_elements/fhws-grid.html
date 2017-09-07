@@ -33,7 +33,7 @@ Available Styling		| Description									| Default
 	:host ::slotted(.col-2) {
 		float: left;
 		padding: 15px;
-		
+		position: relative;
 		width: 16.66%;
 		
 		@apply --fhws-col-2;
@@ -57,7 +57,7 @@ Available Styling		| Description									| Default
 	:host ::slotted(.col-5) {
 		float: left;
 		padding: 15px;
-		
+		position: relative;
 		width: 41.66%;
 		
 		@apply --fhws-col-5;
@@ -118,19 +118,9 @@ Available Styling		| Description									| Default
 		
 		@apply --fhws-col-12;
 	}
-	[class*="col-"] {
-		float: left;
-		padding: 15px;
-		
-	}
-	:host ::slotted(.card-actions) {
-        border-top: 1px solid #e8e8e8;
-        padding: 5px 16px;
-        position:relative;
-        @apply --fhws-card-actions;
-    }
 
     </style>
+
 	<slot></slot>
   </template>
 

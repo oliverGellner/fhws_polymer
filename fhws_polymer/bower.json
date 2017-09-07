@@ -19,7 +19,8 @@
     "paper-input": "PolymerElements/paper-input#^2.0.2",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^2.0.0",
     "paper-listbox": "PolymerElements/paper-listbox#^2.0.0",
-    "paper-item": "PolymerElements/paper-item#^2.0.0"
+    "paper-item": "PolymerElements/paper-item#^2.0.0",
+    "prism-element": "PolymerElements/prism-element#^2.0.1",
   },
   "resolutions": {
     "polymer": "^2.0.0"
