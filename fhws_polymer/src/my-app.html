@@ -29,6 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="my-view5.html">
 <link rel="lazy-import" href="my-view6.html">
 <link rel="lazy-import" href="my-view7.html">
+<link rel="lazy-import" href="my-view8.html">
 <link rel="lazy-import" href="my-view404.html">
 <link rel="import" href="fhws-dialog-view.html">
 <dom-module id="my-app">
@@ -74,6 +75,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
+	.mainmenu, .submenu {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	}
+	
+	.mainmenu a {
+	  display: block;
+	  text-decoration: none;
+	  padding: 10px;	
+	}
+
+	/* add hover behaviour */
+	.mainmenu a:hover {
+		background-color: #C5C5C5;
+	}
+
+	.mainmenu li:hover .submenu {
+	  display: block;
+	  max-height: 6000px;
+	}
+
+
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}
     </style>
 
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -88,13 +122,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-			<a name="view6" href="[[rootPath]]view6">Allgemeine Informationen</a>
-
-		  <a name="view2" href="[[rootPath]]view2">Cards</a>
-          <a name="view3" href="[[rootPath]]view3">Kontakt-Chip</a>
-		  <a name="view4" href="[[rootPath]]view4">Dialog</a>
-		  <a name="view5" href="[[rootPath]]view5">Switches</a>
-		  <a name="view7" href="[[rootPath]]view7">Input-Felder</a>
+			
+			
+			<nav class="navigation">
+			<ul class="mainmenu">
+			<li><a name="view6" href="[[rootPath]]view6">Allgemeine Informationen</a></li>
+			<li><a href="">Elemente</a>
+			<ul class="submenu">
+			<li><a name="view2" href="[[rootPath]]view2">Cards</a></li>
+			<li><a name="view3" href="[[rootPath]]view3">Kontakt-Chip</a></li>
+			<li><a name="view4" href="[[rootPath]]view4">Dialog</a></li>
+			<li><a name="view5" href="[[rootPath]]view5">Switches</a></li>
+			<li><a name="view7" href="[[rootPath]]view7">Input-Felder</a></li>
+			<li><a name="view8" href="[[rootPath]]view8">Buttons</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+   
         </iron-selector>
       </app-drawer>
 
@@ -120,6 +165,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			<my-view4 name="view4"></my-view4>
 			<my-view5 name="view5"></my-view5>
 			<my-view7 name="view7"></my-view7>
+			<my-view8 name="view8"></my-view8>
 			<my-view404 name="view404"></my-view404>
         </iron-pages>
       </app-header-layout>
