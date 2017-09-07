@@ -36,9 +36,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Checkbox -->                
     <fhws-card title="Vorschau Checkbox" color="white">
 		  <div class="card-content">
-           	<paper-checkbox checked>aktiv</paper-checkbox>
+           	<fhws-switch status="checked" element="checkbox" label="aktiv"></fhws-switch>
      <br><br>
-        <paper-checkbox disabled>deaktiviert</paper-checkbox>
+        <fhws-switch status="checked" element="checkboxoff" label="deaktiviert"></fhws-switch>
 		  </div><br>
           <div class="card-actions">
             <fhws-link href="xd">Quellcode anzeigen</fhws-link>
@@ -48,7 +48,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Quellcocde Checkbox -->                
         <fhws-card title="Quellcode Checkbox" color="white">
         <div class="card-content">
-         <fhws-code code='<fhws-switch element="<<checkbox>>"></fhws-switch>'></fhws-code>   
+         <fhws-code code='<fhws-switch status="checked" element="checkboxoff" label="deaktiviert"></fhws-switch>'></fhws-code>   
+         <fhws-code code='<fhws-switch status="checked" element="checkboxoff" label="deaktiviert"></fhws-switch>'></fhws-code>   
             </div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>

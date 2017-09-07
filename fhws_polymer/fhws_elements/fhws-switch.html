@@ -7,8 +7,11 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
+<link rel="import" href="fhws-styles.html">
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/paper-radio-button/paper-radio-button.html">
 <!--
 https://stackoverflow.com/questions/24322599/css-why-cannot-change-checkbox-color-whatever-i-do
 http://www.cssscript.com/material-design-inspired-animated-toggle-pure-css/
@@ -27,70 +30,14 @@ element					| checkbox; radio; switcher						| checkbox
     <style>
 		input[type=checkbox] {visibility: hidden;}
 		.container {position: relative;}
-		
-	<!--checkbox -->
-	.checkbox {position: absolute;}
-	.checkbox label {
-		cursor: pointer;
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		left: 4px;
-		top: 0;
-		border: 2px solid  #ff9c3f;
-		background: #ff9c3f;
-	}
-	.checkbox label:after {
-		opacity: 0;
-		content: '';
-		position: absolute;
-		width: 9px;
-		height: 4px;
-		background: transparent;
-		top: 3px;
-		left: 2px;
-		border: 3px solid #fcfff4;
-		border-top: none;
-		border-right: none;
-		transform: rotate(-45deg);
-	}
-	.checkbox input[type=checkbox]:checked + label:after {
-		filter: alpha(opacity=100);
-		opacity: 1;
-	}
-	
-	<!-- radio -->
-	.radio {position: absolute;}
-	.radio label {
-		cursor: pointer;
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		border-radius: 50px;
-		left: 4px;
-		top: 4px;
-		border: 2px solid  #ed6c00;
-		background: white;
-	}
-	.radio label:after { //innere Kreis
-		filter: alpha(opacity=0);
-		opacity: 0;
-		content: '';
-		position: absolute;
-		width: 9px;
-		height: 9px;
-		background:  #ed6c00;
-		border-radius: 25px;
-		top: 2px;
-		left: 3px;
-        bottom: 2px;
-        right: 3px;
-  
-	}
-	.radio input[type=checkbox]:checked + label:after {
-		filter: alpha(opacity=100);
-		opacity: 1;
-	}
+	 paper-checkbox.orange {
+      --paper-checkbox-checked-color: #ed6c00;
+      --paper-checkbox-checked-ink-color: #ed6c00;
+      --paper-checkbox-unchecked-color: #ed6c00;
+      --paper-checkbox-unchecked-ink-color: #ed6c00;
+      --paper-checkbox-label-color: black;
+      --paper-checkbox-vertical-align: top;
+    }	
 	
 	<!--switcher -->
 	label.input-toggle {
@@ -152,13 +99,24 @@ element					| checkbox; radio; switcher						| checkbox
 
 	<template is="dom-if" if="{{checkbox}}">
 	<div class="container">
-		<div class="checkbox">
-			<input type="checkbox" id="checkbox"/>
-			<label for="checkbox"></label>
-		</div>
+		<paper-checkbox checked class="orange">{{label}}</paper-checkbox>
 	</div>
 	</template>
-	
+	<template is="dom-if" if="{{checkboxunchecked}}">
+	<div class="container">
+		<paper-checkbox class="orange">{{label}}</paper-checkbox>
+	</div>
+	</template>
+	<template is="dom-if" if="{{checkboxdisabled}}">
+	<div class="container">
+		<paper-checkbox disabled checked class="orange">{{label}}</paper-checkbox>
+	</div>
+	</template>
+	<template is="dom-if" if="{{checkboxuncheckeddisabled}}">
+	<div class="container">
+		<paper-checkbox disabled class="orange">{{label}}</paper-checkbox>
+	</div>
+	</template>
 	<template is="dom-if" if="{{radio}}">
 		<div class="container">
 			<div class="radio">
@@ -192,10 +150,23 @@ element					| checkbox; radio; switcher						| checkbox
 				element: {
 					value: 'checkbox'
 				},
-				
+				status: {
+					value: ''
+				},
+				label: {
+				},
 				checkbox: {
-						computed: 'computeCheckbox(element)'
-					},	
+						computed: 'computeCheckbox(element, status)'
+				},	
+				checkboxunchecked: {
+						computed: 'computeCheckboxUnchecked(element, status)'
+				},
+				checkboxdisabled: {
+						computed: 'computeCheckboxDisabled(element, status)'
+				},	
+				checkboxuncheckeddisabled: {
+						computed: 'computeCheckboxUncheckedDisabled(element, status)'
+				},	
 					
 				radio: {
 						computed: 'computeRadio(element)'
@@ -207,8 +178,32 @@ element					| checkbox; radio; switcher						| checkbox
 			}
 		}
 		
-		computeCheckbox(element) {
+		computeCheckbox(element, status) {
 			if (element === "checkbox"){
+				if(status === "checked"){
+				return true;
+				}
+			}
+			return false;
+		}
+		
+		computeCheckboxUnchecked(element, status) {
+			if (element === "checkbox" && status === ""){
+				return true;
+			}
+			return false;
+		}
+		computeCheckboxDisabled(element, status) {
+			if (element === "checkboxoff"){
+				if(status === "checked"){
+				return true;
+				}
+			}
+			return false;
+		}
+		
+		computeCheckboxUncheckedDisabled(element, status) {
+			if (element === "checkboxoff" && status === ""){
 				return true;
 			}
 			return false;
