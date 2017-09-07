@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-input.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">
 
 <dom-module id="my-view7">
   <template>
@@ -20,14 +21,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
     </style>
-      
     <fhws-header header="Input-Felder">
 
+      <fhws-card>
   <fhws-input label="name"></fhws-input>
   <fhws-input type="password"></fhws-input>
   <fhws-input type="knummer"></fhws-input>
   <fhws-input type="studentmail"></fhws-input>
   <fhws-input type="studiengangfakinfo"></fhws-input>
+  </fhws-card>
   </template>
 
   <script>
