@@ -109,6 +109,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	  max-height: 6000px;
 	  transition-delay: 0.5s;
 	}
+	
+
     </style>
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
     <app-route
@@ -117,9 +119,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}">
+    <app-drawer-layout fullbleed narrow="{{narrow}}" >
       <!-- Drawer content -->
-      <app-drawer style="overflow:scroll;" id="drawer" slot="drawer" swipe-open="[[narrow]]">
+      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+	  <div style="overflow:scroll; height:100%;" >
         <app-toolbar>Menu</app-toolbar>
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
@@ -147,6 +150,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
    
 
         </iron-selector>
+		</div>
       </app-drawer>
 
       <!-- Main content -->
