@@ -23,36 +23,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 	
 	<template is="dom-if" if="{{slider}}">
-		a<paper-slider value="{{value}}" class="orange"></paper-slider>
+		<paper-slider value="{{value}}" class="orange"></paper-slider>
 	</template>
 	<template is="dom-if" if="{{slideroff}}">
-		b<paper-slider disabled value="{{value}}" class="orange"></paper-slider>
+		<paper-slider disabled value="{{value}}" class="orange"></paper-slider>
 	</template>
-	
-	<template is="dom-if" if="{{sliderlabel}}">
-		<div>{{label}}</div><br>    
-		c<paper-slider  value="{{value}}" class="orange"></paper-slider>
-	</template>
-	<template is="dom-if" if="{{sliderofflabel}}">
-		<div>{{label}}</div><br>
-		d<paper-slider  disabled value="{{value}}" class="orange"></paper-slider>
-	</template>
-	
 	<template is="dom-if" if="{{sliderpin}}">
-		e<paper-slider pin value="{{value}}" class="orange"></paper-slider>
+		<paper-slider pin value="{{value}}" class="orange"></paper-slider>
 	</template>
 	<template is="dom-if" if="{{slideroffpin}}">
-		f<paper-slider pin disabled value="{{value}}" class="orange"></paper-slider>
+		<paper-slider pin disabled value="{{value}}" class="orange"></paper-slider>
 	</template>
-	<template is="dom-if" if="{{sliderlabelpin}}">
-		<div>{{label}}</div><br>    
-		g<paper-slider pin value="{{value}}" class="orange"></paper-slider>
+	
+	<template is="dom-if" if="{{slideredit}}">
+              <paper-slider class="orange" value="{{value}}" max="{{max}}" editable></paper-slider>
 	</template>
-	<template is="dom-if" if="{{sliderofflabelpin}}">
-		<div>{{label}}</div><br>
-		h<paper-slider pin disabled value="{{value}}" class="orange"></paper-slider>
-	</template>
-		 
   </template>
  
   <script>
@@ -64,12 +49,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		
 		static get properties() {
 			return {
-				label: {
-					value: ''
-				},	
 				value: {
 					value: ''
 				},
+				max: {
+					value: 'off'
+				},	
 				pin: {
 					value: "off"
 				},
@@ -77,71 +62,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					value: 'active'
 				},
 				slider: {
-					computed: 'computeSlider(status, label, pin)'
+					computed: 'computeSlider(status, max, pin)'
+				},
+				slideredit: {
+					computed: 'computeSliderEdit(status, max, pin)'
 				},
 				slideroff: {
-					computed: 'computeSliderOff(status, label, pin)'
-				},
-				sliderlabel: {
-					computed: 'computeSliderLabel(status, label, pin)'
-				},
-				sliderofflabel: {
-					computed: 'computeSliderOffLabel(status, label, pin)'
+					computed: 'computeSliderOff(status, max, pin)'
 				},
 				sliderpin: {
-					computed: 'computeSliderPin(status, label, pin, pin)'
+					computed: 'computeSliderPin(status, max, pin)'
 				},
 				slideroffpin: {
-					computed: 'computeSliderOffPin(status, label, pin)'
-				},
-				sliderlabelpin: {
-					computed: 'computeSliderLabelPin(status, label, pin)'
-				},
-				sliderofflabelpin: {
-					computed: 'computeSliderOffLabelPin(status, label, pin)'
+					computed: 'computeSliderOffPin(status, max, pin)'
 				}
 			}
 		}
-		computeSlider(status, label, pin){
-			if(status === "active" && label === "" && pin === "off")
+		computeSlider(status, max, pin){
+			if(status === "active" && pin === "off" && max === "off")
 				return true;
 			return false;
 		}
-		computeSliderOff(status, label, pin ){
-			if(status == "off" && label === "" && pin === "off")
-				return true;
-			return false;
-      }
-	  computeSliderLabel(status, label, pin){
-			if(status === "active" && label !== "" && pin === "off")
+		computeSliderEdit(status, max, pin){
+			if(status === "active" && pin === "off" && max !== "off")
 				return true;
 			return false;
 		}
-		computeSliderOffLabel(status, label, pin){
-			if(status == "off" && label !== "" && pin === "off")
+		computeSliderOff(status, max, pin ){
+			if(status == "off" && pin === "off" && max === "off")
 				return true;
 			return false;
       }
-	  computeSliderPin(status, label, pin){
-			if(status === "active" && label === "" && pin ==="on")
+	  computeSliderPin(status, max, pin){
+			if(status === "active"  && pin ==="on" && max === "off")
 				return true;
 			return false;
 		}
-		computeSliderOffPin(status, label, pin ){
-			if(status == "off" && label === "" && pin ==="on")
+		computeSliderOffPin(status, max, pin ){
+			if(status == "off" && pin ==="on" && max === "off")
 				return true;
 			return false;
       }
-	  computeSliderLabelPin(status, label, pin){
-			if(status === "active" && label !== "" && pin ==="on")
-				return true;
-			return false;
-		}
-		computeSliderOffLabelPin(status, label, pin){
-			if(status == "off" && label !== "" && pin ==="on")
-				return true;
-			return false;
-      }
+	
 	}
     window.customElements.define(FhwsSlider.is, FhwsSlider);
 
