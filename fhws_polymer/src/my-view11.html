@@ -14,13 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
-<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
-<link rel="import" href="../bower_components/paper-spinner/paper-spinner-behavior.html">
-<link rel="import" href="../bower_components/paper-spinner/paper-spinner-lite.html">
-<link rel="import" href="../bower_components/paper-spinner/paper-spinner-styles.html">
-
-
-
+<link rel="import" href="../fhws_elements/fhws-loading.html">
 
 <dom-module id="my-view11">
   <template>
@@ -36,7 +30,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Vorschau Loading -->  
     <fhws-card title="Vorschau Loading" color="white">
 		  <div class="card-content">
-         <paper-spinner-lite active class="#ed6a00"></paper-spinner-lite>
+         <fhws-loading></fhws-loading>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
@@ -47,9 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <!-- Quellcode Loading -->            
     <fhws-card title="Quellcode Loading" color="white">
 		<div class="card-content">
-			<fhws-code code='<paper-spinner-lite active class="#ed6a00"></paper-spinner-lite>
-'></fhws-code>
-			
+			<fhws-code code='<fhws-loading></fhws-loading>'></fhws-code>
            	</div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
