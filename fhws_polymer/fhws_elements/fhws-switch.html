@@ -108,41 +108,42 @@ element					| checkbox; radio; switcher						| checkbox
 
 	<template is="dom-if" if="{{checkbox}}">
 		<div class="container">
-			<paper-checkbox checked class="orange">{{label}}</paper-checkbox>
+			a<paper-checkbox checked class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxunchecked}}">
 		<div class="container">
-			<paper-checkbox class="orange">{{label}}</paper-checkbox>
+		b	<paper-checkbox class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxdisabled}}">
-			<div class="container">
+	c		<div class="container">
 		<paper-checkbox disabled checked class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxuncheckeddisabled}}">
 		<div class="container">
-			<paper-checkbox disabled class="orange">{{label}}</paper-checkbox>
+		d	<paper-checkbox disabled class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{radio}}">
 		<div class="container">
-		<paper-radio-button class="orange">{{label}}</paper-radio-button>		  
+	e	<paper-radio-button class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	<template is="dom-if" if="{{radiochecked}}">
 		<div class="container">
-		<paper-radio-button checked class="orange">{{label}}</paper-radio-button>		  
+		f<paper-radio-button checked class="orange">{{label}}</paper-radio-button>		  
 		</div>
-	</template<template is="dom-if" if="{{radiodisabled}}">
+	</template>
+	<template is="dom-if" if="{{radiodisabled}}">
 		<div class="container">
-		<paper-radio-button disabled class="orange">{{label}}</paper-radio-button>		  
+		g<paper-radio-button disabled class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	<template is="dom-if" if="{{radiocheckeddisabled}}">
 		<div class="container">
-		<paper-radio-button checked disabled class="orange">{{label}}</paper-radio-button>		  
+		h<paper-radio-button checked disabled class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	
