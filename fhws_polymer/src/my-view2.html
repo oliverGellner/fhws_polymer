@@ -17,6 +17,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-dialog.html">
 <link rel="import" href="../fhws_elements/fhws-grid.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-collapse/iron-collapse.html">
+
 
 
 <dom-module id="my-view2">
@@ -91,8 +96,75 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
       </div>
 	</fhws-card>
+	</div> <br>       
+    
+    
+          <!--  -->  
+  
+            
+<div style="width: 350px; heigh: 150px;">
+<paper-card heading="Emmental" image="http://placehold.it/350x150/FFC107/000000" alt="Emmental" >
+  <div class="card-content">
+    Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
+  </div>
+  <div class="card-actions">
+    <paper-button>Share</paper-button>
+    <paper-button>Explore!</paper-button>
+  </div>
+    </paper-card></div>
+
+ 	   <fhws-card title="" color="white">
+		  <div class="card-content">
+            
+
+<paper-card heading="Top western road trips" image="./trip.png" alt="Sailboat Harbor" class="white">
+  <div class="card-content">1,000 miles of wonder</div>
+  <div class="card-actions">
+    <paper-button>Share</paper-button>
+    <paper-button>Explore</paper-button>
+    <paper-icon-button icon="hardware:keyboard-arrow-up" title="more info" onclick="_toggle()" style="float:right;">
+    </paper-icon-button>
+    <iron-collapse id="more-info" style="width:100%;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, tempus eget volutpat ac, cursus ac ante. Nulla facilisi. Praesent sed lacinia ligula. Donec malesuada nisl eget quam iaculis, vel placerat justo cursus.
+    </iron-collapse>
+      
+    <script>
+      function _toggle() {
+        var moreInfo = document.getElementById('more-info');
+        var iconButton = Polymer.dom(event).localTarget;
+        iconButton.icon = moreInfo.opened ? 'hardware:keyboard-arrow-up'
+                                          : 'hardware:keyboard-arrow-down';
+        moreInfo.toggle();
+      }
+    </script>
+  </div>
+</paper-card>
+           
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+ 	
+      
+     <!-- -->            
+    <fhws-card title="Quellcode" color="white">
+		<div class="card-content">
+			<fhws-code code=''></fhws-code>
+			
+           	</div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
+	</fhws-card>
 	</div>        
-    <br>        
+    <br> 
+
+
+
+
+
+
 
     
     <p><b>Ergänzende Informationen</b><br><br>
