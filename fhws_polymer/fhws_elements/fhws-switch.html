@@ -108,42 +108,42 @@ element					| checkbox; radio; switcher						| checkbox
 
 	<template is="dom-if" if="{{checkbox}}">
 		<div class="container">
-			a<paper-checkbox checked class="orange">{{label}}</paper-checkbox>
+			<paper-checkbox checked class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxunchecked}}">
 		<div class="container">
-		b	<paper-checkbox class="orange">{{label}}</paper-checkbox>
+			<paper-checkbox class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxdisabled}}">
-	c		<div class="container">
+			<div class="container">
 		<paper-checkbox disabled checked class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxuncheckeddisabled}}">
 		<div class="container">
-		d	<paper-checkbox disabled class="orange">{{label}}</paper-checkbox>
+			<paper-checkbox disabled class="orange">{{label}}</paper-checkbox>
 		</div>
 	</template>
 	<template is="dom-if" if="{{radio}}">
 		<div class="container">
-	e	<paper-radio-button class="orange">{{label}}</paper-radio-button>		  
+		<paper-radio-button class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	<template is="dom-if" if="{{radiochecked}}">
 		<div class="container">
-		f<paper-radio-button checked class="orange">{{label}}</paper-radio-button>		  
+		<paper-radio-button checked class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	<template is="dom-if" if="{{radiodisabled}}">
 		<div class="container">
-		g<paper-radio-button disabled class="orange">{{label}}</paper-radio-button>		  
+		<paper-radio-button disabled class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	<template is="dom-if" if="{{radiocheckeddisabled}}">
 		<div class="container">
-		h<paper-radio-button checked disabled class="orange">{{label}}</paper-radio-button>		  
+		<paper-radio-button checked disabled class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	
