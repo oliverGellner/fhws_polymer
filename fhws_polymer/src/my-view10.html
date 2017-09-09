@@ -14,10 +14,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-progress.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
 <link rel="import" href="../bower_components/iron-range-behavior/iron-range-behavior.html">
-<link rel="import" href="../bower_components/paper-styles/color.html">
 
 
 
@@ -41,7 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 --paper-progress-secondary-color: #ff9b3e;
             }
             </style>
-                <paper-progress value="800" min="100" max="1000" class="orange"></paper-progress>
+                <fhws-progress value="250"></fhws-progress>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
@@ -52,13 +52,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <!-- Progress One -->            
     <fhws-card title="Quellcode Progress One" color="white">
 		<div class="card-content">
-			<fhws-code code='<custom-style>'></fhws-code>
-			<fhws-code code='<style is="custom-style">'></fhws-code>
-			<fhws-code code='paper-progress.orange'></fhws-code>
-			<fhws-code code=' --paper-progress-active-color: #ed6a00;'></fhws-code>
-            <fhws-code code=' --paper-progress-secondary-color: #ff9b3e;}</style>'></fhws-code>
-			<fhws-code code='<paper-progress value="800" min="100" max="1000" class="orange"></paper-progress>'></fhws-code>
-		
+			<fhws-code code='<fhws-progress value="250"></fhws-progress>'></fhws-code>
            	</div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
@@ -70,14 +64,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                <!-- Progress One -->  
     <fhws-card title="Vorschau Progress Two" color="white">
 		  <div class="card-content">
-        <custom-style>
-            <style is="custom-style">
-            paper-progress.orange {
-                --paper-progress-active-color: #ed6a00;
-                --paper-progress-secondary-color: #ff9b3e;
-            }
-            </style>
-                <paper-progress value="40" secondary-progress="80" class="orange"></paper-progress>
+    
+           
+                <fhws-progress value="400" secondary="800"></fhws-progress>
 
 		  </div><br>
 		 <div class="card-actions">
@@ -89,14 +78,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <!-- Progress Two -->            
     <fhws-card title="Quellcode Progress Two" color="white">
 		<div class="card-content">
-			<fhws-code code='<custom-style>'></fhws-code>
-			<fhws-code code='<style is="custom-style">'></fhws-code>
-			<fhws-code code='paper-progress.orange'></fhws-code>
-			<fhws-code code=' --paper-progress-active-color: #ed6a00;'></fhws-code>
-            <fhws-code code=' --paper-progress-secondary-color: #ff9b3e;}</style>'></fhws-code>
-			<fhws-code code='<paper-progress value="40" secondary-progress="80" class="orange"></paper-progress>
-'></fhws-code>
-		
+			<fhws-code code='<fhws-progress value="400" secondary="800"></fhws-progress>'></fhws-code>
            	</div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
