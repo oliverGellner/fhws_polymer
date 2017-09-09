@@ -12,11 +12,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-switch.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
-
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
-<link rel="import" href="../fhws_elements/fhws-button.html">
+
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-behaviors/paper-button-behavior.html">
+<link rel="import" href="../bower_components/paper-behaviors/paper-ripple-behavior.html">
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles-classes.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+
+
+
 
 <dom-module id="my-view8">
   <template>
@@ -24,15 +36,85 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+        
+          :host {
+	 --shadow-elevation-2dp: {
+            box-shadow: 0 2px 2px 0 rgba(109, 109, 109, 0.14),
+                        0 1px 5px 0 rgba(109, 109, 109, 0.12),
+                        0 3px 1px -2px rgba(109, 109, 109, 0.2);
+          };
+	}
     </style>
 
 	<fhws-header header="Buttons">
-		<fhws-card title="Button">
-			<div class="card-content">
-				<fhws-button name="testButton" type="raised"></fhws-button>
-				<fhws-button name="testButton" type="raised-disabled"></fhws-button>
-			</div>
-		</fhws-card>
+          
+		        
+    <!-- Vorschau Buttons -->  
+    <fhws-card title="Vorschau Buttons" color="white">
+		  <div class="card-content">
+           
+            <paper-button>link</paper-button>
+            <paper-button raised>raised</paper-button>
+            <paper-button disabled>disabled</paper-button>
+              
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+ 	
+      
+     <!-- Quellcode Buttons -->            
+    <fhws-card title="Quellcode Buttons" color="white">
+		<div class="card-content">
+            
+        
+            
+			<fhws-code code='<paper-button>link</paper-button>'></fhws-code><br>
+			<fhws-code code='<paper-button raised>raised</paper-button>'></fhws-code><br>
+			<fhws-code code='<paper-button disabled>disabled</paper-button>'></fhws-code>
+			
+           	</div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+	</div>        
+    
+      
+            <!-- Vorschau Buttons inkl. Icons -->  
+    <fhws-card title="Vorschau Buttons inkl. Icons" color="white">
+		  <div class="card-content">
+        
+              <paper-button><iron-icon icon="check"></iron-icon>link</paper-button>
+              <paper-button raised><iron-icon icon="file-download"></iron-icon>raised</paper-button>
+              <paper-button disabled><iron-icon icon="block"></iron-icon>disabled</paper-button>
+           
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+ 	
+      
+     <!--Quellcode Buttons inkl. Icons -->            
+    <fhws-card title="Vorschau Buttons inkl. Icons" color="white">
+		<div class="card-content">
+			<fhws-code code='<paper-button><iron-icon icon="check"></iron-icon>link</paper-button>'></fhws-code><br>
+			<fhws-code code='<paper-button raised><iron-icon icon="file-download"></iron-icon>raised</paper-button>'></fhws-code><br>
+			<fhws-code code='<paper-button disabled><iron-icon icon="block"></iron-icon>disabled</paper-button>'></fhws-code>
+			
+           	</div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+	</div>        
+    <br> 
+
+      
+
+                
 	</fhws-header>
   </template>
 
