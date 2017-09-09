@@ -30,15 +30,24 @@ element					| checkbox; radio; switcher						| checkbox
     <style>
 		input[type=checkbox] {visibility: hidden;}
 		.container {position: relative;}
+		
 	 paper-checkbox.orange {
-      --paper-checkbox-checked-color: #ed6c00;
-      --paper-checkbox-checked-ink-color: #ed6c00;
-      --paper-checkbox-unchecked-color: #ed6c00;
-      --paper-checkbox-unchecked-ink-color: #ed6c00;
-      --paper-checkbox-label-color: black;
-      --paper-checkbox-vertical-align: top;
+		--paper-checkbox-checked-color: #ed6c00;
+		--paper-checkbox-checked-ink-color: #ed6c00;
+		--paper-checkbox-unchecked-color: #ed6c00;
+		--paper-checkbox-unchecked-ink-color: #ed6c00;
+		--paper-checkbox-label-color: black;
+		--paper-checkbox-vertical-align: top;
     }	
 	
+	paper-radio-button.orange {
+		--paper-radio-button-checked-color: #ed6c00;
+		--paper-radio-button-checked-ink-color: #ed6c00;
+		--paper-radio-button-unchecked-color: #ed6c00;
+		--paper-radio-button-unchecked-ink-color: #ed6c00;
+		--paper-radio-button-label-color: black;
+		--paper-radio-button-vertical-align: top;
+	}
 	<!--switcher -->
 	label.input-toggle {
 	  line-height: 0;
@@ -98,31 +107,42 @@ element					| checkbox; radio; switcher						| checkbox
     </style>
 
 	<template is="dom-if" if="{{checkbox}}">
-	<div class="container">
-		<paper-checkbox checked class="orange">{{label}}</paper-checkbox>
-	</div>
+		<div class="container">
+			<paper-checkbox checked class="orange">{{label}}</paper-checkbox>
+		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxunchecked}}">
-	<div class="container">
-		<paper-checkbox class="orange">{{label}}</paper-checkbox>
-	</div>
+		<div class="container">
+			<paper-checkbox class="orange">{{label}}</paper-checkbox>
+		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxdisabled}}">
-	<div class="container">
+			<div class="container">
 		<paper-checkbox disabled checked class="orange">{{label}}</paper-checkbox>
-	</div>
+		</div>
 	</template>
 	<template is="dom-if" if="{{checkboxuncheckeddisabled}}">
-	<div class="container">
-		<paper-checkbox disabled class="orange">{{label}}</paper-checkbox>
-	</div>
+		<div class="container">
+			<paper-checkbox disabled class="orange">{{label}}</paper-checkbox>
+		</div>
 	</template>
 	<template is="dom-if" if="{{radio}}">
 		<div class="container">
-			<div class="radio">
-				<input type="checkbox" value="None" id="radio" name="check" />
-				<label for="radio"></label>
-			</div>
+		<paper-radio-button class="orange">{{label}}</paper-radio-button>		  
+		</div>
+	</template>
+	<template is="dom-if" if="{{radiochecked}}">
+		<div class="container">
+		<paper-radio-button checked class="orange">{{label}}</paper-radio-button>		  
+		</div>
+	</template<template is="dom-if" if="{{radiodisabled}}">
+		<div class="container">
+		<paper-radio-button disabled class="orange">{{label}}</paper-radio-button>		  
+		</div>
+	</template>
+	<template is="dom-if" if="{{radiocheckeddisabled}}">
+		<div class="container">
+		<paper-radio-button checked disabled class="orange">{{label}}</paper-radio-button>		  
 		</div>
 	</template>
 	
@@ -167,9 +187,19 @@ element					| checkbox; radio; switcher						| checkbox
 				checkboxuncheckeddisabled: {
 						computed: 'computeCheckboxUncheckedDisabled(element, status)'
 				},	
+				radiochecked: {
+						computed: 'computeRadioChecked(element, status)'
+				},
 					
 				radio: {
-						computed: 'computeRadio(element)'
+						computed: 'computeRadio(element, status)'
+					},	
+				radiocheckeddisabled: {
+						computed: 'computeRadioCheckedDisabled(element, status)'
+				},
+					
+				radiodisabled: {
+						computed: 'computeRadioDisabled(element, status)'
 					},	
 					
 				switcher: {
@@ -209,8 +239,15 @@ element					| checkbox; radio; switcher						| checkbox
 			return false;
 		}
 		
-		computeRadio(element) {
-			if(element === "radio"){
+		computeRadio(element, status) {
+			if(element === "radio" && status === "" ){
+				return true;
+			}
+			
+			return false;
+		}
+		computeRadioDisabled(element, status) {
+			if(element === "radiooff" && status === "" ){
 				return true;
 			}
 			
@@ -222,6 +259,19 @@ element					| checkbox; radio; switcher						| checkbox
 				return true;
 			}
 			
+			return false;
+		}
+		
+		computeRadioChecked(element, status) {
+			if(element === "radio" && status === "checked") {
+				return true;
+			}
+			return false;
+		}
+		computeRadioCheckedDisabled(element, status) {
+			if(element === "radiooff" && status === "checked") {
+				return true;
+			}
 			return false;
 		}
       }
