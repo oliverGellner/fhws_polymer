@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
-<link rel="import" href="../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../fhws_elements/fhws-slider.html">
 
 
 
@@ -31,7 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Vorschau Slider aktiv  -->  
         <fhws-card title="Vorschau Slider - aktiv" title=" aktiv" color="white">
 		  <div class="card-content">
-              <paper-slider value="21"></paper-slider>
+              <fhws-slider pin="on" value="21"></fhws-slider>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
@@ -42,7 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <!-- Quellcode Slider aktiv -->            
     <fhws-card title="Quellcode Slider - aktiv" color="white">
 		<div class="card-content">
-			<fhws-code code='<paper-slider value="21"></paper-slider>'></fhws-code>
+			<fhws-code code=' <fhws-slider value="21"></fhws-slider>'></fhws-code>
            	</div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
@@ -53,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <!-- Vorschau Slider inaktiv -->  
     <fhws-card title="Vorschau Slider - inaktiv" color="white">
 		  <div class="card-content">
-            <paper-slider disabled value="33"></paper-slider>
+             <fhws-slider value="21" status="off"></fhws-slider>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
@@ -64,7 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      <!--Quellcode Slider inaktiv -->            
     <fhws-card title="Vorschau Slider - inaktiv" color="white">
 		<div class="card-content">
-			<fhws-code code='<paper-slider disabled value="33"></paper-slider>'></fhws-code>
+			<fhws-code code='<fhws-slider value="21" status="off"></fhws-slider>'></fhws-code>
            	</div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
@@ -73,11 +73,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</div>        
     
     
-          <!-- Vorschau Slider inkl. Label -->  
+          <!-- Vorschau Slider inkl. Label und pin -->  
     <fhws-card title="Vorschau Slider inkl. Label" color="white">
 		  <div class="card-content">
-            <div>Brightness</div><br>
-              <paper-slider pin value="20"></paper-slider>
+              <fhws-slider value="21" label="Brightness"></fhws-slider>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
@@ -85,11 +84,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</fhws-card>
  	
       
-     <!--Quellcode Slider inkl. Label -->            
+     <!--Quellcode Slider inkl. Label und pin -->            
     <fhws-card title="Quellcode Slider inkl. Label" color="white">
 		<div class="card-content">
-			<fhws-code code='<div>Brightness</div><br>'></fhws-code>
-                <fhws-code code='<paper-slider pin value="20"></paper-slider>'></fhws-code>
+                <fhws-code code='<fhws-slider value="21" label="Brightness"></fhws-slider>'></fhws-code>
            	</div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
@@ -101,7 +99,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <fhws-card title="Vorschau Slider inkl. Wert" color="white">
 		  <div class="card-content">
             <div>Brightness</div>
-              <paper-slider class="red" value="23" max="255" editable></paper-slider>
+              <paper-slider value="23" max="255" editable></paper-slider>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
