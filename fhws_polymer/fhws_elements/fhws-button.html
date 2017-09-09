@@ -12,6 +12,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles.html">
+
+<link rel="import" href="../bower_components/paper-behaviors/paper-button-behavior.html">
+<link rel="import" href="../bower_components/paper-behaviors/paper-ripple-behavior.html">
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles-classes.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
 
 
 
@@ -19,20 +29,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
 
     <style>
-	.color {
-		background: #424242;
-		color: white;
-	}
+	    :host {
+	 --shadow-elevation-2dp: {
+            box-shadow: 0 2px 2px 0 rgba(109, 109, 109, 0.14),
+                        0 1px 5px 0 rgba(109, 109, 109, 0.12),
+                        0 3px 1px -2px rgba(109, 109, 109, 0.2);
+          };
+		 }
 	
     </style>
 	
-	<template is="dom-if" if="{{raised}}">
-	<paper-button raised class="color">{{name}}</paper-button>
+	<template is="dom-if" if="{{flat}}">
+		<paper-button>
+			<slot></slot>
+		</paper-button>
+	</template>
+	<template is="dom-if" if="{{flaticon}}">
+		<paper-button>
+			<slot></slot>
+		</paper-button>
+	</template>
+	<template is="dom-if" if="{{raised}}">  
+		<paper-button raised>
+			<slot></slot>
+		</paper-button>
+	</template>
+	<template is="dom-if" if="{{raisedicon}}">  
+		<paper-button raised>
+			<iron-icon icon="{{icon}}"></iron-icon>
+			<slot></slot>
+		</paper-button>
 	</template>
 	<template is="dom-if" if="{{raiseddisabled}}">
-	<paper-button disabled raised class="color">{{name}}</paper-button>
+		<paper-button disabled raised>
+			<slot></slot>
+		</paper-button>
 	</template>
-	
+	<template is="dom-if" if="{{raiseddisabledicon}}">
+		<paper-button disabled raised>
+			<iron-icon icon="{{icon}}"></iron-icon>
+			<slot></slot>
+		</paper-button>
+	</template> 	
   </template>
 
   <script>
@@ -47,32 +85,75 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			name: {
 				value: 'text'
 			},
+			status: {
+				value: 'on'
+			},
 			type: {
 				value: 'raised'
 			},
 			raised: {
-				computed: 'computeRaised(type)'
+				computed: 'computeRaised(type, icon, status)'
+			},
+			flat: {
+				computed: 'computeFlat(type, icon, status)'
+			},
+			flaticon: {
+				computed: 'computeFlatIcon(type, icon, status)'
 			},
 			raiseddisabled: {
-				computed: 'computeRaisedDisabled(type)'
-			}
+				computed: 'computeRaisedDisabled(type, icon, status)'
+			},
+			icon: {
+				value: ''
+			},
+			raisedicon: {
+				computed: 'computeRaisedIcon(type, icon, status)'
+			},
+			raiseddisabledicon: {
+				computed: 'computeRaisedDisabledIcon(type, icon, status)'
+			},
 		}
 	}
 	
-	 computeRaised(type) {
-			if (type === "raised"){
+	 computeRaised(type, icon, status) {
+			if (type === "raised" && icon === "" && status === "on"){
 				return true;
 			}
 			return false;
 		}
-		computeRaisedDisabled(type) {
-			if (type === "raised-disabled"){
+		computeRaisedDisabled(type, icon, status) {
+			if (type === "raised" && icon ==="" && status === "off"){
+				return true;
+			}
+			return false;
+		} 
+		computeRaisedIcon(type, icon, status) {
+			if (type === "raised" && icon !== "" && status==="on"){
 				return true;
 			}
 			return false;
 		}
-	
 		
+		computeRaisedDisabledIcon(type, icon, status) {
+			if (type === "raised" && icon !== 	"" && status==="off"){
+				return true;
+			}
+			return false;
+		}
+		
+		computeFlat(type, icon, status) {
+			if (type === "flat" && icon ==="" && status ==="on"){
+				return true;
+			}
+			return false;
+		}
+		
+		computeFlatIcon(type, icon, status) {
+			if (type === "flat" && icon !==""&& status === "on"){
+				return true;
+			}
+			return false;
+		}		
       }
     window.customElements.define(FhwsButton.is, FhwsButton);
 
