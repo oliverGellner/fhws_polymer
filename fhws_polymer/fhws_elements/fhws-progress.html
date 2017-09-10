@@ -1,0 +1,35 @@
+<link rel="import" href="fhws-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-progress/paper-progress.html">
+
+<dom-module id="fhws-progress">
+  <template>
+    <style>
+		paper-progress.orange{
+			--paper-progress-active-color: #ed6a00;
+			--paper-progress-secondary-color: #ff9b3e;
+		}
+    </style>
+		<paper-progress value="{{value}}" secondary-progress="{{secondary}}" max="1000" class="orange"></paper-progress>
+	</template>
+ 
+  <script>
+    class FhwsProgress extends Polymer.Element {
+
+      static get is() { 
+			return 'fhws-progress'; 
+		}
+		
+		static get properties() {
+			return {
+				value: {
+				},
+				secondary: {
+				},
+			}
+		}
+	}
+    window.customElements.define(FhwsProgress.is, FhwsProgress);
+  </script>
+</dom-module>
+

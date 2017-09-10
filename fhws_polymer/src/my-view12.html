@@ -11,35 +11,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
-<link rel="import" href="../fhws_elements/fhws-card.html">
-<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu-light.html">
-<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu-icons.html">
-<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu-shared-styles.html">
-<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
-<link rel="import" href="../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
-
-
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
 
 <dom-module id="my-view12">
   <template>
-       <fhws-header header="Drop-Downs">
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+
+      <fhws-header header="Code">
+
   
-      
-      <!-- Vorschau DropDown  -->  
-    <fhws-card title="Vorschau Drop-Down ohne Vorauswahl" color="white">
+      <!-- Vorschau Loading -->  
+    <fhws-card title="Vorschau Code" color="white">
 		  <div class="card-content">
-            
-<paper-dropdown-menu label="Dinosaurs" style="padding-right:100px;">
-  <paper-listbox slot="dropdown-content" class="dropdown-content">
-    <paper-item>allosaurus</paper-item>
-    <paper-item>brontosaurus</paper-item>
-    <paper-item>carcharodontosaurus</paper-item>
-    <paper-item>diplodocus</paper-item>
-  </paper-listbox>
-</paper-dropdown-menu>
-
+        <fhws-code code='<html><div style="padding:10px;" class="test"></div></html>'></fhws-code>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-link href="xd">Quellcode anzeigen</fhws-link>
@@ -47,112 +37,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</fhws-card>
  	
       
-     <!-- Quellcode DropDown -->            
-    <fhws-card title="Quellcode Drop-Down ohne Vorauswahl" color="white">
-		<div class="card-content">
-			<fhws-code code='<paper-dropdown-menu label="Dinosaurs" style="padding-right:100px;">'></fhws-code>
-            <div style="text-indent:25px;">
-                <fhws-code code='<paper-listbox slot="dropdown-content" class="dropdown-content">'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-item>allosaurus</paper-item>'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-item>allosaurus</paper-item>'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-item>carcharodontosaurus</paper-item>'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-item>diplodocus</paper-item>'></fhws-code></div>
-            <div style="text-indent:25px;">
-                <fhws-code code='</paper-listbox>'></fhws-code></div>
-			<fhws-code code='</paper-dropdown-menu>'></fhws-code>
 
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>        
-    
-            <!-- Vorschau DropDown mit Vorauswahl -->  
-    <fhws-card title="Vorschau Drop-Down mit Vorauswahl" color="white">
-		  <div class="card-content">
-            <paper-dropdown-menu label="Dinosaurs">
-                <paper-listbox slot="dropdown-content" class="dropdown-content" selected="1">
-                    <paper-item>allosaurus</paper-item>
-                    <paper-item>brontosaurus</paper-item>
-                    <paper-item>carcharodontosaurus</paper-item>
-                    <paper-item>diplodocus</paper-item>
-                </paper-listbox>        
-            </paper-dropdown-menu>
-           
-		  </div><br>
-		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
-	</fhws-card>
- 	
-      
-     <!-- Quellcode DropDown mit Vorauswahl-->            
-    <fhws-card title="Quellcode Drop-Down mit Vorauswahl" color="white">
+     <!-- Quellcode Loading -->            
+    <fhws-card title="Quellcode Code" color="white">
 		<div class="card-content">
-			<fhws-code code='<paper-dropdown-menu label="Dinosaurs">'></fhws-code>
-            <div style="text-indent:25px;">
-                <fhws-code code='<paper-listbox slot="dropdown-content" class="dropdown-content" selected="1">'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-item>allosaurus</paper-item>'></fhws-code></div>
-            <div style="text-indent:50px;">
-			<fhws-code code='<paper-item>brontosaurus</paper-item>'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-item>carcharodontosaurus</paper-item>'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-item>diplodocus</paper-item>'></fhws-code></div>
-            <div style="text-indent:25px;">
-                <fhws-code code='</paper-listbox>'></fhws-code></div>
-			<fhws-code code='</paper-dropdown-menu>'></fhws-code>
-			
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>         
-
-
-      <!-- Vorschau DropDown mit Tabs -->  
-    <fhws-card title="Vorschau Drop-Down mit Tabs" color="white">
-		  <div class="card-content">
-            
-              
-              <paper-dropdown-menu label="Menu tabs!?">
-                <paper-tabs slot="dropdown-content" class="dropdown-content">
-                  <paper-tab>cheddar</paper-tab>
-                  <paper-tab>stilton</paper-tab>
-                  <paper-tab>emmental</paper-tab>
-              </paper-tabs>
-              </paper-dropdown-menu>
-           
-		  </div><br>
-		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
-	</fhws-card>
- 	
-      
-     <!-- Quellcode Drop-Down mit Tabs-->            
-    <fhws-card title="Quellcode Drop-Down mit Tabs" color="white">
-		<div class="card-content">
-			<fhws-code code='<paper-dropdown-menu label="Menu tabs!?">'></fhws-code>
-            <div style="text-indent:25px;">
-            <fhws-code code='<paper-tabs slot="dropdown-content" class="dropdown-content">'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-tab>cheddar</paper-tab>'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-tab>stilton</paper-tab>'></fhws-code></div>
-            <div style="text-indent:50px;">
-                <fhws-code code='<paper-tab>emmental</paper-tab>'></fhws-code></div>
-            <div style="text-indent:25px;">
-                <fhws-code code='</paper-tabs>'></fhws-code></div>
-			<fhws-code code='</paper-dropdown-menu>'></fhws-code>
-			
+			<fhws-code code='<fhws-code code="<html><div></div></html>"></fhws-code>'></fhws-code>
            	</div><br>
         <div class="card-actions">
         <fhws-link href="xd">Vorschau anzeigen</fhws-link>
@@ -161,19 +50,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</div>        
     <br> 
 
-
-
-      
-      
-      
-        
   </template>
 
   <script>
-    class MyView12 extends Polymer.Element {
+    class Myview12 extends Polymer.Element {
       static get is() { return 'my-view12'; }
     }
 
-    window.customElements.define(MyView12.is, MyView12);
+    window.customElements.define(Myview12.is, Myview12);
   </script>
 </dom-module>
