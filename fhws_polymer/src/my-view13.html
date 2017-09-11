@@ -18,6 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 
 
 <dom-module id="my-view13">
@@ -45,13 +46,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <fhws-header header="Drop-Downs">
   
-                <!-- Vorschau Drop-Down -->  
-    <fhws-card title="Vorschau Drop-Down ohne Vorauswahl" color="white">
+                <!-- Drop-Down ohne Vorauswahl -->  
+    <fhws-card title="Drop-Down ohne Vorauswahl" color="white">
 		  <div class="card-content">
                      
               <paper-dropdown-menu label="Studiengänge">
                   <paper-listbox slot="dropdown-content" selected="1">
-                        <paper-item>E-Commerce (B.Sc.))</paper-item>
+                        <paper-item>E-Commerce (B.Sc.)</paper-item>
                         <paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
                         <paper-item>Informatik (B.Sc.)</paper-item>
                         <paper-item>Informationssysteme (M.Sc.)</paper-item>
@@ -60,26 +61,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+            <fhws-collapse title="Quellcode">
+       		<fhws-code code=''></fhws-code>
+            </fhws-collapse>
       </div>
 	</fhws-card>
  	
-      
-     <!-- Quellcode Drop-Down -->            
-    <fhws-card title="Quellcode Drop-Down ohne Vorauswahl" color="white">
-		<div class="card-content">
-			<fhws-code code=''></fhws-code>
-			
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>        
+          
+          
+            
     
       
-            <!-- Vorschau Drop-Down mit Vorauswahl -->  
-    <fhws-card title="Vorschau Drop-Down mit Vorauswahl" color="white">
+            <!-- Drop-Down mit Vorauswahl -->  
+    <fhws-card title="Drop-Down mit Vorauswahl" color="white">
 		  <div class="card-content">
 <paper-dropdown-menu label="Studiengänge">
   <paper-listbox slot="dropdown-content" class="dropdown-content" selected="1">
@@ -92,56 +86,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
               
 		  </div><br>
-		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
+        <div class="card-actions">
+		  <fhws-collapse title="Quellcode">
+       	    <fhws-code code=''></fhws-code>
+          </fhws-collapse>
+        </div>
 	</fhws-card>
  	
-      
-     <!--Quellcode Drop-Down mit Vorauswahl -->            
-    <fhws-card title="Quellcode Drop-Down mit Vorauswahl" color="white">
-		<div class="card-content">
-			<fhws-code code=''></fhws-code>
-			
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>        
+           
     
-      <!-- Vorschau Drop-Down Disabled -->  
-    <fhws-card title="Vorschau Drop-Down Disabled" color="white">
+      <!-- Drop-Down Disabled -->  
+    <fhws-card title="Drop-Down Disabled" color="white">
 		  <div class="card-content">
             
-                <paper-dropdown-menu label="Disabled dinosaurs" disabled>
+                <paper-dropdown-menu label="Studiengänge" disabled>
                     <paper-listbox slot="dropdown-content" class="dropdown-content">
-                            <paper-item>allosaurus</paper-item>
-                            <paper-item>brontosaurus</paper-item>
-                            <paper-item>carcharodontosaurus</paper-item>
-                            <paper-item>diplodocus</paper-item>
+                            <paper-item>E-Commerce (B.Sc.)</paper-item>
+                            <paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
+                            <paper-item>Informatik (B.Sc.)</paper-item>
+                            <paper-item>Informationssysteme (M.Sc.)</paper-item>
                     </paper-listbox>
                 </paper-dropdown-menu>
            
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+        <fhws-collapse title="Quellcode">
+       	    <fhws-code code=''></fhws-code>
+          </fhws-collapse>
       </div>
 	</fhws-card>
- 	
-      
-     <!-- Quellcode Drop-Down Disabled -->            
-    <fhws-card title="Vorschau Drop-Down Disabled" color="white">
-		<div class="card-content">
-			<fhws-code code=''></fhws-code>
-			
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>        
-    <br> 
+          </div>
+          <br>
 
   </template>
 

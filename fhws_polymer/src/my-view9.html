@@ -29,30 +29,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <fhws-header header="Sliders">
   
-          <!-- Vorschau Slider aktiv  -->  
-        <fhws-card title="Vorschau Slider - aktiv" title=" aktiv" color="white">
+          <!-- Slider aktiv  -->  
+        <fhws-card title="Slider - aktiv" title=" aktiv" color="white">
 		  <div class="card-content">
-              <fhws-slider pin="on" value="21"></fhws-slider>
+                <fhws-slider value="21"></fhws-slider>
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+         <fhws-collapse title="Quellcode">
+       		<fhws-code code='<fhws-slider value="21"></fhws-slider>'></fhws-code>
+	</fhws-collapse>
       </div>
 	</fhws-card>
  	
       
-     <!-- Quellcode Slider aktiv -->            
-    <fhws-card title="Quellcode Slider - aktiv" color="white">
-		<div class="card-content">
-			<fhws-code code=' <fhws-slider value="21"></fhws-slider>'></fhws-code>
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>        
       
             <!-- Vorschau Slider inaktiv -->  
-    <fhws-card title="Vorschau Slider - inaktiv" color="white">
+    <fhws-card title="Slider - inaktiv" color="white">
 		  <div class="card-content">
              <fhws-slider value="21" status="off"></fhws-slider>
 		  </div><br>
@@ -64,19 +56,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</fhws-card>       
 
           <!-- Vorschau Slider inkl. pin -->  
-    <fhws-card title="Vorschau Slider inkl. Pin" color="white">
+    <fhws-card title="Slider inkl. Pin" color="white">
 		  <div class="card-content">
-              <fhws-slider value="21"></fhws-slider>
+              <fhws-slider pin="on" value="21"></fhws-slider>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-collapse title="Quellcode">
-			<fhws-code code='<fhws-slider value="21"></fhws-slider>'></fhws-code>
+			<fhws-code code='<fhws-slider pin="on" value="21"></fhws-slider>'></fhws-code>
 		</fhws-collapse>
       </div>
 	</fhws-card>    
     
-          <!-- Vorschau Slider inkl. Wert -->  
-    <fhws-card title="Vorschau Slider inkl. Wert" color="white">
+          <!-- Slider inkl. Wert -->  
+    <fhws-card title="Slider inkl. Wert" color="white">
 		  <div class="card-content">
             <div>Brightness</div>
               <fhws-slider value="23" max="255"></fhws-slider>
