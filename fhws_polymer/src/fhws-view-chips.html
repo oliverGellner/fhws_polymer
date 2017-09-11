@@ -10,16 +10,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="../fhws_elements/fhws-contact-chip.html">
+<link rel="import" href="../fhws_elements/fhws-chip.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
-<link rel="import" href="../bower_components/paper-chip/paper-chip.html">
-<link rel="import" href="../bower_components/paper-chip/paper-chip-icons.html">
-<link rel="import" href="../bower_components/paper-chip/paper-chip-input.html">
-
 
 
 <dom-module id="fhws-view-chips">
@@ -30,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
         
       
-    </style>
+    </style>	
 
     <fhws-header header="Kontakt Chip">
   
@@ -39,9 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <fhws-card title="Vorschau single-line Chip" color="white">
 		  <div class="card-content">
             
-                <paper-chip single-line>
-                   <div slot="label" class="label">Single-line</div>
-                </paper-chip>
+                <fhws-chip label="Single-line"></fhws-chip>
            
 		  </div><br>
 		 <div class="card-actions">
@@ -57,13 +51,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 	</fhws-card>
  	
-      
      
-    
             <!--Vorschau multi-line Chip  -->  
     <fhws-card title="Vorschau multi-line Chip" color="white">
 		  <div class="card-content">
-			<fhws-contact-chip person="testPerson"></fhws-contact-chip>
+			<fhws-chip person="testPerson"></fhws-chip>
 		  </div><br>
 		 <div class="card-actions">
         <fhws-collapse title="Quellcode">
