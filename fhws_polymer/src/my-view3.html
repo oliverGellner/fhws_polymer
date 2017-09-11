@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-contact-chip.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../bower_components/paper-chip/paper-chip.html">
@@ -45,24 +46,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
            
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+        <fhws-collapse title="Quellcode">
+			<fhws-code code='<paper-chip single-line>'></fhws-code>
+            <div style="text-indent:25px;">
+                <fhws-code code='<div slot="label" class="label">Single-line</div>'></fhws-code>
+			</div>
+            <fhws-code code='</paper-chip>'></fhws-code>
+           	<br>
+		</fhws-collapse>
+		</div>
       </div>
 	</fhws-card>
  	
       
-     <!--Quellcode single-line Chip -->            
-    <fhws-card title="Quellcode single-line Chip" color="white">
-		<div class="card-content"> 
-                <fhws-code code='<paper-chip single-line>'></fhws-code>
-            <div style="text-indent:25px;">
-                <fhws-code code='<div slot="label" class="label">Single-line</div>'></fhws-code></div>
-            <fhws-code code='</paper-chip>'></fhws-code>
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>        
+     
     
             <!--Vorschau multi-line Chip  -->  
     <fhws-card title="Vorschau multi-line Chip" color="white">

@@ -14,6 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-card.html">           
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 
 <dom-module id="my-view12">
   <template>
@@ -32,24 +33,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <fhws-code code='<html><div style="padding:10px;" class="test"></div></html>'></fhws-code>
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
-	</fhws-card>
- 	
-      
-
-     <!-- Quellcode Loading -->            
-    <fhws-card title="Quellcode Code" color="white">
-		<div class="card-content">
+        <fhws-collapse title="Quellcode">
 			<fhws-code code='<fhws-code code="<html><div></div></html>"></fhws-code>'></fhws-code>
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+		</fhws-collapse>
       </div>
-	</fhws-card>
-	</div>        
+	</fhws-card>    
     <br> 
-
   </template>
 
   <script>
