@@ -1,0 +1,56 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="fhws-styles.html">
+
+<dom-module id="fhws-collapse">
+  <template>
+
+    <style>
+		.collapse{
+			cursor: pointer;
+			display: block;
+			color: #eb6c00;
+		}
+		
+		.collapse + input{
+			display: none; /* hide the checkboxes */
+		}
+		
+		.collapse + input + div{
+			display:none;
+		}
+		
+		.collapse + input:checked + div{
+			display:block;
+		}
+    </style>
+	
+		<label id="label" class="collapse" for="_1" on-click="handleCollapse">{{title}}</label>
+		<input id="_1" type="checkbox"> 
+		<div>
+			<br>
+			<slot></slot>
+		</div>
+		
+	</template>
+
+
+  <script>
+    class FhwsCollapse extends Polymer.Element {
+
+      static get is() { 
+        return 'fhws-collapse'; 
+		}
+		
+		static get properties() {
+        return {
+            title: { 
+                
+			}
+        }
+	}
+	}
+    window.customElements.define(FhwsCollapse.is, FhwsCollapse);
+
+  </script>
+</dom-module>
+

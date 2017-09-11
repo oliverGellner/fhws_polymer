@@ -14,6 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 <link rel="import" href="../fhws_elements/fhws-progress.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
@@ -35,66 +36,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <fhws-card title="Vorschau Progress One" color="white">
 		  <div class="card-content">
         <custom-style>
-            <style is="custom-style">
-            paper-progress.orange {
-                --paper-progress-active-color: #ed6a00;
-                --paper-progress-secondary-color: #ff9b3e;
-            }
-            </style>
                 <fhws-progress value="250"></fhws-progress>
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
-	</fhws-card>
- 	
-      
-     <!-- Progress One -->            
-    <fhws-card title="Quellcode Progress One" color="white">
-		<div class="card-content">
-
+        <fhws-collapse title="Quellcode">
 			<fhws-code code='<fhws-progress value="250"></fhws-progress>'></fhws-code>
-
-        </div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+		</fhws-collapse>
       </div>
 	</fhws-card>
-	</div>        
 
         
                <!-- Progress One -->  
     <fhws-card title="Vorschau Progress Two" color="white">
 		  <div class="card-content">
-    
-           
                 <fhws-progress value="400" secondary="800"></fhws-progress>
-
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
-	</fhws-card>
- 	
-      
-     <!-- Progress Two -->            
-    <fhws-card title="Quellcode Progress Two" color="white">
-		<div class="card-content">
-
+        <fhws-collapse title="Quellcode">
 			<fhws-code code='<fhws-progress value="400" secondary="800"></fhws-progress>'></fhws-code>
-
-        </div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+		</fhws-collapse>
       </div>
-	</fhws-card>
-	</div>        
+	</fhws-card>      
     <br> 
-        
-        
-        
-  </template>
-
+   </template>
   <script>
     class Myview10 extends Polymer.Element {
       static get is() { return 'my-view10'; }

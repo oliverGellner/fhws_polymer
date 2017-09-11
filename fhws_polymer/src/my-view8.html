@@ -16,6 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-button.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
@@ -52,62 +53,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
-	</fhws-card>
- 	
-      
-     <!-- Quellcode Buttons -->            
-    <fhws-card title="Quellcode Buttons" color="white">
-		<div class="card-content">
-   
-            
+        <fhws-collapse title="Quellcode">
 			<fhws-code code='<fhws-button type="flat">Link</fhws-button>'></fhws-code><br>
 			<fhws-code code='<fhws-button type="raised">Raised</fhws-button>'></fhws-code><br>
 			<fhws-code code='<fhws-button type="raised" status="off">Disabled</fhws-button>'></fhws-code>
-			
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+		</fhws-collapse>
       </div>
 	</fhws-card>
-	</div>        
-    
       
             <!-- Vorschau Buttons inkl. Icons -->  
-    <fhws-card title="Vorschau Buttons inkl. Icons" color="white">
+	<fhws-card title="Vorschau Buttons inkl. Icons" color="white">
 		  <div class="card-content">
-        
-			
-          <fhws-button type="flat" icon="check">Link</fhws-button>
-          <fhws-button type="raised" icon="file-download">Raised</fhws-button>
-          <fhws-button type="raised" status="off" icon="block">Disabled</fhws-button>
-           
+			  <fhws-button type="flat" icon="check">Link</fhws-button>
+			  <fhws-button type="raised" icon="file-download">Raised</fhws-button>
+			  <fhws-button type="raised" status="off" icon="block">Disabled</fhws-button>
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
-      </div>
-	</fhws-card>
- 	
-      
-     <!--Quellcode Buttons inkl. Icons -->            
-    <fhws-card title="Vorschau Buttons inkl. Icons" color="white">
-		<div class="card-content">
+        <fhws-collapse title="Quellcode">
 			<fhws-code code='<fhws-button type="flat" icon="check">Link</fhws-button>'></fhws-code><br>
 			<fhws-code code='<fhws-button type="raised" icon="file-download">Raised</fhws-button>'></fhws-code><br>
 			<fhws-code code='<fhws-button type="raised" icon="block" status="off" >Disabled</fhws-button>'></fhws-code>
-			
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+		</fhws-collapse>
       </div>
 	</fhws-card>
-	</div>        
-    <br> 
-
-      
-
-                
+<br>	
 	</fhws-header>
   </template>
 

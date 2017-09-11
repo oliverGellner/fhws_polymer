@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="../fhws_elements/fhws-switch.html">
 <link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
@@ -36,33 +37,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Checkbox -->                
     <fhws-card title="Vorschau Checkbox" color="white">
 		  <div class="card-content">
-             
-                
                 <fhws-switch status="checked" element="checkbox" label="aktiv (default: checked)"></fhws-switch><br>
                 <fhws-switch element="checkbox" label="aktiv (default: unchecked)"></fhws-switch><br>
                 <fhws-switch status="checked" element="checkboxoff" label="inaktiv (default: checked)"></fhws-switch><br>
                 <fhws-switch element="checkboxoff" label="inaktiv (default: unchecked)"></fhws-switch>
-              
-		  </div><br>
+          </div><br>
           <div class="card-actions">
-            <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+            <fhws-collapse title="Quellcode">
+				<fhws-code code='<fhws-switch status="checked" element="checkbox" label="aktiv (default: checked)"></fhws-switch>'></fhws-code><br>   
+				<fhws-code code='<fhws-switch element="checkbox" label="aktiv (default: unchecked)"></fhws-switch>'></fhws-code><br> 
+				<fhws-code code='<fhws-switch status="checked" element="checkboxoff" label="inaktiv (default: checked)"></fhws-switch>'></fhws-code><br>
+				<fhws-code code='<fhws-switch element="checkboxoff" label="inaktiv (default: unchecked)"></fhws-switch>'></fhws-code> 
+			</fhws-collapse>
           </div>
 	</fhws-card>
         
-    <!-- Quellcocde Checkbox -->                	
-        <fhws-card title="Quellcode Checkbox" color="white">
-        <div class="card-content">
-			<fhws-code code='<fhws-switch status="checked" element="checkbox" label="aktiv (default: checked)"></fhws-switch>'></fhws-code><br>   
-			<fhws-code code='<fhws-switch element="checkbox" label="aktiv (default: unchecked)"></fhws-switch>'></fhws-code><br> 
-			<fhws-code code='<fhws-switch status="checked" element="checkboxoff" label="inaktiv (default: checked)"></fhws-switch>'></fhws-code><br>
-            <fhws-code code='<fhws-switch element="checkboxoff" label="inaktiv (default: unchecked)"></fhws-switch>'></fhws-code> 
-            
-		 </div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-        </div>
-	   </fhws-card>
-	   </div>
+    
                 
     
     <!-- Radio-Button -->    
@@ -76,24 +66,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             
         </div><br>
 		  <div class="card-actions">
-             <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+             <fhws-collapse title="Quellcode">
+				<fhws-code code='<fhws-switch element="radio" label="aktiv (default: unchecked)"></fhws-switch>'></fhws-code><br>
+				<fhws-code code='<fhws-switch element="radio" label="aktiv (default: checked)" status="checked"></fhws-switch>'></fhws-code><br>
+				<fhws-code code='<fhws-switch element="radiooff" label="inaktiv (default: unchecked)"></fhws-switch>'></fhws-code><br>
+				<fhws-code code='<fhws-switch element="radiooff" label="inaktiv (default: checked)" status="checked"></fhws-switch>'></fhws-code>
+			 </fhws-link>
           </div>
 	</fhws-card>
-      
-      
-    <!-- Quellcocde Radio-Button -->                
-    <fhws-card title="Quellcode Radio-Button" color="white">
-        <div class="card-content">
-        <fhws-code code='<fhws-switch element="radio" label="aktiv (default: unchecked)"></fhws-switch>'></fhws-code><br>
-         <fhws-code code='<fhws-switch element="radio" label="aktiv (default: checked)" status="checked"></fhws-switch>'></fhws-code><br>
-         <fhws-code code='<fhws-switch element="radiooff" label="inaktiv (default: unchecked)"></fhws-switch>'></fhws-code><br>
-        <fhws-code code='<fhws-switch element="radiooff" label="inaktiv (default: checked)" status="checked"></fhws-switch>'></fhws-code>		
-        </div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-        </div>
-      </fhws-card>
-	   </div>
         
     <!-- Switch -->    
     <fhws-card title="Vorschau Switch" color="white">
@@ -101,24 +81,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
            	<fhws-switch element="switch"></fhws-switch>
 		  </div><br>
 		  <div class="card-actions">
-             <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+             <fhws-collapse title="Quellcode">
+				 <fhws-code code='<fhws-switch element="<<switch>>"></fhws-switch>'></fhws-code> 
+			 </fhws-collapse>
           </div>
-	</fhws-card>
-    
-      <!-- Quellcocde Radio-Button -->                
-    <fhws-card title="Quellcode Switch" color="white">
-        <div class="card-content">
-        <fhws-code code='<fhws-switch element="<<switch>>"></fhws-switch>'></fhws-code>   
-        </div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-        </div>
-      </fhws-card>
-	   </div>
-       <br>
-
-
-	</fhws-header>
+	</fhws-card> 
+<br>	
+</fhws-header>
   </template>
 
   <script>

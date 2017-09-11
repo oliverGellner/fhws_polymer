@@ -82,7 +82,24 @@ Available Styling		| Description									| defaultc
 		@apply --fhws-card-content-code;
 	}
 	
+		  .collapse{
+  cursor: pointer;
+  display: block;
+  background: #cdf;
+}
+.collapse + input{
+  display: none; /* hide the checkboxes */
+}
+.collapse + input + div{
+  display:none;
+}
+.collapse + input:checked + div{
+  display:block;
+}
+	
     </style>
+	
+	
 	
 	<template is="dom-if" if="{{orange}}">
 		<div class="card">
@@ -96,7 +113,7 @@ Available Styling		| Description									| defaultc
 	</template>
 	
 	<template is="dom-if" if="{{white}}">
-<div class="card">
+		<div class="card">
 			<div class="card_white">
 			<span class="title">
 				<h3>{{title}}</h3>
@@ -112,6 +129,13 @@ Available Styling		| Description									| defaultc
         </div>
 	</template>
   </template>
+  
+	<template is="dom-if" if="{{collapsed}}">
+		<label class="collapse" for="_1">Collapse 1</label>
+		<input id="_1" type="checkbox"> 
+		<div>Content 1</div>
+	</template>
+  </template>
 
   <script>
     class FhwsCard extends Polymer.Element {
@@ -125,6 +149,9 @@ Available Styling		| Description									| defaultc
             title: { 
                 
 			},
+			collapser: {
+			value: "true"
+			},
 			color: {
 				value: "defaultc"
 			},
@@ -137,6 +164,9 @@ Available Styling		| Description									| defaultc
 			defaultc: {
 				computed: 'computeDefaultc(color)'
 			},
+			collapsed: {
+				computed: 'computeCollapse(collapser)'
+			}
         }
       }
 	  
@@ -156,6 +186,12 @@ Available Styling		| Description									| defaultc
 		
 		computeDefaultc(color) {
 			if (color === "defaultc"){
+				return true;
+			}
+			return false;
+		}
+		computeCollapse(collapser) {
+			if (collapser === "true"){
 				return true;
 			}
 			return false;
