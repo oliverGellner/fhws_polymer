@@ -23,7 +23,7 @@ Example:
     </div>
 </fhws-card>
 
-Available Styling		| Description									| defaultc
+Available Styling		| Description									| card
 '--fhws-card-content' 	| Mixin applied to the card content section		| '{}'
 '--fhws-card-actions'	| Mixin applied to the card action section 		| '{}'
 
@@ -82,21 +82,6 @@ Available Styling		| Description									| defaultc
 		@apply --fhws-card-content-code;
 	}
 	
-		  .collapse{
-  cursor: pointer;
-  display: block;
-  background: #cdf;
-}
-.collapse + input{
-  display: none; /* hide the checkboxes */
-}
-.collapse + input + div{
-  display:none;
-}
-.collapse + input:checked + div{
-  display:block;
-}
-	
     </style>
 	
 	
@@ -123,7 +108,7 @@ Available Styling		| Description									| defaultc
         </div>
 	</template>
 	
-	<template is="dom-if" if="{{defaultc}}">
+	<template is="dom-if" if="{{card}}">
 		<div class="card">
 				<slot></slot>
         </div>
@@ -153,7 +138,7 @@ Available Styling		| Description									| defaultc
 			value: "true"
 			},
 			color: {
-				value: "defaultc"
+				value: "card"
 			},
 			orange: {
 				computed: 'computeOrange(color)'
@@ -161,8 +146,8 @@ Available Styling		| Description									| defaultc
 			white: {
 				computed: 'computeWhite(color)'
 			},
-			defaultc: {
-				computed: 'computeDefaultc(color)'
+			card: {
+				computed: 'computecard(color)'
 			},
 			collapsed: {
 				computed: 'computeCollapse(collapser)'
@@ -184,8 +169,8 @@ Available Styling		| Description									| defaultc
 			return false;
 		}
 		
-		computeDefaultc(color) {
-			if (color === "defaultc"){
+		computecard(color) {
+			if (color === "card"){
 				return true;
 			}
 			return false;

@@ -1,0 +1,83 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-chip/paper-chip.html">
+
+<dom-module id="fhws-chip">
+	<template>
+		<style>
+		</style>
+		<iron-ajax 
+			auto 
+			url="{{url}}"
+			handle-as="json"
+			last-response="{{json}}">
+		</iron-ajax>
+		
+		<template is="dom-if" if="{{multiline}}">
+			 <paper-chip>
+					<iron-icon slot="icon" class="icon" src="{{imgUrl}}"></iron-icon>
+					<div slot="label" class="label">{{json.name}}</div>
+					<div slot="caption" class="caption">{{json.email}}</div>
+			 </paper-chip>
+		</template>
+		
+		<template is="dom-if" if="{{singleline}}">
+			<paper-chip single-line>
+				<div slot="label" class="label">{{label}}</div>
+			</paper-chip>
+		</template>
+	</template>
+  <script>
+    class FhwsChip extends Polymer.Element {
+		static get is() { 
+			return 'fhws-chip'; 
+		}
+		
+		static get properties() {
+			return {
+				person: {
+					value: 'none'
+				},
+				label: {
+					value: ''
+				},
+				url: {
+					computed: 'computeUrl(person)'
+				},				
+				imgUrl: {
+					computed: 'computeImgUrl(person)'
+				},
+				multiline: {
+					computed: 'computeMultiline(person)'
+				},
+				singleline: {
+					computed: 'computeSingleline(label)'
+				}
+			}
+		}
+		
+		computeUrl(person) {
+			if(person !== "none")
+				return '../data/professor/'+ person + '.json';
+		}
+		
+		computeImgUrl(person) {
+			if(person !== "none")
+			return '../data/professor/'+ person + '.png';
+		}
+		computeMultiline(person) {
+			if(person !== 'none')
+				return true;
+			return false;
+		}
+		computeSingleline(label) {
+			if(label !== '')
+				return true;
+			return false;
+		}
+	}
+    window.customElements.define(FhwsChip.is, FhwsChip);
+
+  </script>
+</dom-module>
+
