@@ -32,22 +32,23 @@ element					| checkbox; radio; switcher						| checkbox
 		.container {position: relative;}
 		
 	 paper-checkbox.orange {
-		--paper-checkbox-checked-color: #ed6c00;
-		--paper-checkbox-checked-ink-color: #ed6c00;
-		--paper-checkbox-unchecked-color: #ed6c00;
-		--paper-checkbox-unchecked-ink-color: #ed6c00;
+		--paper-checkbox-checked-color: var(--primary-color);
+		--paper-checkbox-checked-ink-color: var(--primary-color);
+		--paper-checkbox-unchecked-color: var(--primary-color);
+		--paper-checkbox-unchecked-ink-color: var(--primary-color);
 		--paper-checkbox-label-color: black;
 		--paper-checkbox-vertical-align: top;
     }	
 	
 	paper-radio-button.orange {
-		--paper-radio-button-checked-color: #ed6c00;
-		--paper-radio-button-checked-ink-color: #ed6c00;
-		--paper-radio-button-unchecked-color: #ed6c00;
-		--paper-radio-button-unchecked-ink-color: #ed6c00;
+		--paper-radio-button-checked-color: var(--primary-color);
+		--paper-radio-button-checked-ink-color: var(--primary-color);
+		--paper-radio-button-unchecked-color: var(--primary-color);
+		--paper-radio-button-unchecked-ink-color: var(--primary-color);
 		--paper-radio-button-label-color: black;
 		--paper-radio-button-vertical-align: top;
 	}
+	
 	<!--switcher -->
 	label.input-toggle {
 	  line-height: 0;
@@ -59,7 +60,7 @@ element					| checkbox; radio; switcher						| checkbox
 	label.input-toggle > span {
 	  display: inline-block;
 	  position: relative;
-	  background-image: linear-gradient(to right, grey 0%, grey 50%, #ff9c3f 50%, #ff9c3f 100%);
+	  background-image: linear-gradient(to right, grey 0%, grey 50%, var(--primary-color-light) 50%, var(--primary-color-light) 100%);
 	  background-size: 64px 14px;
 	  background-position: 0%;
 	  border-radius: 32px;
@@ -89,7 +90,7 @@ element					| checkbox; radio; switcher						| checkbox
 
 	label.input-toggle > input:checked + span:after {
 	  left: calc(100% - 18px);
-	  background-color: #ed6c00;
+	  background-color: var(--primary-color);
 	}
 
 	label.input-toggle > span:active:after {transform: translateY(-50%) scale3d(1.15, 0.85, 1);	}

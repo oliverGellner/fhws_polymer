@@ -38,18 +38,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="my-view13.html">
 <link rel="lazy-import" href="my-view404.html">
 <link rel="import" href="fhws-dialog-view.html">
+<link rel="import" href="shared-styles.html">
 <dom-module id="my-app">
   <template>
-    <style>
-      :host {
-        --app-primary-color: #4285f4;
-        --app-secondary-color: black;
-
+    <style include="shared-styles">
+      
+      :host{
         display: block;
       }
 	  
 	  .toolbar {
-		background-color: #b33a00;
+		background-color: var(--primary-color-dark);
 	}
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -58,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       app-header {
         color: #fff;
-        background-color: var(--app-primary-color);
+        background-color: var(--secondary-color-light);
       }
 
       app-header paper-icon-button {
@@ -73,7 +72,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 0 16px;
         text-decoration: none;
-        color: var(--app-secondary-color);
+        color: var(--secondary-color-dark);
         line-height: 40px;
       }
 
@@ -82,34 +81,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-weight: bold;
       }
 
-	.mainmenu, .submenu {
-	  list-style: none;
-	  padding: 0;
-	  margin: 0;
+	.black {
 		
+		--fhws-collapse-color: var(--secondary-color-dark);
 	}
-
-.submenu {
-  overflow: auto;
-  max-height: 0;
-  -webkit-transition: all 0.5s ease-out;
+	
+	#scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: var(--secondary-color-light);
 }
-	.mainmenu a {
-	  display: block;
-	  text-decoration: none;
-	  padding: 10px;	
-	}
 
-	/* add hover behaviour */
-	.mainmenu a:hover {
-		background-color: #C5C5C5;
-	}
+#scrollbar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: var(--secondary-color-light);
+}
 
-	.mainmenu li:hover .submenu {
-	  display: block;
-	  max-height: 6000px;
-	  transition-delay: 0.5s;
-	}
+#scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--primary-color);
+}
+
+	
+
 	
 
     </style>
@@ -123,33 +121,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed narrow="{{narrow}}" >
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-	  <div style="overflow:scroll; height:100%;" >
+	  <div id="scrollbar" style="overflow:scroll; height:100%; overflow-x: auto;" >
         <app-toolbar>Menu</app-toolbar>
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+		<a name="view6" href="[[rootPath]]view6">Allgemeine Informationen</a>
+		<div style=padding:16px;">
+		<fhws-collapse class="black" style="color:black;" title="Elemente">
+			<a name="view2" href="[[rootPath]]view2">Cards</a>
+			<a name="view3" href="[[rootPath]]view3">Kontakt-Chip</a>
+			<a name="view4" href="[[rootPath]]view4">Dialog</a>
+			<a name="view5" href="[[rootPath]]view5">Switches</a>
+			<a name="view7" href="[[rootPath]]view7">Input-Felder</a>
+            <a name="view12" href="[[rootPath]]view12">Drop-Downs</a>
+			<a name="view8" href="[[rootPath]]view8">Buttons</a>
+            <a name="view9" href="[[rootPath]]view9">Sliders</a>
+            <a name="view10" href="[[rootPath]]view10">Progress</a>
+            <a name="view11" href="[[rootPath]]view11">Loading</a>
+            <a name="view13" href="[[rootPath]]view13">Code</a>
+		</fhws-collapse>
+		</div>
 			
-			
-			<nav class="navigation">
-			<ul class="mainmenu">
-			<li><a name="view6" href="[[rootPath]]view6">Allgemeine Informationen</a></li>
-			<li><a href="">Elemente</a>
-			<ul class="submenu">
-			<li><a name="view2" href="[[rootPath]]view2">Cards</a></li>
-			<li><a name="view3" href="[[rootPath]]view3">Contact-Chip</a></li>
-			<li><a name="view4" href="[[rootPath]]view4">Dialog</a></li>
-			<li><a name="view5" href="[[rootPath]]view5">Switches</a></li>
-			<li><a name="view7" href="[[rootPath]]view7">Input-Types</a></li>
-            <li><a name="view13" href="[[rootPath]]view13">Drop-Downs</a></li>
-			<li><a name="view8" href="[[rootPath]]view8">Buttons</a></li>
-            <li><a name="view9" href="[[rootPath]]view9">Sliders</a></li>
-            <li><a name="view10" href="[[rootPath]]view10">Progress</a></li>
-            <li><a name="view11" href="[[rootPath]]view11">Loading</a></li>
-            <li><a name="view12" href="[[rootPath]]view12">Code</a></li>
-
-      </ul>
-    </li>
-  </ul>
-</nav>
    
 
         </iron-selector>
@@ -218,7 +210,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _routePageChanged(page) {
         // If no page was found in the route data, page will be an empty string.
         // Deault to 'view1' in that case.
-        this.page = page || 'view1';
+        this.page = page || 'view6';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
