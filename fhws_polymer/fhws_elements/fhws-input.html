@@ -171,13 +171,27 @@ Available Styling		| Description									| Default
 					<paper-item>Informatik (B.Sc.)</paper-item>
 					<paper-item>Wirtschaftinformatik (B.Sc.)</paper-item>
                     <paper-item>Informationsysteme (M.Sc.)</paper-item>
-
 				</paper-listbox>
 			</paper-dropdown-menu>
 		</div>
-        
-        
-        
+	</template>	
+	<template is="dom-if" if="{{dropdown}}">
+		<div class="container">
+			<paper-dropdown-menu label="{{label}}">
+				<paper-listbox slot="dropdown-content" selected="1">
+					<slot></slot>
+				</paper-listbox>
+			</paper-dropdown-menu>
+		</div>
+	</template>	
+	<template is="dom-if" if="{{dropdownoff}}">
+		<div class="container">
+			<paper-dropdown-menu disabled label="{{label}}">
+				<paper-listbox slot="dropdown-content" selected="1">
+					<slot></slot>
+				</paper-listbox>
+			</paper-dropdown-menu>
+		</div>
 	</template>	
   </template>
 
@@ -259,6 +273,12 @@ Available Styling		| Description									| Default
 			},
 			number: {
 				computed: 'computeNumber(type, prefix)'
+			},
+			dropdown: {
+				computed: 'computeDropdown(type)'
+			},
+			dropdownoff: {
+				computed: 'computeDropdownOff(type)'
 			}
 			
 		}
@@ -356,6 +376,18 @@ Available Styling		| Description									| Default
 		}
 		computePrefixText(type, prefix) {
 			if(type === "text" && prefix !== ""){
+				return true;
+			}
+			return false;
+		}
+		computeDropdown(type) {
+			if(type === "dropdown"){
+				return true;
+			}
+			return false;
+		}
+		computeDropdownOff(type) {
+			if(type === "dropdownoff"){
 				return true;
 			}
 			return false;
