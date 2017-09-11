@@ -15,11 +15,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-<link rel="import" href="../bower_components/neon-animation/web-animations.html">">
+<link rel="import" href="../bower_components/neon-animation/web-animations.html">
 <link rel="import" href="../bower_components/iron-input/iron-input.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="fhws-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input-container.html">
+<link rel="import" href="../bower_components/paper-input/paper-input-error.html">
+<link rel="import" href="../bower_components/paper-input/paper-input-char-counter.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="ssn-validator.html">
+<link rel="import" href="../bower_components/iron-validatable-behavior/iron-validatable-behavior.html">
+<link rel="import" href="ssn-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
 
 <!--
 Example:
@@ -35,9 +49,7 @@ Available Styling		| Description									| Default
     <style>
 	:root {
 		/* Label and underline color when the input is not focused */
-
-
-        --paper-input-container-color: var(--primary-color);
+        --paper-input-container-color: var(--secondary-color-light);
 
         /* Label and underline color when the input is focused */
         --paper-input-container-focus-color: var(--primary-color);
@@ -49,6 +61,12 @@ Available Styling		| Description									| Default
         --paper-input-container-input-color: black;
 	}
 	
+	
+        paper-input.label
+        {
+            color: #f5f5f6;
+        }
+	
 	.container {
 		padding:10px;
 	}
@@ -59,11 +77,49 @@ Available Styling		| Description									| Default
       
 	<template is="dom-if" if="{{text}}">
 		<div class="container">
-            
-            
-            
-			<paper-input value="{{value}}" label="{{label}}">
+			<paper-input value="{{value}}" label="{{label}}"></paper-input>
+		</div>
+	</template>	
+	<template is="dom-if" if="{{number}}">
+		<div class="container">
+			<paper-input type="number" value="{{value}}" label="{{label}}"></paper-input>
+		</div>
+	</template>	
+	<template is="dom-if" if="{{manual}}"><!-- defekt -->
+		<div class="container">
+			<paper-input id="inputForValidation" required label="{{label}}" pattern="{{pattern}}" error-message="{{errormsg}}"></paper-input>
+			<fhws-button type="raised" onclick="validate()">{{button}}</fhws-button>
+		</div>
+	</template>	
+	<template is="dom-if" if="{{computepattern}}">
+		<div class="container">
+			<paper-input label="{{label}}" auto-validate pattern="{{pattern}}" error-message="{{errormsg}}"></paper-input>
+		</div>
+	</template>
+	<template is="dom-if" if="{{limited}}">
+		<div class="container">
+			<paper-input label="Unbeschränkte Zeichenanzahl" char-counter></paper-input>
+		</div>
+	</template>	
+	<template is="dom-if" if="{{limitedvalue}}">
+		<div class="container">
+			<paper-input label="Unbeschränkte Zeichenanzahl" char-counter maxlength="{{length}}"></paper-input>
+		</div>
+	</template>
+	<template is="dom-if" if="{{mandatory}}">
+		<div class="container">
+			<paper-input label="{{label}}" required auto-validate error-message="{{errormsg}}"></paper-input>
+		</div>
+	</template>
+	<template is="dom-if" if="{{textdisabled}}">
+		<div class="container">
+			<paper-input disabled value="{{value}}" label="{{label}}">
 			</paper-input>
+		</div>
+	</template>
+	<template is="dom-if" if="{{textarea}}">
+		<div class="container">
+			<paper-textarea value="{{value}}" label="{{label}}"></paper-textarea>
 		</div>
 	</template>
 	<template is="dom-if" if="{{password}}">
@@ -72,18 +128,30 @@ Available Styling		| Description									| Default
 			</paper-input>
 		</div>
 	</template>
-	
 	<template is="dom-if" if="{{studentmail}}">
 		<div class="container">
-			<paper-input label="Studenten Email-Adresse">
+			<paper-input label="{{label}}">
 				<div slot="suffix" class="suffix">@student.fhws.de</div>
 			</paper-input>
 		</div>
-        
-        
-        
-        
 	</template>
+	
+	<template is="dom-if" if="{{computeprefixnum}}">
+		<div class="container">
+			<paper-input label="{{label}}" type="number">
+				<div slot="prefix">{{prefix}}</div>
+			</paper-input>
+		</div>
+	</template>
+	
+	<template is="dom-if" if="{{computeprefixtexz}}">
+		<div class="container">
+			<paper-input label="{{label}}">
+				<div slot="prefix">{{prefix}}</div>
+			</paper-input>
+		</div>
+	</template>
+	
 	<template is="dom-if" if="{{knummer}}">
 		<div class="container">
 				<paper-input 
@@ -130,7 +198,22 @@ Available Styling		| Description									| Default
 			value: {
 				value: ''
 			},
+			length: {
+				value: ''
+			},
+			pattern: {
+				value: 'none'
+			},
+			errormsg: {	
+				value: 'Eine Eingabe ist erfoderlich!'
+			},
+			button: {
+				value: 'Jetzt validieren!'
+			},
 			placeholder: {
+			},
+			prefix: {
+				value: ''
 			},
 			studentmail: {
 					computed: 'computeStudentenmail(type)'
@@ -142,11 +225,42 @@ Available Styling		| Description									| Default
 					computed: 'computeStudiengangFakInfo(type)'
 			},
 			text: {
-					computed: 'computeText(type)'
+				computed: 'computeText(type, pattern)'
 			},
 			password: {
 					computed: 'computePassword(type)'
 			},
+			textarea: {
+				computed: 'computeTextarea(type)'
+			},
+			textdisabled: {
+				computed: 'computeTextdisabled(type)'
+			},
+			limited: {
+				computed: 'computeLimited(type, length)'
+			},
+			limitedvalue: {
+				computed: 'computeLimitedValue(type, length)'
+			},
+			mandatory: {
+				computed: 'computeMandatory(type)'
+			},
+			computepattern: {
+				computed: 'computePattern(pattern, type)'
+			},
+			manual: {
+				computed: 'computeManual(type)'
+			},
+			computeprefixnum: {
+				computed: 'computePrefixNum(type, prefix)'
+			},
+			computeprefixtext: {
+				computed: 'computePrefixText(type, prefix)'
+			},
+			number: {
+				computed: 'computeNumber(type, prefix)'
+			}
+			
 		}
 	}
 		
@@ -168,8 +282,8 @@ Available Styling		| Description									| Default
 			}
 			return false;
 		}
-		computeText(type) {
-			if(type === "text"){
+		computeText(type, pattern) {
+			if(type === "text" && pattern === "none"){
 				return true;
 			}
 			return false;
@@ -180,6 +294,73 @@ Available Styling		| Description									| Default
 			}
 			return false;
 		}
+		computeTextarea(type) {
+			if(type === "textarea"){
+				return true;
+			}
+			return false;
+		}
+		computeTextdisabled(type) {
+			if(type === "off"){
+				return true;
+			}
+			return false;
+		}
+		computeLimited(type, length) {
+			if(type === "limit" && length === ""){
+				return true;
+			}
+			return false;
+		}
+		computeLimitedValue(type, length) {
+			if(type === "limit" && length !== ""){
+				return true;
+			}
+			return false;
+		}
+		computeLimitedValue(type, length) {
+			if(type === "limit" && length !== ""){
+				return true;
+			}
+			return false;
+		}
+		computeMandatory(type) {
+			if(type === "required"){
+				return true;
+			}
+			return false;
+		}
+		computePattern(pattern, type) {
+			if(pattern !== "none" && type !== "manual"){
+				return true;
+			}
+			return false;
+		}
+		computeManual(type) {
+			if(type === "manual"){
+				return true;
+			}
+			return false;
+		}
+		computeNumber(type, prefix) {
+			if(type === "number" && prefix === ""){
+				return true;
+			}
+			return false;
+		}
+		computePrefixNum(type, prefix) {
+			if(type === "number" && prefix !== ""){
+				return true;
+			}
+			return false;
+		}
+		computePrefixText(type, prefix) {
+			if(type === "text" && prefix !== ""){
+				return true;
+			}
+			return false;
+		}
+		
 		
       }
     window.customElements.define(FhwsInput.is, FhwsInput);
