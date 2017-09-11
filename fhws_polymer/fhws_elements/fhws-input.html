@@ -18,6 +18,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/neon-animation/web-animations.html">">
 <link rel="import" href="../bower_components/iron-input/iron-input.html">
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
 
 <!--
 Example:
@@ -33,10 +35,10 @@ Available Styling		| Description									| Default
     <style>
 	:root {
 		/* Label and underline color when the input is not focused */
-        --paper-input-container-color: orange;
+        --paper-input-container-color: #6d6d6d;
 
         /* Label and underline color when the input is focused */
-        --paper-input-container-focus-color: green;
+        --paper-input-container-focus-color: #ed6c00;
 
         /* Label and underline color when the input is invalid */
         --paper-input-container-invalid-color: red;
@@ -50,8 +52,14 @@ Available Styling		| Description									| Default
 	}
 	
     </style>
+      
+      
+      
 	<template is="dom-if" if="{{text}}">
 		<div class="container">
+            
+            
+            
 			<paper-input value="{{value}}" label="{{label}}">
 			</paper-input>
 		</div>
@@ -69,6 +77,10 @@ Available Styling		| Description									| Default
 				<div slot="suffix" class="suffix">@student.fhws.de</div>
 			</paper-input>
 		</div>
+        
+        
+        
+        
 	</template>
 	<template is="dom-if" if="{{knummer}}">
 		<div class="container">
@@ -85,12 +97,17 @@ Available Styling		| Description									| Default
 		<div class="container">
 			<paper-dropdown-menu label="Studiengang">
 				<paper-listbox slot="dropdown-content" selected="1">
-					<paper-item>EC</paper-item>
-					<paper-item>Informatik</paper-item>
-					<paper-item>Wirtschaftinformatik</paper-item>
+					<paper-item>E-Commerce (B.Sc.)</paper-item>
+					<paper-item>Informatik (B.Sc.)</paper-item>
+					<paper-item>Wirtschaftinformatik (B.Sc.)</paper-item>
+                    <paper-item>Informationsysteme (M.Sc.)</paper-item>
+
 				</paper-listbox>
 			</paper-dropdown-menu>
 		</div>
+        
+        
+        
 	</template>	
   </template>
 

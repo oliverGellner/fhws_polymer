@@ -1,0 +1,155 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+
+
+<dom-module id="my-view13">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+        
+        	:root {
+		/* Label and underline color when the input is not focused */
+        --paper-input-container-color: #6d6d6d;
+
+        /* Label and underline color when the input is focused */
+        --paper-input-container-focus-color: #ed6c00;
+
+        /* Label and underline color when the input is invalid */
+        --paper-input-container-invalid-color: red;
+
+        /* Input foreground color */
+        --paper-input-container-input-color: black;
+	}
+        
+    </style>
+
+      <fhws-header header="Drop-Downs">
+  
+                <!-- Vorschau Drop-Down -->  
+    <fhws-card title="Vorschau Drop-Down ohne Vorauswahl" color="white">
+		  <div class="card-content">
+                     
+              <paper-dropdown-menu label="Studiengänge">
+                  <paper-listbox slot="dropdown-content" selected="1">
+                        <paper-item>E-Commerce (B.Sc.))</paper-item>
+                        <paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
+                        <paper-item>Informatik (B.Sc.)</paper-item>
+                        <paper-item>Informationssysteme (M.Sc.)</paper-item>
+                  </paper-listbox>
+              </paper-dropdown-menu>
+
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+ 	
+      
+     <!-- Quellcode Drop-Down -->            
+    <fhws-card title="Quellcode Drop-Down ohne Vorauswahl" color="white">
+		<div class="card-content">
+			<fhws-code code=''></fhws-code>
+			
+           	</div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+	</div>        
+    
+      
+            <!-- Vorschau Drop-Down mit Vorauswahl -->  
+    <fhws-card title="Vorschau Drop-Down mit Vorauswahl" color="white">
+		  <div class="card-content">
+<paper-dropdown-menu label="Studiengänge">
+  <paper-listbox slot="dropdown-content" class="dropdown-content" selected="1">
+    <paper-item>E-Commerce (B.Sc.)</paper-item>
+    <paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
+    <paper-item>Informatik (B.Sc.)</paper-item>
+    <paper-item>Informationssysteme (M.Sc.)</paper-item>
+  </paper-listbox>
+</paper-dropdown-menu>
+
+              
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+ 	
+      
+     <!--Quellcode Drop-Down mit Vorauswahl -->            
+    <fhws-card title="Quellcode Drop-Down mit Vorauswahl" color="white">
+		<div class="card-content">
+			<fhws-code code=''></fhws-code>
+			
+           	</div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+	</div>        
+    
+      <!-- Vorschau Drop-Down Disabled -->  
+    <fhws-card title="Vorschau Drop-Down Disabled" color="white">
+		  <div class="card-content">
+            
+                <paper-dropdown-menu label="Disabled dinosaurs" disabled>
+                    <paper-listbox slot="dropdown-content" class="dropdown-content">
+                            <paper-item>allosaurus</paper-item>
+                            <paper-item>brontosaurus</paper-item>
+                            <paper-item>carcharodontosaurus</paper-item>
+                            <paper-item>diplodocus</paper-item>
+                    </paper-listbox>
+                </paper-dropdown-menu>
+           
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+ 	
+      
+     <!-- Quellcode Drop-Down Disabled -->            
+    <fhws-card title="Vorschau Drop-Down Disabled" color="white">
+		<div class="card-content">
+			<fhws-code code=''></fhws-code>
+			
+           	</div><br>
+        <div class="card-actions">
+        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
+      </div>
+	</fhws-card>
+	</div>        
+    <br> 
+
+  </template>
+
+  <script>
+    class Myview13 extends Polymer.Element {
+      static get is() { return 'my-view13'; }
+    }
+
+    window.customElements.define(Myview13.is, Myview13);
+  </script>
+</dom-module>
