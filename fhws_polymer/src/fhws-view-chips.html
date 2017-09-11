@@ -19,53 +19,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 <dom-module id="fhws-view-chips">
-  <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
-      }
-        
-      
-    </style>	
+	<template>
+		<style include="shared-styles">
+			
+		</style>	
 
-    <fhws-header header="Contact-Chips">
-  
-            
-    <!-- Singleline Chip -->  
-    <fhws-card title="Single-line-Chip" color="white">
-		<div class="card-content">
-            <fhws-chip label="Single-line"></fhws-chip>
-		</div>
-		<br>
-		<div class="card-actions">
-			<fhws-collapse title="Quellcode"><br>
-				<fhws-code code='<paper-chip single-line>'></fhws-code>
-				<div style="text-indent:25px;">
-					<fhws-code code='<div slot="label" class="label">Single-line</div>'></fhws-code>
+		<fhws-header header="Contact-Chips">
+	  
+		
+		<!-- Singleline Chip -->  
+			<fhws-card title="Single-line-Chip" color="white">
+				<div class="card-content">
+					<fhws-chip label="Single-line"></fhws-chip>
 				</div>
-				<fhws-code code='</paper-chip>'></fhws-code>
 				<br>
-			</fhws-collapse>
-		</div>
-	</fhws-card>
- 	
-    <!--multi-line Chip  -->  
-    <fhws-card title="Multi-line-Chip" color="white">
-		<div class="card-content">
-			<fhws-chip person="testPerson"></fhws-chip>
-		</div>
-		<br>
-		<div class="card-actions">
-			<fhws-collapse title="Quellcode"><br>
-				<fhws-code code='<fhws-contact-chip person="testPerson"></fhws-contact-chip>'></fhws-code>
-			</fhws-collapse>
-		</div>
-	</fhws-card>    
-    <br> 
-
-
-        
-  </template>
+				<div class="card-actions">
+					<fhws-collapse title="Quellcode"><br>
+						<fhws-code code='<fhws-chip label="Single-line"></fhws-chip>'></fhws-code>
+						<br>
+					</fhws-collapse>
+				</div>
+			</fhws-card>
+			
+			<!--multi-line Chip  -->  
+			<fhws-card title="Multi-line-Chip" color="white">
+				<div class="card-content">
+					<fhws-chip person="testPerson"></fhws-chip>
+				</div>
+				<br>
+				<div class="card-actions">
+					<fhws-collapse title="Quellcode"><br>
+						<fhws-code code='<fhws-chip person="testPerson"></fhws-chip>'></fhws-code>
+					</fhws-collapse>
+				</div>
+			</fhws-card>    
+			<br> 
+		</fhws-header>
+	</template>
 
   <script>
     class FhwsViewChips extends Polymer.Element {
