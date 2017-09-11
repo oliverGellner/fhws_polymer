@@ -18,69 +18,115 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 <dom-module id="fhws-view-cards">
- <template>
+	<template>
+		<style include="shared-styles">
+		</style>
+	  
+		<fhws-header header="Cards">
 
-    <style include="shared-styles">
-    </style>
-  
-    <fhws-header header="Cards">
-
-    <!-- Card One -->      
-    <fhws-card title="Card (Header: weiß)" color="white">
-		  <div class="card-content">
-            Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim             id est laborum.
-		  </div><br>
-		 <div class="card-actions">
-        <fhws-collapse title="Quellcode">
-			 <fhws-code code='<fhws-card title="your title" color="white">'></fhws-code>
- 			<div style="text-indent:25px;">
- 				<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
- 				<fhws-code code='<div class="card-actions">'></fhws-code>
- 				<div style="text-indent:50px">
- 					<fhws-code code='<fhws-link href="link">Link</fhws-link>'></fhws-code>	
- 				</div>
- 				<fhws-code code='</div>'></fhws-code>
- 			</div>
- 			<fhws-code code='</fhws-card>'></fhws-code>
-		</fhws-collapse>
-      </div>
-	</fhws-card>
-    
-      <!-- Card Two -->  
-    <fhws-card title="Card (Header: orange)" color="orange">
-		  <div class="card-content">
-            Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim             id est laborum.
-		  </div><br>
-		 <div class="card-actions">
-        <fhws-collapse title="Quellcode">
-			<fhws-code code='<fhws-card title="your title">'></fhws-code>
-			<div style="text-indent:25px;">
-				<fhws-code code='<div class="card-content">Your content</div>'></fhws-code>
-				<fhws-code code='<div class="card-actions">'></fhws-code>
-				<div style="text-indent:50px">
-					<fhws-code code='<fhws-link href="link">Link</fhws-link>'></fhws-code>	
+		<!-- Card One -->      
+			<fhws-card title="Card (Header: weiß)" color="white">
+				<div class="card-content">
+					Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim             id est laborum.
 				</div>
-				<fhws-code code='</div>'></fhws-code>
-			</div>
- 			<fhws-code code='</fhws-card>'></fhws-code>
-		</fhws-collapse>
-		</div>
-	</fhws-card>
-	
-<br>
-<br>
-    </fhws-header>
-</template>
+				<br>
+				<div class="card-actions">
+					<fhws-collapse title="Quellcode"><br>
+						<fhws-code code='<fhws-card title="Card (Header: weiß)" color="white">'></fhws-code>
+						<div style="text-indent:25px;">
+							<fhws-code code='<div class="card-content">'></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magn aliqua. Ut enim'</fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.Quis aute iure reprehenderit'></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint obcaecat cupiditat non proident, sunt  in culpa '></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='qui officia deserunt mollit anim id est laborum.'></fhws-code>
+						</div>
+						<div style="text-indent:25px;">
+							<fhws-code code='</div><br>'></fhws-code>
+							<fhws-code code='<div class="card-actions">'></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='<fhws-collapse title="Quellcode"><br>'></fhws-code>
+						</div>
+						<div style="text-indent:75px;">
+							<fhws-code code='*siehe Element Code*'</fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='</fhws-collapse>'></fhws-code>
+						</div>
+							<div style="text-indent:25px;">
+							<fhws-code code='</div>'></fhws-code>
+						</div>
+						<fhws-code code='</fhws-card>'></fhws-code>
+					</fhws-collapse>
+				</div>
+			</fhws-card>
+			
+			  <!-- Card Two -->  
+			<fhws-card title="Card (Header: orange)" color="orange">
+				<div class="card-content">
+					Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<br>
+				<div class="card-actions">
+					<fhws-collapse title="Quellcode"><br>
+						<fhws-code code='<fhws-card title="Card (Header: orange)" color="orange">'></fhws-code>
+						<div style="text-indent:25px;">
+						   <fhws-code code='<div class="card-content">'></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magn aliqua. Ut enim'</fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.Quis aute iure reprehenderit'></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint obcaecat cupiditat non proident, sunt  in culpa '></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='qui officia deserunt mollit anim id est laborum.'></fhws-code>
+						</div>
+						<div style="text-indent:25px;">
+							<fhws-code code='</div><br>'></fhws-code>
+							<fhws-code code='<div class="card-actions">'></fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='<fhws-collapse title="Quellcode"><br>'></fhws-code>
+						</div>
+						<div style="text-indent:75px;">
+							<fhws-code code='*siehe Element Code*'</fhws-code>
+						</div>
+						<div style="text-indent:50px;">
+							<fhws-code code='</fhws-collapse>'></fhws-code>
+						</div>
+						<div style="text-indent:25px;">
+							<fhws-code code='</div>'></fhws-code>
+						</div>
+						<fhws-code code='</fhws-card>'></fhws-code>
+					</fhws-collapse>
+				</div>
+			</fhws-card>
+			<br>
+			<br>
+		</fhws-header>
+	</template>
 
-
-
-  <script>
-    class FhwsViewCards extends Polymer.Element {
-      static get is() { return 'fhws-view-cards'; }
-    }
-
-    window.customElements.define(FhwsViewCards.is, FhwsViewCards);
+	<script>
+		class FhwsViewCards extends Polymer.Element {
+			static get is() { 
+				return 'fhws-view-cards'; 
+			}
+		}
+		
+		window.customElements.define(FhwsViewCards.is, FhwsViewCards);
   </script>
 </dom-module>

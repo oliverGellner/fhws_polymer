@@ -7,7 +7,7 @@
 		  </div><br>
 		 <div class="card-actions">
 
-        <fhws-collapse title="Quellcode">
+        <fhws-collapse title="Quellcode"><br>
        		<fhws-code code=''>
 		</fhws-code>
 	</fhws-collapse>
@@ -15,13 +15,4 @@
       </div>
 	</fhws-card>
 	</div>        
-    <br> 
-
-
-
-
-  
-            
-        
-    
-         
+  	<br>
