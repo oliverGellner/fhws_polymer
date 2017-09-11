@@ -72,11 +72,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
              <!-- Standard Text-Input -->  
     <fhws-card title="Standard Text-Input" color="white">
 		  <div class="card-content">
-            <paper-input label="k-Nummer" value=""></paper-input>
+            <paper-input label="Vorname" value=""></paper-input>
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-collapse title="Quellcode">
-       		<fhws-code code='<paper-input label="text input" value=""></paper-input>'>
+        <fhws-collapse title="Quellcode"><br>
+       		<fhws-code code='<paper-input label="Vorname" value=""></paper-input>'>
 		</fhws-code>
 	</fhws-collapse>
       </div>
@@ -91,7 +91,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-collapse title="Quellcode">
+        <fhws-collapse title="Quellcode"><br>
        		<fhws-code code='<paper-textarea label="Warum möchten Sie in diese Vertiefung?"></paper-textarea>'></fhws-code>
 	</fhws-collapse>
       </div>
@@ -104,7 +104,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-input label="Passwort" type="password"></paper-input>              
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-collapse title="Quellcode">
+        <fhws-collapse title="Quellcode"><br>
        		<fhws-code code='<paper-input label="Passwort" type="password"></paper-input>'></fhws-code>
 	</fhws-collapse>
       </div>
@@ -118,7 +118,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-input label="Disabled-Input" disabled value=""></paper-input>
         </div><br>
 		 <div class="card-actions">
-        <fhws-collapse title="Quellcode">
+        <fhws-collapse title="Quellcode"><br>
        		<fhws-code code='<paper-input label="Disabled-Input" disabled value=""></paper-input>'></fhws-code>
 	</fhws-collapse>
       </div>
@@ -128,13 +128,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
          <!-- Inputs inkl. Zeichenanzeige  -->  
     <fhws-card title="Text-Input inkl. Zeichenanzeige" color="white">
 		  <div class="card-content">
-             <paper-input label="Zeichenanzeige (unbeschränkte Zeichenanzahl)" char-counter></paper-input><br>
-            <paper-input label="Zeichenanzeige (beschränkte Zeichenanzahl)" char-counter maxlength="10"></paper-input>
+             <paper-input label="Unbeschränkte Zeichenanzahl" char-counter></paper-input><br>
+            <paper-input label="Beschränkte Zeichenanzahl" char-counter maxlength="10"></paper-input>
         </div><br>
 		 <div class="card-actions">
-        <fhws-collapse title="Quellcode">
-       		<fhws-code code='<paper-input label="Zeichenanzeige (unbeschränkte Zeichenanzahl)" char-counter></paper-input>'></fhws-code><br>
-       		<fhws-code code='<paper-input label="Zeichenanzeige (beschränkter Zeichenanzahl)" char-counter maxlength="10"></paper-input>'></fhws-code>
+        <fhws-collapse title="Quellcode"><br>
+       		<fhws-code code='<paper-input label="Unbeschränkte Zeichenanzahl" char-counter></paper-input>'></fhws-code><br>
+       		<fhws-code code='<paper-input label="Beschränkte Zeichenanzahl" char-counter maxlength="10"></paper-input>'></fhws-code>
 	</fhws-collapse>
       </div>
 	</fhws-card>
@@ -152,7 +152,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		  </div><br>
 		 <div class="card-actions">
 
-        <fhws-collapse title="Quellcode">
+        <fhws-collapse title="Quellcode"><br>
        		<fhws-code code='<paper-input label="Eine Eingabe ist erforderlich" required auto-validate error-message="Eine Eingabe ist erforderlich"></paper-input>'></fhws-code><br>
             
             <fhws-code code='<paper-input label="Nur Buchstaben" auto-validate pattern="[a-zA-Z]*" error-message="Nur Buchstaben"></paper-input>'></fhws-code><br>
@@ -186,7 +186,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		  </div><br>
 		 <div class="card-actions">
 
-        <fhws-collapse title="Quellcode">
+        <fhws-collapse title="Quellcode"><br>
        		<fhws-code code='<paper-input label="Preis" type="number">'></fhws-code>
             <div style="text-indent:25px">
        		<fhws-code code='<div slot="prefix">€</div>'></fhws-code></div>
@@ -216,16 +216,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		  </div><br>
 		 <div class="card-actions">
 
-        <fhws-collapse title="Quellcode">
-       		<fhws-code code='<paper-input-container always-float-label auto-validate attr-for-value="value">'>
-            <div style="text-indent:25px";>
+        <fhws-collapse title="Quellcode"><br>
+            <fhws-code code='<paper-input-container always-float-label auto-validate attr-for-value="value">'></fhws-code>
+            <div style="text-indent:25px;">
                 <fhws-code code='<label slot="label">Social Security Number</label>'></fhws-code></div>
-       		<div style="text-indent:25px";>
+       		<div style="text-indent:25px;">
                 <fhws-code code='<ssn-input class="paper-input-input" slot="input"></ssn-input>'></fhws-code></div>
             <div style="text-indent:25px;">
                 <fhws-code code='<paper-input-error slot="add-on">Ihre Identifikationsnummer ungültig!</paper-input-error>'></fhws-code></div>
             <fhws-code code='</paper-input-container>'></fhws-code>
-       		<fhws-code code=''></fhws-code>
+       	
 	   </fhws-collapse>
 
       </div>
