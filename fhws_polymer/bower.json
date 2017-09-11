@@ -32,7 +32,8 @@
     "paper-chip": "fabbricadigitale/paper-chip#^0.11.1",
     "paper-card": "PolymerElements/paper-card#^2.0.0",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^2.0.0",
-    "paper-tabs": "PolymerElements/paper-tabs#^2.0.0"
+    "paper-tabs": "PolymerElements/paper-tabs#^2.0.0",
+    "paper-search": "Collaborne/paper-search#^2.0.9"
   },
   "resolutions": {
     "polymer": "^2.0.0"
