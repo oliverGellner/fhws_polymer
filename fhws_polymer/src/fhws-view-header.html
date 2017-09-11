@@ -1,0 +1,140 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/paper-header-panel/paper-header-panel.html">
+
+
+
+<dom-module id="fhws-view-header">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+      
+      
+      
+       <custom-style>
+      <style is="custom-style">
+        body {
+          @apply --layout-inline;
+          @apply --layout-center-center;
+          @apply --layout-wrap;
+          padding: 40px;
+        }
+        paper-header-panel {
+          float: left;
+          width: 240px;
+          height: 240px;
+          margin: 12px;
+          @apply --shadow-elevation-2dp;
+        }
+        [slot=header] {
+          height: 60px;
+          font-size: 16px;
+          line-height: 60px;
+          padding: 0 10px;
+          color: white;
+          transition: height 0.2s;
+        }
+        [slot=header].tall {
+          height: 120px;
+        }
+        [slot=header].medium-tall {
+          height: 100px;
+          line-height: 50px;
+        }
+        .content {
+          height: 2000px;
+        }
+        .cover {
+          margin: 60px;
+        }
+       
+        .orange [slot=header] {
+          background-color: #ed6c00;
+        }
+  
+        .orange .content {
+          background: linear-gradient(white, #ed6c00);
+        }
+ 
+        }
+      </style>
+    </custom-style>
+
+      <fhws-header header="Header">
+
+    <fhws-card title="Header -Standard" color="white">
+		  <div class="card-content">
+        
+             <paper-header-panel class="orange">
+      <div slot="header">standard</div>
+      <div class="content"></div>
+    </paper-header-panel>
+  
+
+    <paper-header-panel mode="scroll" class="orange">
+      <div slot="header">scroll</div>
+      <div class="content"></div>
+    </paper-header-panel>
+
+
+    <paper-header-panel mode="cover" class="orange">
+      <div slot="header" class="tall">cover</div>
+      <div class="content cover"></div>
+    </paper-header-panel>
+
+		  </div><br>
+		 <div class="card-actions">
+
+        <fhws-collapse title="Quellcode"><br>
+       		<fhws-code code=''>
+		</fhws-code>
+	</fhws-collapse>
+
+      </div>
+	</fhws-card>
+	</div>        
+  	
+           
+
+      </div>
+	</fhws-card>
+	</div>        
+  	<br>
+
+          
+          
+          
+          
+  </template>
+
+  <script>
+    class FhwsViewHeader extends Polymer.Element {
+      static get is() { return 'fhws-view-header'; }
+    }
+
+    window.customElements.define(FhwsViewHeader.is, FhwsViewHeader);
+  </script>
+</dom-module>
