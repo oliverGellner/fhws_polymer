@@ -43,10 +43,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       
       :host{
-        --app-primary-color: #4285f4;
-        --app-secondary-color: black;
-		
-
         display: block;
       }
 	  
@@ -124,7 +120,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-drawer-layout fullbleed narrow="{{narrow}}" >
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-	  <div id="scrollbar" style="overflow:scroll; height:100%;" >
+	  <div id="scrollbar" style="overflow:scroll; height:100%; overflow-x: auto;" >
         <app-toolbar>Menu</app-toolbar>
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
@@ -143,7 +139,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <a name="view11" href="[[rootPath]]view11">Loading</a>
             <a name="view13" href="[[rootPath]]view13">Code</a>
 		</fhws-collapse>
-			</div>
+		</div>
 			
    
 
@@ -212,7 +208,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _routePageChanged(page) {
         // If no page was found in the route data, page will be an empty string.
         // Deault to 'view1' in that case.
-        this.page = page || 'view1';
+        this.page = page || 'view6';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
