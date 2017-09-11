@@ -42,7 +42,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-chip single-line>
                    <div slot="label" class="label">Single-line</div>
                 </paper-chip>
-            
            
 		  </div><br>
 		 <div class="card-actions">
@@ -64,37 +63,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <!--Vorschau multi-line Chip  -->  
     <fhws-card title="Vorschau multi-line Chip" color="white">
 		  <div class="card-content">
-            
-            <paper-chip>
-                <iron-icon slot="icon" class="icon" icon="avatars:avatar-1"></iron-icon>
-                <div slot="label" class="label">John Foo</div>
-                <div slot="caption" class="caption">jfoo@doh.com</div>
-            </paper-chip>
-           
+			<fhws-contact-chip person="testPerson"></fhws-contact-chip>
 		  </div><br>
 		 <div class="card-actions">
-        <fhws-link href="xd">Quellcode anzeigen</fhws-link>
+        <fhws-collapse title="Quellcode">
+			<fhws-code code='<fhws-contact-chip person="testPerson"></fhws-contact-chip>'></fhws-code></div>
+		</fhws-collapse>
       </div>
-	</fhws-card>
- 	
-      
-     <!-- Quellcode multiline Chip -->            
-    <fhws-card title="Quellcode multi-line Chip" color="white">
-		<div class="card-content">
-			<fhws-code code='<paper-chip>'></fhws-code>
-			<div style="text-indent:25px;">
-                <fhws-code code='<iron-icon slot="icon" class="icon" icon="avatars:avatar-1"></iron-icon>'></fhws-code></div>
-			<div style="text-indent:25px;">
-                <fhws-code code='<div slot="label" class="label">John Foo</div>'></fhws-code></div>
-			<fhws-code code='</paper-chip>'></fhws-code>
-	
-			
-           	</div><br>
-        <div class="card-actions">
-        <fhws-link href="xd">Vorschau anzeigen</fhws-link>
-      </div>
-	</fhws-card>
-	</div>        
+	</fhws-card>    
     <br> 
 
 
