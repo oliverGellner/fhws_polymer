@@ -16,3 +16,9 @@
 	</fhws-card>
 	</div>        
   	<br>
+
+
+
+
+
+Tabs --> Hintergrundfarbe: Orange, Linie: weiß
