@@ -17,6 +17,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
 
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+
 
 
 <dom-module id="fhws-view-toolbars">
@@ -46,8 +49,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Toolbar inkl. Title, Menü und Buttons hier kann dann anstelle des links auch icon oder button oder sonstiges rein (tabs zum beispiel)-->  
     <fhws-card title="Toolbar inkl. Title, Menü und Buttons" color="white">
 		<div class="card-content">
-			<fhws-header header="Title der a ist nur als bsp, wenn die tabs fertig sind, probier ich mal die da rein zu packen">
-				<div class="header-actions"> <a href="">link</a></div>
+			<fhws-header header="Title">
+				<div class="header-actions">
+					 <paper-tabs selected="0" noink>
+              <paper-tab>ITEM ONE</paper-tab>
+              <paper-tab>ITEM TWO</paper-tab>
+              <paper-tab>ITEM THREE</paper-tab>
+            </paper-tabs>
+				
+				</div>
 			</fhws-header>
 		</div><br>
 		<div class="card-actions">
