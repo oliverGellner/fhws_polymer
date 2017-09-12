@@ -16,46 +16,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
-
-<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
-<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
-
-
-
-<dom-module id="fhws-view-toolbar">
+<dom-module id="fhws-view-tables">
   <template>
     <style include="shared-styles">
- 
+      :host {
+        display: block;
+      }
     </style>
-    <fhws-header header="Toolbar">
 
-          	
-     <!-- Toolbar inkl. Title -->  
-	<fhws-card title="Toolbar inkl. Title" color="white">
+      <fhws-header header="Tables">
+          
+          
+            <!--Card #0  -->  
+    <fhws-card title="Allgemeine Information" color="white">
 		  <div class="card-content">
-            <fhws-header header="Title">
-			</fhws-header>
+            
+			<p>Für die Darstellung größerer Datenmengen eignen sich Tabellen. Sie können in andere Elemente, wie z.B. Karten integriert werden.<br><br>
+Tabellen können Visualisierungen und Funktionen zur Datenmanipulation enthalten. Außerdem enthalten sie eine Header-Zeile mit den Spaltennamen. 
+</p>
+           
 		  </div><br>
-		 <div class="card-actions">
-
-        <fhws-collapse title="Quellcode"><br>
-            <fhws-code code=' <fhws-header header="Title"></fhws-header>'></fhws-code>
-		</fhws-collapse>
-
-      </div>
 	</fhws-card>
-	</div>        
-  	
-   
-          
-          
+	</div>  
+  
+      
+      
+      
+      
+<br>
   </template>
 
   <script>
-    class FhwsViewToolbar extends Polymer.Element {
-      static get is() { return 'fhws-view-toolbar'; }
+    class FhwsViewTables extends Polymer.Element {
+      static get is() { return 'fhws-view-tables'; }
     }
 
-    window.customElements.define(FhwsViewToolbar.is, FhwsViewToolbar);
+    window.customElements.define(FhwsViewTables.is, FhwsViewTables);
   </script>
 </dom-module>
