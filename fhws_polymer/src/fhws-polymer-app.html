@@ -42,8 +42,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="fhws-view-tables.html">
 <link rel="lazy-import" href="fhws-view-footer.html">
 <link rel="lazy-import" href="fhws-view-navdrawer.html">
-<link rel="import" href="../fhws_elements/fhws-collapse.html">
+<link rel="lazy-import" href="fhws-view-vplan.html">
+<link rel="lazy-import" href="fhws-view-bildergalerie.html">
+<link rel="lazy-import" href="fhws-view-mplan.html">
+<link rel="lazy-import" href="fhws-view-fwpmwahl.html">
+<link rel="lazy-import" href="fhws-view-veranstaltungen.html">
+<link rel="lazy-import" href="fhws-view-styleguide.html">
+<link rel="lazy-import" href="fhws-view-polymer.html">
+<link rel="lazy-import" href="fhws-view-installation.html">
+<link rel="lazy-import" href="fhws-view-keinsatz.html">
+<link rel="lazy-import" href="fhws-view-kaufbau.html">
+<link rel="lazy-import" href="fhws-view-md.html">
+<link rel="lazy-import" href="fhws-view-farben.html">
+<link rel="lazy-import" href="fhws-view-typo.html">
+<link rel="lazy-import" href="fhws-view-icons.html">
 
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 <link rel="import" href="../fhws_elements/fhws-scrollbar.html">
 <link rel="lazy-import" href="fhws-view-404.html">
 <link rel="import" href="shared-styles.html">
@@ -119,20 +133,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             
         <div style="padding:16px;">    
 		<fhws-collapse class="black" style="color:black;" title="Allgemeine Informationen"><br>
-            <a name="information" href="[[rootPath]]information">Einsatz des Styleguides</a>
-            <a name="information" href="[[rootPath]]information">Über Polymer</a>
-            <a name="information" href="[[rootPath]]information">Polymer einrichten</a>
-            <a name="information" href="[[rootPath]]information">Komponenten-Einsatz</a>
-            <a name="information" href="[[rootPath]]information">Komponenten-Aufbau</a>    
+            <a name="styleguide" href="[[rootPath]]styleguide">Einsatz des Styleguides</a>
+            <a name="polymer" href="[[rootPath]]polymer">Über Polymer</a>
+            <a name="installation" href="[[rootPath]]installation">Polymer einrichten</a>
+            <a name="keinsatz" href="[[rootPath]]keinsatz">Komponenten-Einsatz</a>
+            <a name="kaufbau" href="[[rootPath]]kaufbau">Komponenten-Aufbau</a>    
         </fhws-collapse></div>
     
             
          <div style="padding:16px;">    
 		<fhws-collapse class="black" style="color:black;" title="Design-Grundlagen"><br>
-            <a name="design" href="[[rootPath]]design">Material Design</a>
-            <a name="design" href="[[rootPath]]design">Farben</a>
-            <a name="design" href="[[rootPath]]design">Typographie</a>
-            <a name="design" href="[[rootPath]]design">Icons</a>    
+            <a name="md" href="[[rootPath]]md">Material Design</a>
+            <a name="farben" href="[[rootPath]]farben">Farben</a>
+            <a name="typo" href="[[rootPath]]typo">Typographie</a>
+            <a name="icons" href="[[rootPath]]icons">Icons</a>    
         </fhws-collapse></div>
                     
                                  
@@ -157,11 +171,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <a name="progress" href="[[rootPath]]progress">Progress</a>
             <a name="code" href="[[rootPath]]code">Code</a>
             <a name="footer" href="[[rootPath]]footer">Footer</a>
+           
       
 		</fhws-collapse>
 		</div>
 			
-   
+        <div style="padding:16px;">    
+		<fhws-collapse class="black" style="color:black;" title="Anwendungsbeispiele"><br>
+            <a name="vplan" href="[[rootPath]]vplan">Vorlesungsplan</a>
+            <a name="bildergalerie" href="[[rootPath]]bildergalerie">Bildergalerie</a>
+            <a name="mplan" href="[[rootPath]]mplan">Mensaplan</a>
+            <a name="fwpmwahl" href="[[rootPath]]fwpmwahl">FWPM-Wahl</a>
+            <a name="veranstaltungen" href="[[rootPath]]veranstaltungen">Veranstaltungsübersicht</a>
+              
+        </fhws-collapse></div>
    
 
         </iron-selector>
@@ -203,6 +226,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <fhws-view-tables name="tables"></fhws-view-tables>
             <fhws-view-footer name="footer"></fhws-view-footer>
             <fhws-view-navdrawer name="navdrawer"></fhws-view-navdrawer>
+            <fhws-view-vplan name="vplan"></fhws-view-vplan>
+            <fhws-view-bildergalerie name="bildergalerie"></fhws-view-bildergalerie>
+            <fhws-view-mplan name="mplan"></fhws-view-mplan>
+            <fhws-view-fwpmwahl name="fwpmwahl"></fhws-view-fwpmwahl>
+            <fhws-view-veranstaltungen name="veranstaltungen"></fhws-view-veranstaltungen>
+            <fhws-view-styleguide name="styleguide"></fhws-view-styleguide>
+            <fhws-view-polymer name="polymer"></fhws-view-polymer>
+            <fhws-view-installation name="installation"></fhws-view-installation>
+            <fhws-view-keinsatz name="keinsatz"></fhws-view-keinsatz>
+            <fhws-view-kaufbau name="kaufbau"></fhws-view-kaufbau>
+            <fhws-view-md name="md"></fhws-view-md>
+            <fhws-view-farben name="farben"></fhws-view-farben>
+            <fhws-view-typo name="typo"></fhws-view-typo>
+            <fhws-view-icons name="icons"></fhws-view-icons>
 			<fhws-view-404 name="view404"></fhws-view-404>
         </iron-pages>
 		</fhws-scrollbar>

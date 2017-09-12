@@ -1,0 +1,57 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
+
+<dom-module id="fhws-view-installation">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+
+      <fhws-header header="Allgemeine Informationen">
+          
+             <!--card #3-->
+
+<fhws-card title="Polymer einrichten" color="white">
+<div class="card-content">
+    <p>
+        Um Polymer-Anwendungen zu erstellen, muss zunächst <b>Polymer CLI</b> installiert werden. Hierbei handelt es sich um das Command Line-Tool für Polymer-Projekte und Web Components. Polymer stellt hierfür eine <a href="https://www.polymer-project.org/2.0/docs/tools/polymer-cli">Anleitung</a>  bereit.<br><br>Vor der Einrichtung von Polymer CLI muss bereits folgendes auf dem Rechner installiert sein:
+        <ul>
+            <li>Node.js</li>
+            <li>npm (Node Package Manager)</li>
+            <li>Git</li>
+            <li>Bower</li>
+        </ul>
+    Für <b>Linux- oder Mac-Betriebssysteme</b> sind keine weiteren Voraussetzungen nötig. Für <b>Windows-Rechner</b> wird die 64-Bit-Version von Windows 10 benötigt. Weiterhin muss eine <a href="https://www.polymer-project.org/2.0/docs/tools/polymer-cli">Linux-Umgebung</a> auf dem Rechner eingerichtet werden. <br><br>Ist Polymer CLI eingerichtet, kann Polymer installiert und ein erstes Anwendungstemplate erstellt werden. Die dafür nötigen Schritte sind in dieser <a href="https://www.polymer-project.org/2.0/start/install-2-0">Anleitung</a> aufgeführt. Alternativ kann Polymer auch mit Bower installiert werden.
+       </p>
+     </div>     
+    </fhws-card>
+       
+          
+          <br>
+  </template>
+
+  <script>
+    class FhwsViewInstallation extends Polymer.Element {
+      static get is() { return 'fhws-view-installation'; }
+    }
+
+    window.customElements.define(FhwsViewInstallation.is, FhwsViewInstallation);
+  </script>
+</dom-module>

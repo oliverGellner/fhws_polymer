@@ -16,57 +16,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
-
-
-<dom-module id="fhws-view-footer">
+<dom-module id="fhws-view-bildergalerie">
   <template>
     <style include="shared-styles">
- 
-        img.displayed 
-    {
-        display:block;
-        margin-left:auto;
-        margin-right:auto;
-    }
+      :host {
+        display: block;
+      }
         
-        
+        img.displayed
+        {
+            display:block;
+            margin-left:auto;
+            margin:auto;
+        }
         
     </style>
-    <fhws-header header="Footer">
 
-        
-                      <!--Card #0  -->  
+      <fhws-header header="Bildergalerie">
+          
+          
+            <!--Card #0  -->  
     <fhws-card title="Allgemeine Information" color="white">
 		  <div class="card-content">
             
-              <p>Der Footer enthält weiterführende Information zu einer Anwendung und ihrem Betreiber. Dies kann Text, eine Linksammlung oder ein Logo sein. Der Footer besteht aus dem <b>Hauptteil</b> in der <b>Primärfarbe</b> sowie einer <b>Copyright-Zeile</b> in der <b>dunklen Variante der Primärfarbe</b>.</p>
+			<p>Im Mockup ist die Anzeige einer Bildergalerie dargestellt.</p>
            
 		  </div><br>
 	</fhws-card>
 	</div>  
-      
-      
-          <fhws-card title="Mockup Footer Desktop / Mobile" color="white">
+  
+      <!--Mockup Bildergalerie -->  
+    <fhws-card title="Mockup Bildergalerie" color="white">
 		  <div class="card-content">
+              
                 <p style="text-align:center">Desktop</p>
-              <img class="displayed" src="../images/5.%20footer-desktop-850px.png"><br>
+              <img class="displayed" src=""><br>
               <p style="text-align:center">Mobile</p>
-              <img style="width:360px;" class="displayed" src="../images/5.%20footer-mobile.png">
-           
-		  </div><br>
-	</fhws-card>
-	</div>  
-          
-      
-      
-      <br>    
+              <img style="width:360px;" class="displayed" src="../images/8.%20mobile-bildergalerie.png">
+        
+        </div><br>
+	</fhws-card>    
+    <br> 
   </template>
 
   <script>
-    class FhwsViewFooter extends Polymer.Element {
-      static get is() { return 'fhws-view-footer'; }
+    class FhwsViewBildergalerie extends Polymer.Element {
+      static get is() { return 'fhws-view-bildergalerie'; }
     }
 
-    window.customElements.define(FhwsViewFooter.is, FhwsViewFooter);
+    window.customElements.define(FhwsViewBildergalerie.is, FhwsViewBildergalerie);
   </script>
 </dom-module>

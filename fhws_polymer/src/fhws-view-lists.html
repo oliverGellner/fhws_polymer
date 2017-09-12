@@ -15,6 +15,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
+<link rel="import" href="../bower_components/paper-collapse-item/">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 
 <dom-module id="fhws-view-lists">
   <template>
@@ -22,10 +25,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+        
+        img.displayed
+        {
+            display:block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
     </style>
 
       <fhws-header header="Lists">
-          
+     
           
             <!--Card #0  -->  
     <fhws-card title="Allgemeine Information" color="white">
@@ -37,11 +48,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
            
 		  </div><br>
 	</fhws-card>
-	</div>  
+ 
   
-      
-      
-      
+           
+            <!-- List 1 -->  
+    <fhws-card title="Mockup List ein- / ausklappbar" color="white">
+		  <div class="card-content">
+              
+            
+            <table style="width:100%;">
+                <td style="text-align:center;">
+                    <p>eingeklappt</p>
+                    <img src="../images/1.%20list-collapsed.png">
+                </td>  
+                <td style="text-align:center;">
+                    <p>ausgeklappt</p>
+                    <img src="../images/1.%20list-expanded.png">
+                </td>
+                  </table>
+                    </div><br>
+	</fhws-card>
+	
+          
+            <!-- List 2 -->  
+    <fhws-card title="Mockup List ein- / mehrzeilig" color="white">
+		  <div class="card-content">
+                    <p style="text-align:center">1-zeilig</p>
+                    <img class="displayed" src="../images/2.%20list-selected-1-zeilig.png">
+                    <br>
+                    <p style="text-align:center">2-zeilig</p>
+                    <img class="displayed" src="../images/2.%20list-selected-2-zeilig.png">
+                    <br>
+                    <p style="text-align:center">3-zeilig</p>
+                    <img class="displayed" src="../images/2.%20list-selected-3-zeilig.png">
+              
+                  </table>
+       </div><br>
+	</fhws-card>
+          
+          <!-- List 3 -->  
+    <fhws-card title="Mockup List Desktop / Mobile" color="white">
+		  <div class="card-content">
+               
+                    <p style="text-align:center">Desktop</p>
+                    <img style="width:900px;" class="displayed" src="../images/3.%20list-3-zeilig-desktop.png">
+                <br>
+                    <p style="text-align:center">Mobile</p>
+                    <img class="displayed" src="../images/3.%20list-3-zeilig-mobile.png">
+                </td>
+       </div><br>
+	</fhws-card>
+	
+	
+  
       
 <br>
   </template>

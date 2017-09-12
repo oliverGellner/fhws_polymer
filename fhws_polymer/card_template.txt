@@ -33,6 +33,19 @@
 
 
 
+                <p style="text-align:center">Desktop</p>
+              <img class="displayed" src=""><br>
+              <p style="text-align:center">Mobile</p>
+              <img style="width:360px;" class="displayed" src="">
+
+
+
+ img.displayed
+        {
+            display:block;
+            margin-left:auto;
+            margin:auto;
+        }
 
 
 Link zu Git Repo (Beschreibung allg. Informationen) ergänzen

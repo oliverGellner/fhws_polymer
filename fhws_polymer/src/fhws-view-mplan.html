@@ -16,57 +16,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
-
-
-<dom-module id="fhws-view-footer">
+<dom-module id="fhws-view-mplan">
   <template>
     <style include="shared-styles">
- 
-        img.displayed 
-    {
-        display:block;
-        margin-left:auto;
-        margin-right:auto;
-    }
-        
-        
-        
+      :host {
+        display: block;
+      }
     </style>
-    <fhws-header header="Footer">
 
-        
-                      <!--Card #0  -->  
+      <fhws-header header="Mensaplan">
+          
+          
+            <!--Card #0  -->  
     <fhws-card title="Allgemeine Information" color="white">
 		  <div class="card-content">
             
-              <p>Der Footer enthält weiterführende Information zu einer Anwendung und ihrem Betreiber. Dies kann Text, eine Linksammlung oder ein Logo sein. Der Footer besteht aus dem <b>Hauptteil</b> in der <b>Primärfarbe</b> sowie einer <b>Copyright-Zeile</b> in der <b>dunklen Variante der Primärfarbe</b>.</p>
+			<p>Auf dem Mockup für den Mensaplan kommen folgende Komponenten zum Einsatz:
+                
+                <ul>
+                    <li>Tabs</li>
+                    <li>Buttons</li>
+                    <li>Karten</li>
+                    <li>Dialog</li>
+              </ul>
+Außerdem enthalten die Karten eine Bewertungsfunktion für die jeweiligen Gerichte.
+</p>
            
 		  </div><br>
 	</fhws-card>
 	</div>  
-      
-      
-          <fhws-card title="Mockup Footer Desktop / Mobile" color="white">
+  
+      <!--Mockup Mensaplan -->  
+    <fhws-card title="Mockup Mensaplan" color="white">
 		  <div class="card-content">
-                <p style="text-align:center">Desktop</p>
-              <img class="displayed" src="../images/5.%20footer-desktop-850px.png"><br>
-              <p style="text-align:center">Mobile</p>
-              <img style="width:360px;" class="displayed" src="../images/5.%20footer-mobile.png">
-           
+        <fhws-code code=''></fhws-code>
 		  </div><br>
-	</fhws-card>
-	</div>  
-          
-      
-      
-      <br>    
+	</fhws-card>    
+    <br> 
   </template>
 
   <script>
-    class FhwsViewFooter extends Polymer.Element {
-      static get is() { return 'fhws-view-footer'; }
+    class FhwsViewMplan extends Polymer.Element {
+      static get is() { return 'fhws-view-mplan'; }
     }
 
-    window.customElements.define(FhwsViewFooter.is, FhwsViewFooter);
+    window.customElements.define(FhwsViewMplan.is, FhwsViewMplan);
   </script>
 </dom-module>

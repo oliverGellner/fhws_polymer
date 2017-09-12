@@ -1,0 +1,98 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
+
+<dom-module id="fhws-view-kaufbau">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+
+      <fhws-header header="Allgemeine Informationen">
+          
+          
+    
+	        
+         <!--card #5-->
+
+<fhws-card title="Komponenten-Aufbau" color="white">
+<div class="card-content">
+    <p>
+    
+    Jedes Polymer Element ist nach folgendem Schema aufgebaut:<br><br>
+       
+    <fhws-code code='<link rel="import" href="../bower_components/polymer/polymer-element.html">'></fhws-code>
+	<fhws-code code='<dom-module id="fhws-name">'></fhws-code>
+	<div style="text-indent:25px;">
+		<fhws-code code='<template>'></fhws-code>
+		<div style="text-indent:50px;">
+			<fhws-code code='<style>'></fhws-code>
+			<fhws-code code='</style>'></fhws-code>
+			<br>
+		</div>
+		<fhws-code code='</template>'></fhws-code>
+		<fhws-code code="<script>"></fhws-code>
+		<div style="text-indent:50px;">
+			<fhws-code code='class FhwsName extends Polymer.Element {'></fhws-code>
+			<div style="text-indent:75px;">
+				<fhws-code code='static get is() { '></fhws-code>
+				<div style="text-indent:100px;">
+					<fhws-code code="return 'fhws-name'"; '></fhws-code>
+				</div>
+				<fhws-code code='}'></fhws-code>
+				<fhws-code code='static get properties() {'></fhws-code>	
+				<div style="text-indent:100px;">
+					<fhws-code code='return {'></fhws-code>	
+					<fhws-code code='}'></fhws-code>	
+				</div>
+			</div>
+			<fhws-code code='  }'></fhws-code>	
+			<fhws-code code='window.customElements.define(FhwsName.is, FhwsName);'></fhws-code>	
+		</div>
+		<fhws-code code='</script>'></fhws-code>	
+	</div>
+		<fhws-code code='</dom-module>'></fhws-code><br>
+	  
+<ol>
+    <li><b>Style</b><br>Hier wird der Style des Objekts mithilfe von CSS festgelegt.</li><br>
+    <li><b>Template</b><br>Anschließend folgt innerhalb des template-Abschnittes die Gestaltung des Neuen Polymer Elementes.</li><br>
+    <li><b>Script Part</b><br>Hier werden die Attribute des Elementes oder weitere Skripte definiert, die Daten für das Element zurückliefern sollen</li>
+</ol>
+</div>
+    
+    
+    </p>
+</div>
+</fhws-card>
+
+        
+        
+  	<br>
+        
+        
+  </template>
+
+  <script>
+    class FhwsViewKaufbau extends Polymer.Element {
+      static get is() { return 'fhws-view-kaufbau'; }
+    }
+
+    window.customElements.define(FhwsViewKaufbau.is, FhwsViewKaufbau);
+  </script>
+</dom-module>

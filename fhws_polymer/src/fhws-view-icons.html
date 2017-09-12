@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
-<dom-module id="fhws-view-code">
+<dom-module id="fhws-view-icons">
   <template>
     <style include="shared-styles">
       :host {
@@ -24,46 +24,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-      <fhws-header header="Code">
+      <fhws-header header="Design-Grundlagen">
           
-          
-            <!--Card #0  -->  
-    <fhws-card title="Allgemeine Information" color="white">
+         
+            <!-- Card #4  -->  
+    <fhws-card title="Icons" color="white">
 		  <div class="card-content">
-            
-			<p>Soll in einer Anwendung Quellcode dargestellt werden, kann der HTML-Tag<br><br><fhws-code code="<fhws-code code=''></fhws-code>"></fhws-code><br>genutzt werden. Er formatiert HTML-Text automatisch in eine aus Editoren bekannte Darstellung von Quellcode.</p>
-           
+            <p>
+                Material Design stellt ein umfangreiches <a href="https://material.io/icons/">Icon-Set</a> zur Verfügung. Icons können als Icon-Font oder als Grafik eingebunden werden. Die Verwendung der Icon-Font ist zu bevorzugen.<br><br>
+                Icons können in <b>drei Farben</b> genutzt werden: 
+                <ul>
+                    <li>auf hellem Hintergrund: schwarz</li>
+                    <li>auf dunklem Hintergrund: weiß</li>
+                    <li>bei der Verwendung für interaktive Elemente: Primärfarbe</li>  
+                </ul>
+            </p>  
 		  </div><br>
 	</fhws-card>
-	        
         
-        
-          <!-- Code -->  
-    <fhws-card title="Code" color="white">
-		  <div class="card-content">
-            
-              <fhws-code code='<html><div style="padding:10px;" class="test"></div></html>'></fhws-code>
-		  </div><br>
-		 <div class="card-actions">
-
-        <fhws-collapse title="Quellcode"><br>
-       		<fhws-code code='<fhws-code code="<html><div></div></html>"></fhws-code>'></fhws-code>
-		</fhws-code>
-	</fhws-collapse>
-
-      </div>
-	</fhws-card>
-	</div>        
+  
+          
+          
+          
   	<br>
-        
-        
   </template>
 
   <script>
-    class FhwsViewCode extends Polymer.Element {
-      static get is() { return 'fhws-view-code'; }
+    class FhwsViewIcons extends Polymer.Element {
+      static get is() { return 'fhws-view-icons'; }
     }
 
-    window.customElements.define(FhwsViewCode.is, FhwsViewCode);
+    window.customElements.define(FhwsViewIcons.is, FhwsViewIcons);
   </script>
 </dom-module>
