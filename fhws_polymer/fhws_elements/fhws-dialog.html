@@ -1,0 +1,53 @@
+<link rel="import" href="fhws-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="fhws-dialog-close.html">
+<link rel="import" href="fhws-button.html">
+
+<dom-module id="fhws-dialog">
+  <template>
+    <style include="fhws-styles">
+	
+	 paper-dialog.size-position {
+    position: relative;
+  
+    overflow: auto;
+  }
+    </style>
+	
+	<fhws-button type="raised" on-click="dialog">{{title}}</fhws-button>
+	<paper-dialog class="size-position" id="dialog">
+		<slot></slot>
+		<fhws-dialog-close title="{{close}}"></fhws-dialog-close>
+	</paper-dialog>
+	</template>
+	
+ 
+  <script>
+    class FhwsDialog extends Polymer.Element {
+
+      static get is() { 
+			return 'fhws-dialog'; 
+		}
+		
+		static get properties() {
+			return {
+				title: {
+				},
+				close: {
+				},
+				type: {
+					value: "classic"
+				}
+			}
+		}
+	
+		
+		dialog(){
+            this.$.dialog.toggle();
+		}
+	}
+    window.customElements.define(FhwsDialog.is, FhwsDialog);
+  </script>
+</dom-module>
+

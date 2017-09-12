@@ -1,0 +1,59 @@
+<link rel="import" href="fhws-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="fhws-button.html">
+
+<dom-module id="fhws-dialog-verdict">
+  <template>
+    <style include="fhws-styles">
+	
+	.right {
+		float: right;
+	}
+	 paper-dialog.size-position {
+    position: relative;
+  
+    overflow: auto;
+  }
+    </style>
+		<fhws-button type="raised" on-click="dialog">{{title}}</fhws-button>
+		<paper-dialog class="size-position" id="dialog">
+		<slot></slot>
+		<div class="right">
+		<fhws-button type="flat" dialog-dismiss>{{dismiss}}</fhws-button>
+		<fhws-button type="flat" dialog-confirm autofocus>{{accept}}</fhws-button>	
+		</div>
+	</paper-dialog>
+
+	
+	</template>
+ 
+  <script>
+    class FhwsDialogVerdict extends Polymer.Element {
+
+      static get is() { 
+			return 'fhws-dialog-verdict'; 
+		}
+		
+		static get properties() {
+			return {
+				title: {
+					value: ""
+				},
+				accept: {
+					value: "Akzeptieren"
+				},
+				dismiss: {
+					value: "Ablehnen"
+				}
+			}
+		}
+		
+		dialog(){
+            this.$.dialog.toggle();
+    }
+	}
+    window.customElements.define(FhwsDialogVerdict.is, FhwsDialogVerdict);
+  </script>
+</dom-module>
+
