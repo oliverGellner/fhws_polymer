@@ -14,115 +14,73 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-card.html">           
 <link rel="import" href="../fhws_elements/fhws-link.html">
 <link rel="import" href="../fhws_elements/fhws-code.html">
-<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
-<link rel="import" href="../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../fhws_elements/fhws-input.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
 
 <dom-module id="fhws-view-dropdown">
   <template>
     <style include="shared-styles">
-      :host {
-        display: block;
-      }
-        
-        	:root {
-		/* Label and underline color when the input is not focused */
-        --paper-input-container-color: #6d6d6d;
-
-        /* Label and underline color when the input is focused */
-        --paper-input-container-focus-color: #ed6c00;
-
-        /* Label and underline color when the input is invalid */
-        --paper-input-container-invalid-color: red;
-
-        /* Input foreground color */
-        --paper-input-container-input-color: black;
-	}
-        
+   
     </style>
 
-      <fhws-header header="Drop-Downs">
-  
-                <!-- Drop-Down ohne Vorauswahl -->  
-    <fhws-card title="Drop-Down ohne Vorauswahl" color="white">
-		  <div class="card-content">
-                     
-              <paper-dropdown-menu label="Studiengänge">
-                  <paper-listbox slot="dropdown-content" selected="1">
-                        <paper-item>E-Commerce (B.Sc.)</paper-item>
-                        <paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
-                        <paper-item>Informatik (B.Sc.)</paper-item>
-                        <paper-item>Informationssysteme (M.Sc.)</paper-item>
-                  </paper-listbox>
-              </paper-dropdown-menu>
-
-		  </div><br>
-		 <div class="card-actions">
-            <fhws-collapse title="Quellcode"><br>
-                <fhws-code code=''></fhws-code>
-            </fhws-collapse>
-      </div>
-	</fhws-card>
+    <fhws-header header="Drop-Downs">
+		<!-- Drop-Down Studiengänge -->  
+		<fhws-card title="Drop-Down ohne Vorauswahl" color="white">
+			<div class="card-content">   
+				<fhws-input type="studiengangfakinfo"></fhws-input>
+			</div>
+			<br>
+			<div class="card-actions">
+				<fhws-collapse title="Quellcode"><br>
+					<fhws-code code='<fhws-input type="studiengangfakinfo"></fhws-input>'></fhws-code>
+				</fhws-collapse>
+			</div>
+		</fhws-card>
  	
-          
-          
-            
-    
-      
-            <!-- Drop-Down mit Vorauswahl -->  
-    <fhws-card title="Drop-Down mit Vorauswahl" color="white">
-		  <div class="card-content">
-<paper-dropdown-menu label="Studiengänge">
-  <paper-listbox slot="dropdown-content" class="dropdown-content" selected="1">
-    <paper-item>E-Commerce (B.Sc.)</paper-item>
-    <paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
-    <paper-item>Informatik (B.Sc.)</paper-item>
-    <paper-item>Informationssysteme (M.Sc.)</paper-item>
-  </paper-listbox>
-</paper-dropdown-menu>
-
-              
-		  </div><br>
-        <div class="card-actions">
-		  <fhws-collapse title="Quellcode"><br>
-       	    <fhws-code code=''></fhws-code>
-          </fhws-collapse>
-        </div>
-	</fhws-card>
+        <!-- Drop-Down mit Vorauswahl -->  
+		<fhws-card title="Drop-Down mit Vorauswahl" color="white">
+			<div class="card-content">
+				<fhws-input type="dropdown" label="Studiengänge">
+					<paper-item>E-Commerce (B.Sc.)</paper-item>
+					<paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
+					<paper-item>Informatik (B.Sc.)</paper-item>
+					<paper-item>Informationssysteme (M.Sc.)</paper-item>
+				</fhws-input>
+			</div>
+			<br>
+			<div class="card-actions">
+				<fhws-collapse title="Quellcode"><br>
+					<fhws-code code=''></fhws-code>
+				</fhws-collapse>
+			</div>
+		</fhws-card>
  	
-           
-    
       <!-- Drop-Down Disabled -->  
-    <fhws-card title="Drop-Down Disabled" color="white">
-		  <div class="card-content">
-            
-                <paper-dropdown-menu label="Studiengänge" disabled>
-                    <paper-listbox slot="dropdown-content" class="dropdown-content">
-                            <paper-item>E-Commerce (B.Sc.)</paper-item>
-                            <paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
-                            <paper-item>Informatik (B.Sc.)</paper-item>
-                            <paper-item>Informationssysteme (M.Sc.)</paper-item>
-                    </paper-listbox>
-                </paper-dropdown-menu>
-           
-		  </div><br>
-		 <div class="card-actions">
-        <fhws-collapse title="Quellcode"><br>
-       	    <fhws-code code=''></fhws-code>
-          </fhws-collapse>
-      </div>
-	</fhws-card>
-          </div>
-          <br>
-
+		<fhws-card title="Drop-Down Disabled" color="white">
+			<div class="card-content">
+				<fhws-input type="dropdownoff" label="Studiengänge">
+					<paper-item>E-Commerce (B.Sc.)</paper-item>
+					<paper-item>Wirtschaftsinformatik (B.Sc.)</paper-item>
+					<paper-item>Informatik (B.Sc.)</paper-item>
+					<paper-item>Informationssysteme (M.Sc.)</paper-item>
+				</fhws-input
+			</div><br>
+			<div class="card-actions">
+				<fhws-collapse title="Quellcode"><br>
+					<fhws-code code=''></fhws-code>
+				</fhws-collapse>
+			</div>
+		</fhws-card>
+         <br>
+	</fhws-header>
   </template>
 
   <script>
-    class FhwsViewDropdown extends Polymer.Element {
-      static get is() { return 'fhws-view-dropdown'; }
+	class FhwsViewDropdown extends Polymer.Element {
+		static get is() { 
+			return 'fhws-view-dropdown'; 
+		}
     }
 
     window.customElements.define(FhwsViewDropdown.is, FhwsViewDropdown);
