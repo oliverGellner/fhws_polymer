@@ -30,12 +30,12 @@ Available Styling		| Description									| Default
 		background-color: var(--primary-color);
 		height: 192px;
 		color: white;
+		
 	}
         
 	.header {
-		position: absolute;
-		left: 125px;
-        padding-top: 16px;
+		color: white;
+		padding-left: 16px;
         font-weight: 500; font-size: 20px;
 	}
 
@@ -51,7 +51,7 @@ Available Styling		| Description									| Default
 		
        @media screen and (min-width: 1001px) {
 			.content {
-				padding-top: 88px;
+				padding-top: 20px;
 				width: 1000px;
 				margin: 0 auto;
 			}
@@ -60,21 +60,23 @@ Available Styling		| Description									| Default
 				height: 150px;
 			}
 		}
+		
+		:host ::slotted(.header-actions) {
+        padding: 16px 16px;
+		position: relative;
+
+        @apply --fhws-header-actions;
+    }
 
         
         
     </style>
 	
        <div class="colorblock">
-			<span class="header">
-				<h3>{{header}}</h3>
-			</span>
-			
-      
-      <div class="content">
-          <slot></slot>
-          
-      </div>
+			<div class="content">
+				<h3 class="header">{{header}}</h3>
+				<slot></slot>
+			</div>
       </div>
   </template>
 
