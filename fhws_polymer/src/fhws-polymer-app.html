@@ -36,6 +36,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="fhws-view-dialogs.html">
 <link rel="lazy-import" href="fhws-view-tabs.html">
 <link rel="lazy-import" href="fhws-view-search.html">
+<link rel="lazy-import" href="fhws-view-picker.html">
+<link rel="lazy-import" href="fhws-view-toasts.html">
+<link rel="lazy-import" href="fhws-view-toolbars.html">
 <link rel="lazy-import" href="fhws-view-404.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="fhws-polymer-app">
@@ -127,18 +130,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		<a name="information" href="[[rootPath]]information">Allgemeine Informationen</a>
 		<div style=padding:16px;">
 		<fhws-collapse class="black" style="color:black;" title="Elemente">
+            <a name="toolbars" href="[[rootPath]]toolbars">Toolbars</a>
 			<a name="cards" href="[[rootPath]]cards">Cards</a>
-			<a name="chips" href="[[rootPath]]chips">Chips</a>
-            <a name="tabs" href="[[rootPath]]tabs">Tabs</a>
-
-            <a name="search" href="[[rootPath]]search">Search</a>
 			<a name="chips" href="[[rootPath]]chips">Contact-Chips</a>
-
+            <a name="tabs" href="[[rootPath]]tabs">Tabs</a>
+            <a name="search" href="[[rootPath]]search">Search</a>
 			<a name="dialogs" href="[[rootPath]]dialogs">Dialogs</a>
 			<a name="switch" href="[[rootPath]]switch">Switches</a>
 			<a name="input" href="[[rootPath]]input">Input-Types</a>
             <a name="dropdown" href="[[rootPath]]dropdown">Drop-Downs</a>
+            <a name="picker" href="[[rootPath]]picker">Picker</a>
 			<a name="buttons" href="[[rootPath]]buttons">Buttons</a>
+			<a name="toasts" href="[[rootPath]]toasts">Toasts</a>
             <a name="sliders" href="[[rootPath]]sliders">Sliders</a>
             <a name="progress" href="[[rootPath]]progress">Progress</a>
             <a name="loading" href="[[rootPath]]loading">Loading</a>
@@ -169,6 +172,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             fallback-selection="view404"
             role="main">
 			<fhws-view-information name="information"></fhws-view-information>
+			<fhws-view-toolbars name="toolbars"></fhws-view-toolbars>
 			<fhws-view-cards name="cards"></fhws-view-cards>
             <fhws-view-tabs name="tabs"></fhws-view-tabs>
             <fhws-view-search name="search"></fhws-view-search>
@@ -177,7 +181,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			<fhws-view-switch name="switch"></fhws-view-switch>
 			<fhws-view-input name="input"></fhws-view-input>
 			<fhws-view-dropdown name="dropdown"></fhws-view-dropdown>
+			<fhws-view-picker name="picker"></fhws-view-picker>
 			<fhws-view-buttons name="buttons"></fhws-view-buttons>
+			<fhws-view-toasts name="toasts"></fhws-view-toasts>
             <fhws-view-sliders name="sliders"></fhws-view-sliders>
             <fhws-view-progress name="progress"></fhws-view-progress>
             <fhws-view-loading name="loading"></fhws-view-loading>
