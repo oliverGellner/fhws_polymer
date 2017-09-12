@@ -1,0 +1,49 @@
+<link rel="import" href="fhws-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="fhws-scrollbar">
+  <template>
+    <style>
+		.scrollbar{
+			overflow:scroll; height:100%; overflow-x: auto;	
+		}
+		
+		.scrollbar::-webkit-scrollbar-track
+		{
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+			background-color: white;
+		}
+
+		.scrollbar::-webkit-scrollbar
+		{
+			width: 12px;
+			background-color: var(--secondary-color-light);
+		}
+
+		.scrollbar::-webkit-scrollbar-thumb
+		{
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+			background-color: var(--primary-color);
+		}
+    </style>
+		<div class="scrollbar">
+			<slot></slot>
+		</div>
+	</template>
+ 
+  <script>
+    class FhwsScrollbar extends Polymer.Element {
+
+      static get is() { 
+			return 'fhws-scrollbar'; 
+		}
+		
+		static get properties() {
+			return {
+			}
+		}
+	}
+    window.customElements.define(FhwsScrollbar.is, FhwsScrollbar);
+  </script>
+</dom-module>
+
