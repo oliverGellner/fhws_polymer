@@ -1,0 +1,53 @@
+<link rel="import" href="fhws-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-alert-dialog/paper-alert-dialog.html">
+<link rel="import" href="../bower_components/paper-alert-dialog/paper-alert-dialog-icon-header.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
+<link rel="import" href="../fhws_elements/fhws-button.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+
+
+<dom-module id="fhws-toast">
+  <template>
+    <style include="fhws-styles">
+		#toast {
+		text-align: center;
+			z-index:9999;
+		}
+		.color {
+			background-color: var(--secondary-color);
+		}
+    </style>
+		<div class="container">
+		<fhws-button type="raised" on-click="openToast">{{title}}</fhws-button>
+		<paper-toast class="color" id="toast" text="{{text}}"></paper-toast>
+		</div>
+	</template>
+ 
+  <script>
+    class FhwsToast extends Polymer.Element {
+
+      static get is() { 
+			return 'fhws-toast'; 
+		}
+		
+		static get properties() {
+			return {
+				title: {
+				value: "Toast"
+				},
+				text: {
+				value: "This toast auto-closes after 3 seconds"
+				}
+			}
+		}
+		openToast() {
+			this.$.toast.open();
+		}
+	}
+    window.customElements.define(FhwsToast.is, FhwsToast);
+  </script>
+</dom-module>
+

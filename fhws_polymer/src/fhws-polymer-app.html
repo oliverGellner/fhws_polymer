@@ -40,7 +40,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="fhws-view-toasts.html">
 <link rel="lazy-import" href="fhws-view-toolbar.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
-<link rel="import" href="fhws-view-design.html">
+
+<link rel="import" href="../fhws_elements/fhws-scrollbar.html">
 <link rel="lazy-import" href="fhws-view-404.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="fhws-polymer-app">
@@ -90,26 +91,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		
 		--fhws-collapse-color: var(--secondary-color-dark);
 	}
-	#scrollbar{
-	overflow:scroll; height:100%; overflow-x: auto;	
-	}
-	#scrollbar::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: white;
-}
-
-#scrollbar::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: var(--secondary-color-light);
-}
-
-#scrollbar::-webkit-scrollbar-thumb
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: var(--primary-color);
-}
+	
 
 	
 
@@ -125,8 +107,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <app-drawer-layout fullbleed narrow="{{narrow}}" >
       <!-- Drawer content -->
-      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-	  <div id="scrollbar" >
+      <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]" style="z-index:-1000">
+	  <fhws-scrollbar>
         <app-toolbar>Menu</app-toolbar>
 
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
@@ -176,7 +158,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
    
 
         </iron-selector>
-		</div>
+		</fhws-scrollbar>
       </app-drawer>
       <!-- Main content -->
       <app-header-layout has-scrolling-region>
@@ -187,7 +169,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div main-title>FHWS Styleguide</div>
           </app-toolbar>
         </app-header>
-		<div id="scrollbar">
+		<fhws-scrollbar>
         <iron-pages
             selected="[[page]]"
             attr-for-selected="name"
@@ -213,7 +195,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <fhws-view-code name="code"></fhws-view-code>
 			<fhws-view-404 name="view404"></fhws-view-404>
         </iron-pages>
-		</div>
+		</fhws-scrollbar>
       </app-header-layout>
     </app-drawer-layout>
   </template>
