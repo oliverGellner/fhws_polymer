@@ -35,24 +35,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         Zunächst muss Polymer installiert werden (siehe „Polymer einrichten“). Anschließend kann das <b>Git-Repo</b> geklont werden. <br><br>Die weiteren Schritte: <br>
     <ul>
         <li>In Git in das entsprechende Verzeichnis wechseln</li>
-        <li>Den Befehl <i>bower install</i> ausführen: Hierdurch werden die benötigten Abhängigkeiten aufgebaut</li>
-        <li>Den Befehl <i>polymer serve</i> ausführen: Damit wird der Polymer-Server gestartet</li>
+        <li>Den Befehl <i>bower install</i> in der Bash ausführen: Hierdurch werden die benötigten Abhängigkeiten aufgebaut</li>
+        <li>Den Befehl <i>polymer serve</i> in der Bash ausführen: Damit wird der Polymer-Server gestartet</li>
     </ul>
     Nun läuft der lokale Polymer-Server. Der Aufruf erfolgt unter der in der Konsole ausgegebenen URL.
     <img src="../images/bash_screen.png" alt="bash-screen"></img><br><br>
     Weitere Hinweise zum Arbeiten mit den Polymer-Komponenten:<br>
     
     <ol>
-        <li><b>Naming</b>
-Die Polymerdatei hat die Endung .html
-Darüberhinaus muss sie ein "-" Enthalten
-Im JavaScript Teil werden die mit "-" getrennten Worte durch CamelCase dargestellt.
-Bsp.: fhws-test-element wird zu fhwsTestElement</li><br>
-        <li><b>Nutzereingaben</b>
-Das erstellte Polymerelement kann eigene Attribute erhalten.
-Bsp.: <fhws-test-element title="Hallo"></fhws-test-element>
-Definiert wird dies in der Klasse FhwsTestElement in der Methode:
-static get properties()</li>
+        <li><b>Naming</b><br>
+Die Polymer-Datei hat die Endung .html<br>
+Darüberhinaus muss sie ein "-" enthalten.<br>
+Im JavaScript Teil werden die mit "-" getrennten Worte durch CamelCase dargestellt.<br><br>
+            <i>Bsp.:</i> fhws-test-element wird zu: fhwsTestElement</li><br>
+        <li><b>Nutzereingaben</b><br>
+Die erstellte Polymer-Komponente kann eigene Attribute erhalten.<br>
+Dies wird in der Klasse FhwsTestElement in der Methode: static get properties() definiert.<br><br>
+            <i>Bsp.:</i> <fhws-code code='<fhws-test-element title="Hallo"></fhws-test-element>'></fhws-code></li>
     </ol>
     
     </p>
