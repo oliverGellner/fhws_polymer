@@ -20,5 +20,19 @@
 
 
 
+                <!--Card #0  -->  
+    <fhws-card title="Allgemeine Information" color="white">
+		  <div class="card-content">
+            
+			<p></p>
+           
+		  </div><br>
+	</fhws-card>
+	</div>     
+          
 
-Tabs --> Hintergrundfarbe: Orange, Linie: weiﬂ
+
+
+
+
+Link zu Git Repo (Beschreibung allg. Informationen) erg‰nzen

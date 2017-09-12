@@ -22,12 +22,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-<dom-module id="fhws-view-toolbars">
+<dom-module id="fhws-view-toolbar">
   <template>
     <style include="shared-styles">
  
     </style>
-    <fhws-header header="Toolbars">
+    <fhws-header header="Toolbar">
 
           	
      <!-- Toolbar inkl. Title -->  
@@ -46,43 +46,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	</fhws-card>
 	</div>        
   	
-      <!-- Toolbar inkl. Title, Menü und Buttons hier kann dann anstelle des links auch icon oder button oder sonstiges rein (tabs zum beispiel)-->  
-    <fhws-card title="Toolbar inkl. Title, Menü und Buttons" color="white">
-		<div class="card-content">
-			<fhws-header header="Title">
-				<div class="header-actions">
-					 <paper-tabs selected="0" noink>
-              <paper-tab>ITEM ONE</paper-tab>
-              <paper-tab>ITEM TWO</paper-tab>
-              <paper-tab>ITEM THREE</paper-tab>
-            </paper-tabs>
-				
-				</div>
-			</fhws-header>
-		</div><br>
-		<div class="card-actions">
-			<fhws-collapse title="Quellcode"><br>
-				<fhws-code code='<fhws-header header="Title">'></fhws-code>
-				<div style="text-indent:25px;">
-					<fhws-code code='<div class="header-actions"> <a href="">link</a></div>'></fhws-code>
-				</div>
-				<fhws-code code='</fhws-header>'></fhws-code>
-			</fhws-collapse>
-		</div>
-	</fhws-card>
-	<br>
-	</fhws-header>        
-  	<br>  
-      
+   
           
           
   </template>
 
   <script>
-    class FhwsViewToolbars extends Polymer.Element {
-      static get is() { return 'fhws-view-toolbars'; }
+    class FhwsViewToolbar extends Polymer.Element {
+      static get is() { return 'fhws-view-toolbar'; }
     }
 
-    window.customElements.define(FhwsViewToolbars.is, FhwsViewToolbars);
+    window.customElements.define(FhwsViewToolbar.is, FhwsViewToolbar);
   </script>
 </dom-module>
