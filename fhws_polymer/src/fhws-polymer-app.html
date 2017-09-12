@@ -39,6 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="fhws-view-picker.html">
 <link rel="lazy-import" href="fhws-view-toasts.html">
 <link rel="lazy-import" href="fhws-view-toolbars.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
 <link rel="lazy-import" href="fhws-view-404.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="fhws-polymer-app">
@@ -91,8 +92,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	#scrollbar::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: var(--secondary-color-light);
+	background-color: white;
 }
 
 #scrollbar::-webkit-scrollbar
@@ -103,7 +103,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 #scrollbar::-webkit-scrollbar-thumb
 {
-	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: var(--primary-color);
 }
