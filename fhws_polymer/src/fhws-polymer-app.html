@@ -38,6 +38,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="fhws-view-search.html">
 <link rel="lazy-import" href="fhws-view-picker.html">
 <link rel="lazy-import" href="fhws-view-toasts.html">
+<link rel="lazy-import" href="fhws-view-toolbars.html">
 <link rel="lazy-import" href="fhws-view-404.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="fhws-polymer-app">
@@ -129,7 +130,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		<a name="information" href="[[rootPath]]information">Allgemeine Informationen</a>
 		<div style=padding:16px;">
 		<fhws-collapse class="black" style="color:black;" title="Elemente">
-            <a name="header" href="[[rootPath]]header">Header</a>
+            <a name="toolbars" href="[[rootPath]]toolbars">Toolbars</a>
 			<a name="cards" href="[[rootPath]]cards">Cards</a>
 			<a name="chips" href="[[rootPath]]chips">Contact-Chips</a>
             <a name="tabs" href="[[rootPath]]tabs">Tabs</a>
@@ -171,7 +172,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             fallback-selection="view404"
             role="main">
 			<fhws-view-information name="information"></fhws-view-information>
-			<fhws-view-header name="header"></fhws-view-header>
+			<fhws-view-toolbars name="toolbars"></fhws-view-toolbars>
 			<fhws-view-cards name="cards"></fhws-view-cards>
             <fhws-view-tabs name="tabs"></fhws-view-tabs>
             <fhws-view-search name="search"></fhws-view-search>
