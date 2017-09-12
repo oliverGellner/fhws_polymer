@@ -19,6 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
 <link rel="import" href="../bower_components/iron-range-behavior/iron-range-behavior.html">
+<link rel="import" href="../fhws_elements/fhws-loading.html">
 
 
 
@@ -31,6 +32,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <fhws-header header="Progress">
+        
+        
+              <!--Card #0  -->  
+    <fhws-card title="Allgemeine Information" color="white">
+		  <div class="card-content">
+            
+              <p>Fortschrittsanzeigen werden eingesetzt, um den <b>Bearbeitungsstand eines Vorgangs</b> zu visualisieren. Dabei sollte die Visualisierung für einen Vorgangstyp über die ganze Anwendung hinweg konsistent bleiben.<br><br>
+                  Man unterscheidet zwischen <b>endlichen und unendlichen Anzeigen</b>. Während endliche Fortschrittsanzeigen den genauen Status eines Vorgangs anzeigt, signalisieren unendliche Fortschrittsanzeigen lediglich die Bearbeitung des Vorgangs.<br><br>
+                  Mehr Informationen zur Fortschrittsanzeige findet man im offiziellen <a href="https://material.io/guidelines/components/progress-activity.html">Material Design-Styleguide</a>.
+</p>
+           
+		  </div><br>
+	</fhws-card>
+	</div>      
+        
   
         <!-- Progress One -->  
     <fhws-card title="Progress One" color="white">
@@ -56,7 +72,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			<fhws-code code='<fhws-progress value="400" secondary="800"></fhws-progress>'></fhws-code>
 		</fhws-collapse>
       </div>
+	</fhws-card> 
+        
+         <!-- Loading -->  
+    <fhws-card title="Loading" color="white">
+		  <div class="card-content">
+         <fhws-loading></fhws-loading>
+		  </div><br>
+		 <div class="card-actions">
+        <fhws-collapse title="Quellcode"><br>
+			<fhws-code code='<fhws-loading></fhws-loading>'></fhws-code>
+		</fhws-collapse>
+      </div>
 	</fhws-card>      
+    
+        
     <br> 
    </template>
   <script>
