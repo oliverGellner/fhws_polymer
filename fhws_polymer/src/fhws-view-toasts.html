@@ -7,6 +7,7 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
@@ -14,11 +15,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-card.html">
 <link rel="import" href="../fhws_elements/fhws-link.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-alert-dialog/paper-alert-dialog.html">
 <link rel="import" href="../bower_components/paper-alert-dialog/paper-alert-dialog-icon-header.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
+<link rel="import" href="../fhws_elements/fhws-toast.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
 
@@ -28,49 +29,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 <dom-module id="fhws-view-toasts">
- <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
-      }
-    </style>
+	<template>
+		<style include="shared-styles">
+			:host {
+				display: block;
+			}
+		</style>
      
-     
-     
-             <fhws-header header="Toasts">
+        <fhws-header header="Toasts">
+			<!-- Toast -->  
+			<fhws-card title="Toast" color="white">
+				<div class="card-content">
+					<fhws-toast value="This toast auto-closes after 3 seconds" title="Toast"></fhws-toast>
+				</div>
+				<br>
+				<div class="card-actions">
+					<fhws-collapse title="Quellcode"><br>
+						<fhws-code code='<fhws-toast value="This toast auto-closes after 3 seconds" title="Toast"></fhws-toast>'></fhws-code>
+					</fhws-collapse>
+				</div>
+			</fhws-card>
+			<br>
+		</fhws-header>       
+  	</template>
+	<script>
+		class FhwsViewToasts extends Polymer.Element {
+			static get is() { 
+				return 'fhws-view-toasts'; 
+			}  
+		}
 
-
-
- 
-          <!-- Toast -->  
-    <fhws-card title="Toast" color="white">
-		  <div class="card-content">
-            
-
-
-
-<paper-button raised onclick="toast0.open()">Default toast</paper-button>
-<paper-toast id="toast0" text="This toast auto-closes after 3 seconds"></paper-toast>
-           
-		  </div><br>
-		 <div class="card-actions">
-
-        <fhws-collapse title="Quellcode"><br>
-       		<fhws-code code=''>
-		</fhws-code>
-	</fhws-collapse>
-
-      </div>
-	</fhws-card>
-	</div>        
-  	<br>
-        
-  </template>
-  <script>
-    class FhwsViewToasts extends Polymer.Element {
-      static get is() { return 'fhws-view-toasts'; }
-    }
-
-    window.customElements.define(FhwsViewToasts.is, FhwsViewToasts);
-  </script>
+		window.customElements.define(FhwsViewToasts.is, FhwsViewToasts);
+	</script>
 </dom-module>
