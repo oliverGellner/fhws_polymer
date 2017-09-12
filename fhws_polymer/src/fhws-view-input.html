@@ -104,10 +104,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			<!-- Inputs inkl. Auto-Validierung -->  
 			<fhws-card title="Input inkl. Auto-Validierung" color="white">
 				<div class="card-content">
-					
-<paper-input label="Eine Eingabe ist erforderlich" required auto-validate error-message="Eine Eingabe ist erforderlich"></paper-input><br>
-<paper-input label="Bitte nur Buchstaben eingeben" auto-validate pattern="[a-zA-Z]*" error-message="Bitte nur Buchstaben eingeben"></paper-input><br>
-<paper-input label="Es können nur Buchstaben eingegeben werden" auto-validate allowed-pattern="[a-zA-Z]"></paper-input>
+                    <fhws-input type="knummer"></fhws-input><br>
+                    <paper-input label="Eine Eingabe ist erforderlich" required auto-validate error-message="Eine Eingabe ist erforderlich"></paper-input><br>
+                    <paper-input label="Bitte nur Buchstaben eingeben" auto-validate pattern="[a-zA-Z]*" error-message="Bitte nur Buchstaben eingeben"></paper-input><br>
+                    <paper-input label="Es können nur Buchstaben eingegeben werden" auto-validate allowed-pattern="[a-zA-Z]"></paper-input>
 
                     
                     
@@ -115,6 +115,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<br>
 				<div class="card-actions">
 					<fhws-collapse title="Quellcode"><br>
+                        <fhws-code code='<fhws-input type="knummer"></fhws-input>'></fhws-code><br>
 						<fhws-code code='<paper-input label="Eine Eingabe ist erforderlich" required auto-validate error-message="Eine Eingabe ist erforderlich"></paper-input>'></fhws-code>
 						<br>			
 						<fhws-code code='<paper-input label="Bitte nur Buchstaben eingeben" auto-validate pattern="[a-zA-Z]*" error-message="Bitte nur Buchstaben eingeben">'></fhws-code>
