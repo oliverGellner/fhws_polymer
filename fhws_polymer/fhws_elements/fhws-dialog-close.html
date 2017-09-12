@@ -1,0 +1,42 @@
+<link rel="import" href="fhws-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="fhws-button.html">
+
+<dom-module id="fhws-dialog-close">
+  <template>
+    <style include="fhws-styles">
+	
+	.right {
+		float: right;
+	}
+	
+    </style>
+	<div class="right">
+    <fhws-button type="flat" dialog-confirm autofocus>{{title}}</fhws-button>
+	</div>
+	</template>
+ 
+  <script>
+    class FhwsDialogClose extends Polymer.Element {
+
+      static get is() { 
+			return 'fhws-dialog-close'; 
+		}
+		
+		static get properties() {
+			return {
+				title: {
+					value: "Schließen"
+				}
+			}
+		}
+		
+		dialog(){
+            this.$.dialog.toggle();
+    }
+	}
+    window.customElements.define(FhwsDialogClose.is, FhwsDialogClose);
+  </script>
+</dom-module>
+
