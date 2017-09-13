@@ -16,54 +16,57 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
-<dom-module id="fhws-view-code">
+
+
+<dom-module id="fhws-view-footer">
   <template>
     <style include="shared-styles">
-      :host {
-        display: block;
-      }
+ 
+        img.displayed 
+    {
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+        
+        
+        
     </style>
+    <fhws-header header="Footer">
 
-      <fhws-header header="Code">
-          
-          
-            <!--Card #0  -->  
+        
+                      <!--Card #0  -->  
     <fhws-card title="Allgemeine Information" color="white">
 		  <div class="card-content">
             
-			<p>Soll in einer Anwendung Quellcode dargestellt werden, kann der HTML-Tag<br><br><fhws-code code="<fhws-code code=''></fhws-code>"></fhws-code><br>genutzt werden. Er formatiert HTML-Text automatisch in eine aus Editoren bekannte Darstellung von Quellcode.</p>
+              <p>Der Footer enthält weiterführende Information zu einer Anwendung und ihrem Betreiber. Dies kann Text, eine Linksammlung oder ein Logo sein. Der Footer besteht aus dem <b>Hauptteil</b> in der <b>Primärfarbe</b> sowie einer <b>Copyright-Zeile</b> in der <b>dunklen Variante der Primärfarbe</b>.</p>
            
 		  </div><br>
 	</fhws-card>
-	        
-        
-        
-          <!-- Code -->  
-    <fhws-card title="Code" color="white">
+	</div>  
+      
+      
+          <fhws-card title="Mockup Footer Desktop / Mobile" color="white">
 		  <div class="card-content">
-            
-              <fhws-code code='<html><div style="padding:10px;" class="test"></div></html>'></fhws-code>
+                <p style="text-align:center">Desktop</p>
+              <img class="displayed" src="../images/5.%20footer-desktop-850px.png"><br>
+              <p style="text-align:center">Mobile</p>
+              <img style="width:360px;" class="displayed" src="../images/5.%20footer-mobile.png">
+           
 		  </div><br>
-		 <div class="card-actions">
-
-        <fhws-collapse title="Quellcode"><br>
-       		<fhws-code code='<fhws-code code="<html><div></div></html>"></fhws-code>'></fhws-code>
-		</fhws-code>
-	</fhws-collapse>
-
-      </div>
 	</fhws-card>
-	</div>        
-  	<br>
-        
-        
+	</div>  
+          
+      
+      
+      <br>    
   </template>
 
   <script>
-    class FhwsViewCode extends Polymer.Element {
-      static get is() { return 'fhws-view-code'; }
+    class FhwsViewFooter extends Polymer.Element {
+      static get is() { return 'fhws-view-footer'; }
     }
 
-    window.customElements.define(FhwsViewCode.is, FhwsViewCode);
+    window.customElements.define(FhwsViewFooter.is, FhwsViewFooter);
   </script>
 </dom-module>

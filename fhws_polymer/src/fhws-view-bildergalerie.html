@@ -16,54 +16,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
-<dom-module id="fhws-view-code">
+<dom-module id="fhws-view-bildergalerie">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
       }
+        
+        img.displayed
+        {
+            display:block;
+            margin-left:auto;
+            margin:auto;
+        }
+        
     </style>
 
-      <fhws-header header="Code">
+      <fhws-header header="Bildergalerie">
           
           
             <!--Card #0  -->  
     <fhws-card title="Allgemeine Information" color="white">
 		  <div class="card-content">
             
-			<p>Soll in einer Anwendung Quellcode dargestellt werden, kann der HTML-Tag<br><br><fhws-code code="<fhws-code code=''></fhws-code>"></fhws-code><br>genutzt werden. Er formatiert HTML-Text automatisch in eine aus Editoren bekannte Darstellung von Quellcode.</p>
+			<p>Im Mockup ist die Anzeige einer Bildergalerie dargestellt.</p>
            
 		  </div><br>
 	</fhws-card>
-	        
-        
-        
-          <!-- Code -->  
-    <fhws-card title="Code" color="white">
+	</div>  
+  
+      <!--Mockup Bildergalerie -->  
+    <fhws-card title="Mockup Bildergalerie" color="white">
 		  <div class="card-content">
-            
-              <fhws-code code='<html><div style="padding:10px;" class="test"></div></html>'></fhws-code>
-		  </div><br>
-		 <div class="card-actions">
-
-        <fhws-collapse title="Quellcode"><br>
-       		<fhws-code code='<fhws-code code="<html><div></div></html>"></fhws-code>'></fhws-code>
-		</fhws-code>
-	</fhws-collapse>
-
-      </div>
-	</fhws-card>
-	</div>        
-  	<br>
+              
+                <p style="text-align:center">Desktop</p>
+              <img class="displayed" src="../images/8.%20desktop-bildergalerie.png"><br>
+              <p style="text-align:center">Mobile</p>
+              <img style="width:360px;" class="displayed" src="../images/8.%20mobile-bildergalerie.png">
         
-        
+        </div><br>
+	</fhws-card>    
+    <br> 
   </template>
 
   <script>
-    class FhwsViewCode extends Polymer.Element {
-      static get is() { return 'fhws-view-code'; }
+    class FhwsViewBildergalerie extends Polymer.Element {
+      static get is() { return 'fhws-view-bildergalerie'; }
     }
 
-    window.customElements.define(FhwsViewCode.is, FhwsViewCode);
+    window.customElements.define(FhwsViewBildergalerie.is, FhwsViewBildergalerie);
   </script>
 </dom-module>

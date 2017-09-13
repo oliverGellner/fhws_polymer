@@ -16,54 +16,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fhws_elements/fhws-code.html">
 <link rel="import" href="../fhws_elements/fhws-collapse.html">
 
-<dom-module id="fhws-view-code">
+<dom-module id="fhws-view-mplan">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
       }
+        
+        img.displayed
+        {
+            display:block;
+            margin-left:auto;
+            margin:auto;
+        }
     </style>
 
-      <fhws-header header="Code">
+      <fhws-header header="Mensaplan">
           
           
             <!--Card #0  -->  
     <fhws-card title="Allgemeine Information" color="white">
 		  <div class="card-content">
             
-			<p>Soll in einer Anwendung Quellcode dargestellt werden, kann der HTML-Tag<br><br><fhws-code code="<fhws-code code=''></fhws-code>"></fhws-code><br>genutzt werden. Er formatiert HTML-Text automatisch in eine aus Editoren bekannte Darstellung von Quellcode.</p>
+			<p>Auf dem Mockup für den Mensaplan kommen folgende Komponenten zum Einsatz:
+                
+                <ul>
+                    <li>Tabs</li>
+                    <li>Buttons</li>
+                    <li>Karten</li>
+                    <li>Dialog</li>
+              </ul>
+Außerdem enthalten die Karten eine Bewertungsfunktion für die jeweiligen Gerichte.
+</p>
            
 		  </div><br>
 	</fhws-card>
-	        
-        
-        
-          <!-- Code -->  
-    <fhws-card title="Code" color="white">
+	</div>  
+  
+      <!--Mockup Mensaplan -->  
+    <fhws-card title="Mockup Mensaplan" color="white">
 		  <div class="card-content">
+              
+              <p style="text-align:center">Desktop - Mensa geöffnet</p>
+                <img class="displayed" src="../images/9.%20desktop-mensaplan-1.png"><br>
+               <p style="text-align:center">Desktop - Mensa geschlossen</p>
+                <img class="displayed" src="../images/9.%20desktop-mensaplan-2.png"><br>
             
-              <fhws-code code='<html><div style="padding:10px;" class="test"></div></html>'></fhws-code>
+              
 		  </div><br>
-		 <div class="card-actions">
-
-        <fhws-collapse title="Quellcode"><br>
-       		<fhws-code code='<fhws-code code="<html><div></div></html>"></fhws-code>'></fhws-code>
-		</fhws-code>
-	</fhws-collapse>
-
-      </div>
-	</fhws-card>
-	</div>        
-  	<br>
-        
-        
+	</fhws-card>    
+    <br> 
   </template>
 
   <script>
-    class FhwsViewCode extends Polymer.Element {
-      static get is() { return 'fhws-view-code'; }
+    class FhwsViewMplan extends Polymer.Element {
+      static get is() { return 'fhws-view-mplan'; }
     }
 
-    window.customElements.define(FhwsViewCode.is, FhwsViewCode);
+    window.customElements.define(FhwsViewMplan.is, FhwsViewMplan);
   </script>
 </dom-module>

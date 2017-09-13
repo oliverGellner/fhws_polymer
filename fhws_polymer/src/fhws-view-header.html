@@ -22,16 +22,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-<dom-module id="fhws-view-toolbar">
+<dom-module id="fhws-view-header">
   <template>
     <style include="shared-styles">
  
     </style>
-    <fhws-header header="Toolbar">
+    <fhws-header header="Header">
 
+        
+                    <!--Card #0  -->  
+    <fhws-card title="Allgemeine Information" color="white">
+		  <div class="card-content">
+            
+			<p>Der Header enthält den Namen der aktuellen Seite sowie wichtige Interaktionsmöglichkeiten, wie z.B. die Suche. Er wird in der Primärfarbe dargestellt. Auf Mobilgeräten wird zusätzlich die Statusleiste mit Angaben des Netzbetreibers, der aktuellen Empfangsqualität, etc., in der dunkeln Variante der Primärfarbe eingefärbt. <br><br>
+                Bei <b>Desktopanwendungen</b> ist der Header <b>permanent sichtbar</b>. Auf <b>Mobilgeräten verschwindet</b> der Header beim Herunterscrollen und wird beim Hochscrollen wieder eingeblendet. 
+</p>
+           
+		  </div><br>
+	</fhws-card>
+	</div>  
+        
+        
           	
-     <!-- Toolbar inkl. Title -->  
-	<fhws-card title="Toolbar inkl. Title" color="white">
+     <!-- Header inkl. Title -->  
+	<fhws-card title="Header" color="white">
 		  <div class="card-content">
             <fhws-header header="Title">
 			</fhws-header>
@@ -39,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		 <div class="card-actions">
 
         <fhws-collapse title="Quellcode"><br>
-            <fhws-code code=' <fhws-header header="Title"></fhws-header>'></fhws-code>
+            <fhws-code code='<fhws-header header="Title"></fhws-header>'></fhws-code>
 		</fhws-collapse>
 
       </div>
@@ -48,14 +62,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   	
    
           
-          
+          <br>
   </template>
 
   <script>
-    class FhwsViewToolbar extends Polymer.Element {
-      static get is() { return 'fhws-view-toolbar'; }
+    class FhwsViewHeader extends Polymer.Element {
+      static get is() { return 'fhws-view-header'; }
     }
 
-    window.customElements.define(FhwsViewToolbar.is, FhwsViewToolbar);
+    window.customElements.define(FhwsViewHeader.is, FhwsViewHeader);
   </script>
 </dom-module>

@@ -1,0 +1,50 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
+
+<dom-module id="fhws-view-md">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+
+      <fhws-header header="Design-Grundlagen">
+          
+          
+    <!-- Card #1  -->  
+    <fhws-card title="Material Design" color="white">
+		  <div class="card-content">
+            <p>
+                Material Design ist eine von <b>Google</b> entwickelte Designsprache und wird seit 2015 in den meisten Google-Apps sowie in zahlreichen anderen Android-Apps verwendet. Material Design basiert auf dem <b>minimalistischen Flat Design</b> und ergänzt es um dreidimensionale Effekte und zahlreiche Animationen zur Unterstützung der Nutzerführung. Indem Benutzeroberflächen wie Printprodukte gestaltet werden, entstehen <b>eindeutige visuelle Hierarchien</b>, was sich positiv auf die Nutzererfahrung auswirkt. Charakteristisch ist der Einsatz von <b>kartenartigen Elementen</b> sowie die gezielte Verwendung von <b>Schatten</b>, welche die Überlappung von Elementen kennzeichnen.<br><br>Unter <a href="https://material.io/guidelines/">https://material.io/guidelines/</a> steht ein umfangreicher Styleguide bereit. Weitere Tools für die Arbeit mit Material Design sind unter diesem Link <a href="https://material.io">https://material.io</a> verfügbar.
+            </p>    
+		  </div><br>
+	</fhws-card>
+	   
+        
+ <br>       
+  </template>
+
+  <script>
+    class FhwsViewMd extends Polymer.Element {
+      static get is() { return 'fhws-view-md'; }
+    }
+
+    window.customElements.define(FhwsViewMd.is, FhwsViewMd);
+  </script>
+</dom-module>

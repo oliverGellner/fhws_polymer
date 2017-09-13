@@ -1,0 +1,54 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
+
+<dom-module id="fhws-view-styleguide">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+
+      <fhws-header header="Allgemeine Informationen">
+ 
+              <!--card #1-->
+      
+	<fhws-card id="einsatz" title="Einsatz des Styleguides" color="white">
+	<div class="card-content">
+        <p>Dieser Styleguide unterstützt die <b>komponentenbasierte Entwicklung</b> von FHWS-Projekten. Zu diesem Zweck werden im Folgenden <b>Polymer-Komponenten</b> bereitgestellt, welche an das Design (Typographie, Farben und Proportionen) der FHWS angepasst wurden. Zusätzlich enthält dieser Styleguide Mockups für Seitenlayouts in FHWS-Webanwendungen. <br><br>Der Styleguide basiert auf dem von Google entwickelten, responsiven <b>Material Design</b> und unterstützt somit eine einheitliche Nutzererfahrung über verschiedene Endgeräte hinweg.<br><br>Die Verwendung dieses Styleguides bringt mehrere <b>Vorteile</b> mit sich:
+            <ul>
+                <li>Entwickler sparen Zeit, indem sie vorgefertigte Interface-Komponenten verwenden und nach ihren Bedürfnissen kombinieren können</li>
+                <li>Durch feste Darstellungsregeln wird die Pflege von Inhalten und die Erweiterung von Webanwendungen erleichtert</li>
+                <li>Die Verwendung von einheitlichen Elementen steigert der Wiedererkennungswert und die Benutzerfreundlichkeit von FHWS-Webanwendungen</li>
+                <li>Material Design ist Android-Nutzern bekannt, sodass die Orientierung in FHWS-Webanwendungen erleichtert wird</li>
+            </ul><br>
+        Der Styleguide entstand als studiengangsübergreifende Projektarbeit an der Fakultät Informatik und Wirtschaftsinformatik im Sommersemester 2017.
+        </p>    
+	</div>
+	</fhws-card><br>
+        
+  </template>
+
+  <script>
+    class FhwsViewStyleguide extends Polymer.Element {
+      static get is() { return 'fhws-view-styleguide'; }
+    }
+
+    window.customElements.define(FhwsViewStyleguide.is, FhwsViewStyleguide);
+  </script>
+</dom-module>

@@ -1,0 +1,64 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../fhws_elements/fhws-header.html">
+<link rel="import" href="../fhws_elements/fhws-card.html">           
+<link rel="import" href="../fhws_elements/fhws-link.html">
+<link rel="import" href="../fhws_elements/fhws-code.html">
+<link rel="import" href="../fhws_elements/fhws-collapse.html">
+
+
+
+<dom-module id="fhws-view-navdrawer">
+  <template>
+    <style include="shared-styles">
+ 
+    </style>
+    <fhws-header header="Navigation-Drawer">
+
+        
+                      <!--Card #0  -->  
+    <fhws-card title="Allgemeine Information" color="white">
+		  <div class="card-content">
+            
+              <p>Der Navigation Drawer enthält das Haupmenü einer Anwendung. Er nimmt die gesamte Bildschirmhöhe ein und ist stets auf der linken Bildschirmseite sichtbar.<br><br>
+Bei Desktopanwendungen ist der Navigation Drawer permanent sichtbar. Auf Mobilgeräten wird der Navigation Drawer durch einen Klick auf das Menü-Icon im Header eingeblendet. Dabei wird der Hintergrund abgedunkelt, um die Aufmerksamkeit des Nutzers auf das Menü zu lenken.<br><br>
+Bei der Gestaltung orientiert sich der Navigation Drawer an Listen. Im oberen Bereich des Navigation Drawers können sich ein Foto, ein Logo oder Profilinformationen des Nutzers befinden.<br><br>
+                  Mehr Informationen zu Pickern findet man im offiziellen <a href="https://material.io/guidelines/patterns/navigation-drawer.html">Material Design-Styleguide</a>.
+</p>
+           
+		  </div><br>
+	</fhws-card>
+	</div>  
+      
+      
+       <fhws-card title="Mockup Navigation-Drawer" color="white">
+		  <div class="card-content">
+            
+        
+           
+		  </div><br>
+	</fhws-card>
+	</div>  
+      
+      
+          <br>
+  </template>
+
+  <script>
+    class FhwsViewNavdrawer extends Polymer.Element {
+      static get is() { return 'fhws-view-navdrawer'; }
+    }
+
+    window.customElements.define(FhwsViewNavdrawer.is, FhwsViewNavdrawer);
+  </script>
+</dom-module>
